@@ -1,0 +1,48 @@
+/* ./styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*Include polices style*/
+
+@font-face {
+  font-family: poppinBlack;
+  src: url('../styles/font/Poppins-Black.ttf');
+}
+
+@font-face {
+  font-family: poppinLight;
+  src: url('../styles/font/Poppins-Light.ttf');
+}
+
+@font-face {
+  font-family: poppinThin;
+  src: url('../styles/font/Poppins-Thin.ttf');
+}
+
+@font-face {
+  font-family: poppinRegular;
+  src: url('../styles//font//Poppins-Regular.ttf');
+}
+
+.border{
+  border: solid 1px white;
+}
+
+body{
+  margin: 0;
+  font-family: poppinRegular, sans-serif;
+}
+
+.contenaire-home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/*Nav_bar style*/
+@import './navBar.css';
+
+/*Body*/
+@import './body_home.css';

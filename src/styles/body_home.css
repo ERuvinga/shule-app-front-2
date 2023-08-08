@@ -1,0 +1,72 @@
+.body_home{
+    position: absolute;
+    top: 55px;
+    left: 0;
+
+    width: 100%;
+    height: fit-content;
+}
+
+.body_home .Wrapper{
+    background-color: #ECF8F9;
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.body_home .Wrapper .description{
+    position: absolute;
+    top: 200px;
+    left: 100px;
+
+    width: 40%;
+    height: fit-content;
+
+}
+
+.body_home .Wrapper .description h1{
+    color: #1e1e1e;
+    font-family: poppinBlack;
+    font-size: 2.2em;
+}
+
+.body_home .Wrapper .description p{
+    font-family: poppinThin;
+    font-size: .9em;
+    font-weight: bolder;
+    color: #728A8F;
+}
+
+.body_home .Wrapper .description .btns{
+    margin-top: 30px;
+    display: flex;
+    font-family: poppinThin;
+    font-size: .9em;
+}
+
+.body_home .Wrapper .description .btns .link_to_login{
+    background-color: #728A8F;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.body_home .Wrapper .description .btns .link_to_about{
+    background-color: white;
+    color: #1e1e1e;
+
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+
+.body_home .Wrapper .description .btns .link_to_login:hover,.link_to_about:hover{
+    box-shadow: 0 0 4px 0 #1e1e1e;
+}
+
+.body_home .Wrapper .illustrat{
+    width: 40%;
+    height: fit-content;
+}
