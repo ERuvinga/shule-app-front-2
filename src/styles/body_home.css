@@ -10,7 +10,7 @@
 .body_home .Wrapper{
     background-color: #ECF8F9;
     width: 100%;
-    height: fit-content;
+    height: 90vh;
 
     display: flex;
     justify-content: flex-end;
