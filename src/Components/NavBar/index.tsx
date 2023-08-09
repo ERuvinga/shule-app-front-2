@@ -5,7 +5,7 @@ import {UserGroupIcon} from '@heroicons/react/24/outline'
 const navbar = ()=>{
     return(
         <nav className='Nav_bar'>
-            <div className='w-[75%] h-[100%] m-auto flex items-center justify-between border'>
+            <div className='border'>
                 <span className='logo border'>Logo</span>
                 <ul className=' links border'>
                     <li><a className='link_selected' href='#'>accueil</a></li>
