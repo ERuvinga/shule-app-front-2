@@ -76,6 +76,10 @@
     width: 50%;
   }
 
+  .Nav_bar .btns .icons li{
+    width: 25px;
+  }
+
   .Nav_bar .btns .link_to_login{
     background-color: #728A8F;
     color: aliceblue;
