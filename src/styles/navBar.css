@@ -11,11 +11,7 @@
     z-index: 1;
   }
   
-  .Nav_bar div{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+
   
   .Nav_bar .logo{
     width: 25%;
