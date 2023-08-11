@@ -25,6 +25,17 @@ export default function Home() {
                 </div>
           </div>
         </section>
+        <div className='desc_inst'>
+          <h2>Notre Ecole</h2>
+          <div className='first_bloc'>
+            <img alt='Institution' src='/imgs/a.jpg'/>
+            <aside>
+              <h3>Un Enseignement de qualité</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est id numquam maxime atque.
+              </p>
+            </aside>
+          </div>
+        </div>
       </section>
     </> 
  )

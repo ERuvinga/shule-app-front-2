@@ -19,7 +19,6 @@ const navbar = ()=>{
                         <li><UserGroupIcon className='w-[25px]'/></li>
                         <li><QuestionMarkCircleIcon className='w-[25px]'/></li>
                     </ul>
-
                     <a className='link_to_login' href='/Login'>Connexion</a>
                 </div>
             </div>
