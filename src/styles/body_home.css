@@ -10,10 +10,13 @@
 .body_home .Wrapper{
     background-color: #ECF8F9;
     width: 100%;
-    height: fit-content;
+    height: 80vh;
 
     display: flex;
     justify-content: flex-end;
+    z-index: 2;
+
+    box-shadow:1px 0 3px 0 #728A8F;
 }
 
 .body_home .Wrapper .description{
@@ -69,4 +72,65 @@
 .body_home .Wrapper .illustrat{
     width: 40%;
     height: fit-content;
+
+}
+
+/*description*/
+
+.desc_inst{
+    width: 99%;
+    height: fit-content;
+    padding: 10px 30px;
+    box-shadow: 0 2px 4px 0 #787777;
+
+    background-color: white;
+    position: absolute;
+    top: 80vh;
+    left: 0;
+
+    border-radius: 0 10px;
+}
+
+.desc_inst .descr{
+    color: #787777;
+    font-family: poppinRegular;
+    margin: 20px 0;
+    font-size: .9em;
+    text-align: center;
+}
+
+.desc_inst h2{
+    font-family: poppinBlack;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.desc_inst .first_bloc{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 80%;
+    margin: 50px auto ;
+}
+
+.desc_inst .first_bloc .first_descr{
+    width: 40%;
+}
+
+.desc_inst .first_bloc h3{
+    font-family: poppinBlack;
+    color: #728A8F;
+    font-size: 1em;
+    padding-top: 60px ;
+    padding-bottom: 15px ;
+
+}
+
+.desc_inst .first_bloc p{
+    font-family: poppinThin;
+    font-weight: bolder;
+    font-size: .9em;
+    color: #787777;
+    width: 80%;
 }

@@ -12,6 +12,10 @@
   }
   
   .Nav_bar div{
+    width: 75%;
+    height: 100%;
+    margin: auto;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
