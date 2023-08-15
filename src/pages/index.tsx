@@ -24,20 +24,6 @@ export default function Home() {
       ask: "Remplace à l'école un ensignant absent ou empeché",
       picture:"/imgs/user/uc.jpg",
     },
-
-    {
-      name: "KAVIRA MUSAVULI Laetitia",
-      function:"Enseignat(e)",
-      ask: "Enseignant(e) au degré Terminal",
-      picture:"/imgs/user/u1.jpg",
-    },
-
-    {
-      name: "KAMBERE BINGASA Augustin",
-      function:"Enseignant(e)",
-      ask: "Enseignant(e) au degré Terminal",
-      picture:"/imgs/user/ud.jpg",
-    },
   ];
 
   return (
@@ -104,14 +90,14 @@ export default function Home() {
             </div>
         </section>
       </div>
-      <section className=' Direction_cont'>
+      <section className='border Direction_cont'>
           <h2 className='title_bloc'>Notre Direction</h2>
           <p className='text_Ancho'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum saepe ad adipisci alias modi nihil omnis quae, perferendis
             corrupti, necessitatibus quaerat officiis du.
           </p>
 
-          <div className='Container_card '>{
+          <div className='Container_card'>{
           Tab_user.map((value, index) => 
           <DirectorCard 
             user={value}  
@@ -119,6 +105,21 @@ export default function Home() {
             />)            
           }
           </div>
+      </section>
+      <section id='about'>
+        <h2>About</h2>
+        <div className=''>
+          <p className=''>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit voluptatibus, iste sequi dolor necessitatibus earum, ad sapiente labore tempora maxime consequuntur odit a, blanditiis accusamus fugit voluptas sunt.
+             Numquam libero deserunt ad quo reprehenderit dicta laudantium, minima, doloribus fuga amet eum dolorem eaque reiciendis voluptatum? Rem labore,
+             aut, cum illo a laudantium deleniti sint eveniet nihil et explicabo unde vero ex eligendi ratione atque, quisquam repellendus perferendis optio eos itaque vitae! Dolor quos ducimus repudiandae incidunt ad deserunt 
+             placeat modi consequuntur culpa laboriosam aperiam error iste, sequi officia accusamus! Iusto, nobis. Nemo architecto, ex numquam a temporibus nobis? Excepturi, maxime.
+          </p>
+
+          <div className=''>
+
+          </div>
+        </div>
       </section>
     </> 
  )
