@@ -1,6 +1,7 @@
 import Head from '../Components/Head'
 import Navbar from '../Components/NavBar'
 import DirectorCard from '../Components/DirectorCard'
+import Footer from '../Components/Footer'
 
 export default function Home() {
 
@@ -62,7 +63,7 @@ export default function Home() {
               </aside>
           </div>
 
-          <div className='illustr_bloc '>
+          <div className='illustr_bloc'>
                 <aside className='text_descr'>
                   <h3 className=''>Un environnement  fait pour ton enfant</h3>
                   <p className=''>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est id numquam maxime atque.
@@ -111,13 +112,13 @@ export default function Home() {
         <div className='container_about '>
           <div className=' about'>
             <p className=''>
-              <h3>E.P Neema</h3>
+              <span className ='title'>E.P Neema</span>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit voluptatibus, iste sequi dolor necessitatibus earum, ad sapiente labore tempora maxime consequuntur odit a, blanditiis accusamus fugit voluptas sunt.
               Numquam libero deserunt ad quo reprehenderit dicta laudantium, minima, doloribus fuga amet eum dolorem eaque reiciendis voluptatum? Rem labore,
             </p>
 
             <p>
-              <h3>Ecole Primaire</h3>
+              <span className='title'>Ecole Primaire</span>
               aut, cum illo a laudantium deleniti sint eveniet nihil et explicabo unde vero ex eligendi ratione atque, quisquam repellendus perferendis optio eos itaque vitae! Dolor quos ducimus repudiandae incidunt ad deserunt 
               placeat modi consequuntur culpa laboriosam aperiam error iste, sequi officia accusamus! Iusto, nobis. Nemo architecto, ex numquam a temporibus nobis? Excepturi, maxime.
             </p>
@@ -134,6 +135,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Footer/>
     </> 
  )
 }

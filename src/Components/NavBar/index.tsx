@@ -1,8 +1,6 @@
-import {QuestionMarkCircleIcon} from '@heroicons/react/24/outline'
-import {ChatBubbleBottomCenterTextIcon} from '@heroicons/react/24/outline'
-import {UserGroupIcon} from '@heroicons/react/24/outline'
+import {QuestionMarkCircleIcon, ChatBubbleBottomCenterTextIcon, UserGroupIcon} from '@heroicons/react/24/outline'
 
-const navbar = ()=>{
+const navbar = () => {
     return(
         <nav className='Nav_bar'>
             <div className=''>
