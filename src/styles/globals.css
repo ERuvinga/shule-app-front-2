@@ -32,6 +32,7 @@
 body{
   margin: 0;
   font-family: poppinRegular, sans-serif;
+  background-color: #f9f9fc;
 }
 
 .contenaire-home{
@@ -40,6 +41,9 @@ body{
   justify-content: center;
   align-items: flex-start;
 }
+
+/*Components*/
+@import './components.css';
 
 /*Nav_bar style*/
 @import './navBar.css';

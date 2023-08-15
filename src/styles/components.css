@@ -1,0 +1,74 @@
+/*Styles of any components*/
+
+
+/*Card */ 
+.card_director{
+    max-width: 300px;
+    width: 300px;
+    min-height: 380px;
+    height: fit-content;
+
+    background-color: white;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: solid 1px #efefef;
+    transition: all .4s ease-in-out;
+}
+
+.card_director:hover{
+    box-shadow: 0 0 6px 0 #E2E3E9;
+    transform: scale(1.01);
+}
+
+.card_director .avatar{
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.card_director .avatar img{
+    width: 100%;
+    height: 200px;
+    object-fit: fill;
+}
+
+.card_director h2{
+    color: #728A8F;
+    font-size: .9em;
+    font-family: poppinBlack;
+}
+
+.card_director .function{
+    color: #787777;
+    font-size: .8em;
+    margin-top:5px ;
+
+    font-weight: bolder;
+}
+
+.card_director .task{
+    color: #787777;
+    font-size: .75em;
+    margin-top:5px ;
+
+    display: block;
+    margin: 10px 0;   
+    min-height: 40px;
+}
+
+.card_director a{
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    padding: 6px 20px;
+    margin-top: 10px;
+
+    background-color: #728A8F;
+    color: white;
+    font-size: .85em;
+    border-radius: 5px;
+
+}

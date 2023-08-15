@@ -1,25 +1,28 @@
-.body_home{
-    position: absolute;
+
+.container_first{
+    width: 100%;
+    height: fit-content;
+    position: sticky;
+}
+
+ .Wrapper{    
+    
+    position: sticky;
     top: 55px;
     left: 0;
 
-    width: 100%;
-    height: fit-content;
-}
-
-.body_home .Wrapper{
-    background-color: #ECF8F9;
+    background-color: #fefefe;
     width: 100%;
     height: 80vh;
 
     display: flex;
     justify-content: flex-end;
-    z-index: 2;
+    z-index: 0;
 
     box-shadow:1px 0 3px 0 #728A8F;
 }
 
-.body_home .Wrapper .description{
+ .Wrapper .description{
     position: absolute;
     top: 200px;
     left: 100px;
@@ -29,74 +32,75 @@
 
 }
 
-.body_home .Wrapper .description h1{
+ .Wrapper .description h1{
     color: #1e1e1e;
     font-family: poppinBlack;
     font-size: 2.2em;
 }
 
-.body_home .Wrapper .description p{
+ .Wrapper .description p{
     font-family: poppinThin;
     font-size: .9em;
     font-weight: bolder;
     color: #728A8F;
 }
 
-.body_home .Wrapper .description .btns{
+ .Wrapper .description .btns{
     margin-top: 30px;
     display: flex;
     font-family: poppinThin;
     font-size: .9em;
 }
 
-.body_home .Wrapper .description .btns .link_to_login{
+ .Wrapper .description .btns .link_to_login{
     background-color: #728A8F;
     color: white;
     padding: 8px 15px;
     border-radius: 5px;
 }
 
-.body_home .Wrapper .description .btns .link_to_about{
+ .Wrapper .description .btns .link_to_about{
     background-color: white;
-    color: #1e1e1e;
+    color: #728A8F;
 
     padding: 8px 15px;
     border-radius: 5px;
     font-weight: bolder;
+    border: #728A8F solid .5px;
 }
 
-.body_home .Wrapper .description .btns .link_to_login:hover,.link_to_about:hover{
-    box-shadow: 0 0 4px 0 #1e1e1e;
+ .Wrapper .description .btns .link_to_login:hover,.link_to_about:hover{
+    box-shadow: 0 0 2px 0 #787777;
 }
 
-.body_home .Wrapper .illustrat{
+ .Wrapper .illustrat{
     width: 40%;
     height: fit-content;
-
 }
 
 /*description*/
 
 .desc_inst{
-    width: 99%;
+    width: 95%;
     height: fit-content;
     padding: 10px 30px;
-    box-shadow: 0 2px 4px 0 #787777;
+    box-shadow: 0 0px 4px 0 #787777;
 
     background-color: white;
-    position: absolute;
+    position: sticky;
     top: 80vh;
-    left: 0;
-
-    border-radius: 0 10px;
+    left: 2.5%;
+    border-radius: 10px;
+    z-index: 1;
 }
 
 .desc_inst .descr{
     color: #787777;
     font-family: poppinRegular;
-    margin: 20px 0;
+    margin: 20px auto;
     font-size: .9em;
     text-align: center;
+    width: 80%;
 }
 
 .desc_inst h2{
@@ -104,21 +108,22 @@
     font-size: 2em;
     text-align: center;
     margin-top: 40px;
+    color: #728A8F;
 }
 
-.desc_inst .first_bloc{
+.desc_inst .illustr_bloc{
     display: flex;
     align-items: flex-start;
     justify-content: center;
     width: 80%;
-    margin: 50px auto ;
+    margin: auto ;
 }
 
-.desc_inst .first_bloc .first_descr{
+.desc_inst .illustr_bloc .text_descr{
     width: 40%;
 }
 
-.desc_inst .first_bloc h3{
+.desc_inst .illustr_bloc h3{
     font-family: poppinBlack;
     color: #728A8F;
     font-size: 1em;
@@ -127,10 +132,132 @@
 
 }
 
-.desc_inst .first_bloc p{
+.desc_inst .illustr_bloc p{
     font-family: poppinThin;
     font-weight: bolder;
     font-size: .9em;
     color: #787777;
+    width:90%;
+}
+
+/*Direction Container*/
+
+.Direction_cont{
+    height: fit-content;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.Direction_cont .title_bloc{
+    font-family: poppinBlack;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 40px;
+    color: #728A8F;
+}
+
+.Direction_cont .text_Ancho{
+    color: #787777;
+    font-family: poppinRegular;
+    margin: 20px auto;
+    font-size: .9em;
+    text-align: center;
+    width: 65%;
+}
+
+.Direction_cont .Container_card{
     width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#about{
+    background-color: white;
+    box-shadow: 0 0 2px 0 #E2E3E9;
+}
+
+#about h2{
+    font-family: poppinBlack;
+    color: #728A8F;
+    font-size: 2em;
+    padding: 15px ;
+    margin: auto;
+    text-align: center;
+}
+#about .container_about{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+#about .container_about .about{
+    width: 50%;
+    padding: 15px;
+}
+
+#about .container_about p h3{
+    padding: 15px 0;
+    color: #728A8F;
+    font-family: poppinBlack;
+    font-size: 1.5em;
+}
+
+#about .container_about .about p{
+    padding: 15px 0;
+    color: #728A8F;
+    font-size: .75em;
+}
+
+#about .container_about .news{
+    padding: 15px;
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+
+#about .container_about .news h3{
+    font-family: poppinBlack;
+    color: #728A8F;
+    font-size: .8em;
+    padding-bottom: 15px ;
+    margin: auto;
+    text-align: left;
+}
+
+#about .container_about .news .blocNews{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content;
+    gap: 10px;
+}
+
+#about .container_about .news label{
+    color: #787777;
+    font-size: .8em;
+    font-weight: bolder;
+}
+
+#about .container_about .news input{
+    border: #E2E3E9 solid 1px;
+    padding: 6px 5px;
+    font-size: .8em;
+    border-radius: 5px;
+}
+
+#about .container_about .news div input:focus{
+    outline: none;
+}
+
+#about .container_about .news div button{
+    padding: 6px 30px;
+    font-size: .8em;
+    background-color: #728A8F;
+    color: #E2E3E9;
+    width: fit-content;
+
+    border-radius: 4px;
 }
