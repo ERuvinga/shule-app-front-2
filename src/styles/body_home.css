@@ -1,3 +1,15 @@
+.contenaire_home{
+    background-color: #fefefe;
+    height: 300vh;
+}
+
+.container_first{
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+
+}
+
 .body_home{
     position: absolute;
     top: 55px;
@@ -8,7 +20,7 @@
 }
 
 .body_home .Wrapper{
-    background-color: #ECF8F9;
+    background-color: #fefefe;
     width: 100%;
     height: 80vh;
 
@@ -58,15 +70,16 @@
 
 .body_home .Wrapper .description .btns .link_to_about{
     background-color: white;
-    color: #1e1e1e;
+    color: #728A8F;
 
     padding: 8px 15px;
     border-radius: 5px;
     font-weight: bolder;
+    border: #728A8F solid .5px;
 }
 
 .body_home .Wrapper .description .btns .link_to_login:hover,.link_to_about:hover{
-    box-shadow: 0 0 4px 0 #1e1e1e;
+    box-shadow: 0 0 2px 0 #787777;
 }
 
 .body_home .Wrapper .illustrat{
@@ -78,7 +91,7 @@
 /*description*/
 
 .desc_inst{
-    width: 99%;
+    width: 95%;
     height: fit-content;
     padding: 10px 30px;
     box-shadow: 0 2px 4px 0 #787777;
@@ -86,17 +99,17 @@
     background-color: white;
     position: absolute;
     top: 80vh;
-    left: 0;
-
-    border-radius: 0 10px;
+    left: 2.5%;
+    border-radius: 10px;
 }
 
 .desc_inst .descr{
     color: #787777;
     font-family: poppinRegular;
-    margin: 20px 0;
+    margin: 20px auto;
     font-size: .9em;
     text-align: center;
+    width: 80%;
 }
 
 .desc_inst h2{
@@ -104,9 +117,10 @@
     font-size: 2em;
     text-align: center;
     margin-top: 40px;
+    color: #728A8F;
 }
 
-.desc_inst .first_bloc{
+.desc_inst .illustr_bloc{
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -114,11 +128,11 @@
     margin: 50px auto ;
 }
 
-.desc_inst .first_bloc .first_descr{
+.desc_inst .illustr_bloc .text_descr{
     width: 40%;
 }
 
-.desc_inst .first_bloc h3{
+.desc_inst .illustr_bloc h3{
     font-family: poppinBlack;
     color: #728A8F;
     font-size: 1em;
@@ -127,10 +141,16 @@
 
 }
 
-.desc_inst .first_bloc p{
+.desc_inst .illustr_bloc p{
     font-family: poppinThin;
     font-weight: bolder;
     font-size: .9em;
     color: #787777;
-    width: 80%;
+    width:90%;
+}
+
+/*Direction Container*/
+
+.Direction_cont{
+    position: absolute;
 }
