@@ -108,15 +108,21 @@ export default function Home() {
       </section>
       <section id='about'>
         <h2 className=''>About</h2>
-        <div className='container_about border'>
-          <p className='border'>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit voluptatibus, iste sequi dolor necessitatibus earum, ad sapiente labore tempora maxime consequuntur odit a, blanditiis accusamus fugit voluptas sunt.
-             Numquam libero deserunt ad quo reprehenderit dicta laudantium, minima, doloribus fuga amet eum dolorem eaque reiciendis voluptatum? Rem labore,
-             aut, cum illo a laudantium deleniti sint eveniet nihil et explicabo unde vero ex eligendi ratione atque, quisquam repellendus perferendis optio eos itaque vitae! Dolor quos ducimus repudiandae incidunt ad deserunt 
-             placeat modi consequuntur culpa laboriosam aperiam error iste, sequi officia accusamus! Iusto, nobis. Nemo architecto, ex numquam a temporibus nobis? Excepturi, maxime.
-          </p>
+        <div className='container_about '>
+          <div className=' about'>
+            <p className=''>
+              <h3>E.P Neema</h3>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit voluptatibus, iste sequi dolor necessitatibus earum, ad sapiente labore tempora maxime consequuntur odit a, blanditiis accusamus fugit voluptas sunt.
+              Numquam libero deserunt ad quo reprehenderit dicta laudantium, minima, doloribus fuga amet eum dolorem eaque reiciendis voluptatum? Rem labore,
+            </p>
 
-          <div className='news'>
+            <p>
+              <h3>Ecole Primaire</h3>
+              aut, cum illo a laudantium deleniti sint eveniet nihil et explicabo unde vero ex eligendi ratione atque, quisquam repellendus perferendis optio eos itaque vitae! Dolor quos ducimus repudiandae incidunt ad deserunt 
+              placeat modi consequuntur culpa laboriosam aperiam error iste, sequi officia accusamus! Iusto, nobis. Nemo architecto, ex numquam a temporibus nobis? Excepturi, maxime.
+            </p>
+          </div>
+          <div className='news '>
             <div className='w-[100%]'>
               <h3>Recevoir des newsletters</h3>
               <div className='blocNews'>
