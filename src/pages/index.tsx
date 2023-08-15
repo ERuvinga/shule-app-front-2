@@ -7,8 +7,7 @@ export default function Home() {
       <Head/>
       <section className='contenaire_home'>
         <Navbar/>
-        <div className='container_first border'>
-          <section className='body_home'>
+        <div className='container_first'>
             <div className='Wrapper'>
                 <div className='description'>
                     <h1 className=''>SOYEZ LE BIENVENU A L` ECOLE<br/>PRIMAIRE NEEMA</h1>
@@ -24,7 +23,6 @@ export default function Home() {
                     <img src='/wel.png' alt='error_illustration'/>
                   </div>
             </div>
-          </section>
           <section className='desc_inst'>
             <h2 className=''>E.P Neema</h2>
             <p className='descr'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad odio culpa ut 
@@ -71,6 +69,9 @@ export default function Home() {
         </div>
         <section className='border Direction_cont'>
           <h2>Notre Direction</h2>
+          <p>
+            Salut
+          </p>
         </section>
       </section>
     </> 
