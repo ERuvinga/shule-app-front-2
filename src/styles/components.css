@@ -72,3 +72,95 @@
     border-radius: 5px;
 
 }
+
+/*Footer*/
+.footer{
+    width: 100%;
+    height: fit-content;
+}
+
+.footer .cont{
+    width: 90%;
+    margin: 30px auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.footer .cont div{
+    width: 23%;
+}
+
+.footer .cont div .title{
+    font-family: poppinBlack;
+    font-size: .8em;
+    color: #728A8F;
+
+    display: block;
+    text-align: center;
+}
+
+.footer .cont div .title_contact{
+    font-family: poppinBlack;
+    font-size: .8em;
+    color: #728A8F;
+
+    display: block;
+    text-align: left; 
+}
+
+.footer .cont div p{
+    font-size: .7em;
+    text-align: left;
+    color: #787777;
+    padding: 10px 0;
+}
+
+.footer .cont div span{
+    font-size: .7em;
+    font-family: poppinBlack;
+    text-align: left;
+    color: #787777;
+    padding: 10px 0;
+}
+
+.footer .cont .list{
+    font-size: .7em;
+    color: #787777;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    padding: 10px 0;
+}
+
+.footer .cont .list li{
+    display: flex;
+    gap: 5px;
+    display: block;
+    text-align: center;
+}
+
+.footer .cont .contacts{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    font-size: .7em;
+    color: #787777;
+    gap: 5px;
+
+    padding: 10px 0;
+}
+
+.footer .cont .contacts li{
+    display: flex;
+    gap: 5px;
+}
+
+
+.footer .cont .icones{
+    width: 20px;
+    margin-right: 10px;
+    color: #787777;
+    }
