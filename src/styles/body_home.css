@@ -198,7 +198,7 @@
     padding: 15px;
 }
 
-#about .container_about p h3{
+#about .container_about p .title{
     padding: 15px 0;
     color: #728A8F;
     font-family: poppinBlack;
