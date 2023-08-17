@@ -31,10 +31,10 @@ export default function Home() {
     <>
       <Head/>
       <Navbar/>
-      <div className='container_first'>
+      <div className='container_first' id='home'>
         <div className='Wrapper'>
           <div className='description' >
-              <h1 id='home'>SOYEZ LE BIENVENU A L` ECOLE<br/>PRIMAIRE NEEMA</h1>
+              <h1 >SOYEZ LE BIENVENU A L` ECOLE<br/>PRIMAIRE NEEMA</h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque consectetur ab sed officiis   
               </p> 
@@ -55,40 +55,40 @@ export default function Home() {
 
             </p>
           <div className='illustr_bloc '>
-              <img className=' w-[400px] mr-6 ' alt='Institution' src='/imgs/a.png'/>
+              <img className='img-illustration sm:mr-6' alt='Institution' src='/imgs/a.png'/>
               <aside className='text_descr '>
-                <h3>Un Enseignement de qualité</h3>
+                <h3 className='first-text'>Un Enseignement de qualité</h3>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est id numquam maxime atque.
                 </p>
               </aside>
           </div>
 
-          <div className='illustr_bloc'>
+          <div className='illustr_bloc bloc_inverse'>
                 <aside className='text_descr'>
                   <h3>Un environnement  fait pour ton enfant</h3>
                   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est id numquam maxime atque.
                   </p>
                 </aside>
-                <img className='w-[400px]' alt='Institution' src='/imgs/b.png'/>
+                <img className='img-illustration' alt='Institution' src='/imgs/b.png'/>
           </div>
 
           <div className='illustr_bloc '>
-              <img className=' w-[400px] mr-6 ' alt='Institution' src='/imgs/c.gif'/>
-              <aside className='text_descr '>
-                <h3>U de qualité</h3>
+              <img className=' img-illustration sm:mr-6' alt='Institution' src='/imgs/c.gif'/>
+              <aside className='text_descr'>
+                <h3>Des excellents ressources</h3>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est id numquam maxime atque.
                 </p>
               </aside>
           </div>
 
-              <div className='illustr_bloc '>
+          <div className='illustr_bloc bloc_inverse '>
                 <aside className='text_descr '>
                   <h3>Des Enseignants à la Hauteur</h3>
                   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est id numquam maxime atque.
                   </p>
                 </aside>
-                <img className='w-[400px]' alt='Institution' src='/imgs/d.png'/>
-            </div>
+                <img className='img-illustration' alt='Institution' src='/imgs/d.png'/>
+          </div>
         </section>
       </div>
       <section className='Direction_cont'>

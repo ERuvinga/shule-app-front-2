@@ -105,7 +105,7 @@
 
 .desc_inst h2{
     font-family: poppinBlack;
-    font-size: 2em;
+    font-size: 1.5em;
     text-align: center;
     margin-top: 40px;
     color: #728A8F;
@@ -115,8 +115,12 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    width: 80%;
+    width: 85%;
     margin: auto ;
+}
+
+.desc_inst .img-illustration{
+    width: 400px;
 }
 
 .desc_inst .illustr_bloc .text_descr{
@@ -137,7 +141,7 @@
     font-weight: bolder;
     font-size: .9em;
     color: #787777;
-    width:90%;
+    width:95%;
 }
 
 /*Direction Container*/
@@ -264,6 +268,21 @@
     border-radius: 4px;
 }
 
+@media screen and (max-width: 950px) {
+    .desc_inst .illustr_bloc{
+        width: 98%;
+    }
+
+    .desc_inst .illustr_bloc .text_descr{
+        width: 60%;
+    }
+
+    .desc_inst .img-illustration{
+        width: 300px;
+    }
+}
+
+
 @media screen and (max-width: 750px) {
     #about .container_about{
         width: 90%;
@@ -282,9 +301,64 @@
         align-items: center;
     }
 
-    .Direction_cont .text_Ancho{
-        font-size: .8em;
-        width: 85%;
+    .desc_inst .illustr_bloc{
+        width: 100%;
+    }
+
+    .desc_inst .illustr_bloc .text_descr{
+        width: 70%;
+        font-size: .9em;
+    }
+
+    .desc_inst .img-illustration{
+        width: 240px;
+    }
+}
+
+@media screen and (max-width: 650px){
+
+    .desc_inst{
+        width: 98%;
+        top: 90vh;
+        left: 2%;
+        padding: 10px 0;
+
+    }
+    
+    .desc_inst .descr{
+        font-size: .75em;
+        width: 95%;
+        margin-top: 10px;
+
+    }
+    
+    .desc_inst h2{
+        font-size: 1.2em;
+    }
+    
+    .desc_inst .illustr_bloc{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        width: 99%;
+        margin: 0;
+        text-align: center;
+    }
+
+    .desc_inst .bloc_inverse{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .desc_inst .illustr_bloc .text_descr{
+        width: 95%;
+        font-size: .7em;
+    }
+
+    .desc_inst .illustr_bloc h3{
+        padding-top: 30px ;
+        padding-bottom: 20px ;
+    
     }
 }
 
@@ -304,4 +378,9 @@
         font-size: .7em;
         width: 90%;
     }
+
+    h2{
+        font-size: 1em;
+    }
+
 }
