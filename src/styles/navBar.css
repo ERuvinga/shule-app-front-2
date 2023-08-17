@@ -105,7 +105,7 @@
 
   .Nav_bar .btns .link_to_login:hover{
     opacity: .9;
-    box-shadow: 0 0 8px  #1e1e1e;
+    box-shadow: 0 0 3px  #1e1e1e;
   }
 
   @media screen and (max-width : 850px){
@@ -166,7 +166,6 @@
     font-size: .9em;
 
     box-shadow: 0 0 3px 0 #E2E3E9;
-    border: solid .8px #E2E3E9;
     border-radius: 30px;
     opacity: 1;
     transition: all .5s ease-in-out;

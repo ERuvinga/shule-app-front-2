@@ -9,25 +9,24 @@
     
     position: sticky;
     top: 55px;
-    left: 0;
-
+    
     background-color: #fefefe;
     width: 100%;
     height: 80vh;
 
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-evenly;
     z-index: 0;
 
     box-shadow:1px 0 3px 0 #728A8F;
 }
 
  .Wrapper .description{
-    position: absolute;
-    top: 200px;
-    left: 100px;
+    position: relative;
+    top: 30%;
 
     width: 40%;
+    max-width: 500px;
     height: fit-content;
 
 }
@@ -35,7 +34,7 @@
  .Wrapper .description h1{
     color: #1e1e1e;
     font-family: poppinBlack;
-    font-size: 2.2em;
+    font-size: 2em;
 }
 
  .Wrapper .description p{
@@ -75,7 +74,9 @@
 
  .Wrapper .illustrat{
     width: 40%;
-    height: fit-content;
+    max-width: 660px;
+    display: flex;
+    align-items: center;
 }
 
 /*description*/
@@ -284,6 +285,59 @@
 
 
 @media screen and (max-width: 750px) {
+        
+    .Wrapper{    
+        
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+
+    .Wrapper .description{
+        position: static;
+        width: 98%;
+        margin: 0 auto;
+        padding-left: 10px;
+        text-align: left;
+
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    } 
+
+    .Wrapper .description p{
+        font-size: .75em;
+        color: #728A8F;
+    }
+    .Wrapper .illustrat{
+        width: 95%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .Wrapper .description h1{
+        font-size: 1.2em;
+        width: 85%;
+    }
+
+    
+ .Wrapper .description .btns{
+    margin-top: 15px;
+    font-size: .75em;
+}
+
+ .Wrapper .description .btns .link_to_login{
+    padding: 8px 12px;
+    height: fit-content;
+}
+
+ .Wrapper .description .btns .link_to_about{
+
+    padding: 8px 12px;
+
+}
+
     #about .container_about{
         width: 90%;
         display: flex;
@@ -317,6 +371,7 @@
 
 @media screen and (max-width: 650px){
 
+    
     .desc_inst{
         width: 98%;
         top: 90vh;
@@ -363,6 +418,7 @@
 }
 
 @media screen and (max-width: 500px) {
+
     #about .container_about .news{
         width: 80%;
     }

@@ -33,18 +33,18 @@ export default function Home() {
       <Navbar/>
       <div className='container_first' id='home'>
         <div className='Wrapper'>
-          <div className='description' >
-              <h1 >SOYEZ LE BIENVENU A L` ECOLE<br/>PRIMAIRE NEEMA</h1>
-              <p>
+          <div className='description '>
+              <h1 className=''>SOYEZ LE BIENVENU A L` ECOLE PRIMAIRE NEEMA</h1>
+              <p className=''>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque consectetur ab sed officiis   
               </p> 
-              <div className='btns'>
+              <div className='btns '>
                 <a className='link_to_login mr-5' href='/Login'>Connexion</a>
                 <a className='link_to_about' href='#about'>A propos</a>
               </div>
           </div>
-          <div className='illustrat mr-16'>
-            <img src='/wel.png' alt='error_illustration'/>
+          <div className='illustrat'>
+            <img src='/wel.png' alt='error_illustration' />
           </div>
         </div>
         <section className='desc_inst'>
