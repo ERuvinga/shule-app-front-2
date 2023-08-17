@@ -110,7 +110,7 @@
 
   @media screen and (max-width : 850px){
     .Nav_bar{
-      width: 90%;
+      width: 100%;
       height: fit-content;
       padding: 20px 0;
     }

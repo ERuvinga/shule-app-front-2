@@ -85,6 +85,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .footer .cont div{
@@ -163,4 +164,41 @@
     width: 20px;
     margin-right: 10px;
     color: #787777;
+    }
+
+    @media screen and (max-width : 850px) {
+        .footer .cont{
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .footer .cont div{
+            width: 95%;
+            border-bottom: #E2E3E9 solid 1px;
+            margin: 10px 0;
+        }
+
+        .footer .cont .last_blc{
+            border: none;
+        }
+
+        .footer .cont div .title_contact{
+            text-align: center; 
+        }
+        .footer .cont .contacts{
+            align-items: center;
+        }
+        .footer .cont div p{
+            text-align: center;
+        }
+
+        .footer .cont div span{
+            font-size: .5em;
+            text-align: center;
+            display: block;
+        }
+        
     }
