@@ -31,64 +31,64 @@ export default function Home() {
     <>
       <Head/>
       <Navbar/>
-      <div className='container_first'>
+      <div className='container_first' id='home'>
         <div className='Wrapper'>
-          <div className='description'>
-              <h1 className=''>SOYEZ LE BIENVENU A L` ECOLE<br/>PRIMAIRE NEEMA</h1>
-              <p>
+          <div className='description '>
+              <h1 className=''>SOYEZ LE BIENVENU A L` ECOLE PRIMAIRE NEEMA</h1>
+              <p className=''>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque consectetur ab sed officiis   
               </p> 
-              <div className='btns'>
+              <div className='btns '>
                 <a className='link_to_login mr-5' href='/Login'>Connexion</a>
                 <a className='link_to_about' href='#about'>A propos</a>
               </div>
           </div>
-          <div className='illustrat mr-16'>
-            <img src='/wel.png' alt='error_illustration'/>
+          <div className='illustrat'>
+            <img src='/wel.png' alt='error_illustration' />
           </div>
         </div>
         <section className='desc_inst'>
-            <h2 className=''>E.P Neema</h2>
+            <h2>E.P Neema</h2>
             <p className='descr'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad odio culpa ut 
               dolorum dolor nostrum est, harum sint aperiam, cumque
               atque consequuntur eveniet molestias explicabo, id vitae corrupti numquam nam
 
             </p>
           <div className='illustr_bloc '>
-              <img className=' w-[400px] mr-6 ' alt='Institution' src='/imgs/a.png'/>
+              <img className='img-illustration sm:mr-6' alt='Institution' src='/imgs/a.png'/>
               <aside className='text_descr '>
-                <h3 className=''>Un Enseignement de qualité</h3>
-                <p className=''>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est id numquam maxime atque.
+                <h3 className='first-text'>Un Enseignement de qualité</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est id numquam maxime atque.
                 </p>
               </aside>
           </div>
 
-          <div className='illustr_bloc'>
+          <div className='illustr_bloc bloc_inverse'>
                 <aside className='text_descr'>
-                  <h3 className=''>Un environnement  fait pour ton enfant</h3>
-                  <p className=''>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est id numquam maxime atque.
+                  <h3>Un environnement  fait pour ton enfant</h3>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est id numquam maxime atque.
                   </p>
                 </aside>
-                <img className='w-[400px]' alt='Institution' src='/imgs/b.png'/>
+                <img className='img-illustration' alt='Institution' src='/imgs/b.png'/>
           </div>
 
           <div className='illustr_bloc '>
-              <img className=' w-[400px] mr-6 ' alt='Institution' src='/imgs/c.gif'/>
-              <aside className='text_descr '>
-                <h3 className=''>U de qualité</h3>
-                <p className=''>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est id numquam maxime atque.
+              <img className=' img-illustration sm:mr-6' alt='Institution' src='/imgs/c.gif'/>
+              <aside className='text_descr'>
+                <h3>Des excellents ressources</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est id numquam maxime atque.
                 </p>
               </aside>
           </div>
 
-              <div className='illustr_bloc '>
+          <div className='illustr_bloc bloc_inverse '>
                 <aside className='text_descr '>
-                  <h3 className=''>Des Enseignants à la Hauteur</h3>
-                  <p className=''>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est id numquam maxime atque.
+                  <h3>Des Enseignants à la Hauteur</h3>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora est id numquam maxime atque.
                   </p>
                 </aside>
-                <img className='w-[400px]' alt='Institution' src='/imgs/d.png'/>
-            </div>
+                <img className='img-illustration' alt='Institution' src='/imgs/d.png'/>
+          </div>
         </section>
       </div>
       <section className='Direction_cont'>
@@ -108,10 +108,10 @@ export default function Home() {
           </div>
       </section>
       <section id='about'>
-        <h2 className=''>About</h2>
+        <h2>About</h2>
         <div className='container_about '>
           <div className=' about'>
-            <p className=''>
+            <p>
               <span className ='title'>E.P Neema</span>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit voluptatibus, iste sequi dolor necessitatibus earum, ad sapiente labore tempora maxime consequuntur odit a, blanditiis accusamus fugit voluptas sunt.
               Numquam libero deserunt ad quo reprehenderit dicta laudantium, minima, doloribus fuga amet eum dolorem eaque reiciendis voluptatum? Rem labore,
@@ -123,7 +123,7 @@ export default function Home() {
               placeat modi consequuntur culpa laboriosam aperiam error iste, sequi officia accusamus! Iusto, nobis. Nemo architecto, ex numquam a temporibus nobis? Excepturi, maxime.
             </p>
           </div>
-          <div className='news '>
+          <div className='news'>
             <div className='w-[100%]'>
               <h3>Recevoir des newsletters</h3>
               <div className='blocNews'>

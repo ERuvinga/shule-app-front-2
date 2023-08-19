@@ -42,11 +42,12 @@ body{
   align-items: flex-start;
 }
 
-/*Components*/
-@import './components.css';
 
 /*Nav_bar style*/
 @import './navBar.css';
 
 /*Body*/
 @import './body_home.css';
+
+/*Components*/
+@import './components.css';

@@ -9,25 +9,24 @@
     
     position: sticky;
     top: 55px;
-    left: 0;
-
+    
     background-color: #fefefe;
     width: 100%;
     height: 80vh;
 
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-evenly;
     z-index: 0;
 
     box-shadow:1px 0 3px 0 #728A8F;
 }
 
  .Wrapper .description{
-    position: absolute;
-    top: 200px;
-    left: 100px;
+    position: relative;
+    top: 30%;
 
     width: 40%;
+    max-width: 500px;
     height: fit-content;
 
 }
@@ -35,7 +34,7 @@
  .Wrapper .description h1{
     color: #1e1e1e;
     font-family: poppinBlack;
-    font-size: 2.2em;
+    font-size: 2em;
 }
 
  .Wrapper .description p{
@@ -75,7 +74,9 @@
 
  .Wrapper .illustrat{
     width: 40%;
-    height: fit-content;
+    max-width: 660px;
+    display: flex;
+    align-items: center;
 }
 
 /*description*/
@@ -105,7 +106,7 @@
 
 .desc_inst h2{
     font-family: poppinBlack;
-    font-size: 2em;
+    font-size: 1.5em;
     text-align: center;
     margin-top: 40px;
     color: #728A8F;
@@ -115,8 +116,12 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    width: 80%;
+    width: 85%;
     margin: auto ;
+}
+
+.desc_inst .img-illustration{
+    width: 400px;
 }
 
 .desc_inst .illustr_bloc .text_descr{
@@ -137,7 +142,7 @@
     font-weight: bolder;
     font-size: .9em;
     color: #787777;
-    width:90%;
+    width:95%;
 }
 
 /*Direction Container*/
@@ -150,7 +155,7 @@
 
 .Direction_cont .title_bloc{
     font-family: poppinBlack;
-    font-size: 2em;
+    font-size: 1.5em;
     text-align: center;
     margin-top: 40px;
     color: #728A8F;
@@ -171,6 +176,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 #about{
@@ -181,8 +187,8 @@
 #about h2{
     font-family: poppinBlack;
     color: #728A8F;
-    font-size: 2em;
-    padding: 15px ;
+    font-size: 1.5em;
+    padding-top: 15px;
     margin: auto;
     text-align: center;
 }
@@ -199,10 +205,11 @@
 }
 
 #about .container_about p .title{
+    display: block;
     padding: 15px 0;
     color: #728A8F;
     font-family: poppinBlack;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 #about .container_about .about p{
@@ -221,7 +228,7 @@
 #about .container_about .news h3{
     font-family: poppinBlack;
     color: #728A8F;
-    font-size: .8em;
+    font-size: .7em;
     padding-bottom: 15px ;
     margin: auto;
     text-align: left;
@@ -260,4 +267,176 @@
     width: fit-content;
 
     border-radius: 4px;
+}
+
+@media screen and (max-width: 950px) {
+    .desc_inst .illustr_bloc{
+        width: 98%;
+    }
+
+    .desc_inst .illustr_bloc .text_descr{
+        width: 60%;
+    }
+
+    .desc_inst .img-illustration{
+        width: 300px;
+    }
+}
+
+
+@media screen and (max-width: 750px) {
+        
+    .Wrapper{    
+        
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+
+    .Wrapper .description{
+        position: static;
+        width: 98%;
+        margin: 0 auto;
+        padding-left: 10px;
+        text-align: left;
+
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    } 
+
+    .Wrapper .description p{
+        font-size: .75em;
+        color: #728A8F;
+    }
+    .Wrapper .illustrat{
+        width: 95%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .Wrapper .description h1{
+        font-size: 1.2em;
+        width: 85%;
+    }
+
+    
+ .Wrapper .description .btns{
+    margin-top: 15px;
+    font-size: .75em;
+}
+
+ .Wrapper .description .btns .link_to_login{
+    padding: 8px 12px;
+    height: fit-content;
+}
+
+ .Wrapper .description .btns .link_to_about{
+
+    padding: 8px 12px;
+
+}
+
+    #about .container_about{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+    #about .container_about .about{
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        border-bottom: #E2E3E9 solid 1px;
+    }
+    #about .container_about .news{
+        margin: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    .desc_inst .illustr_bloc{
+        width: 100%;
+    }
+
+    .desc_inst .illustr_bloc .text_descr{
+        width: 70%;
+        font-size: .9em;
+    }
+
+    .desc_inst .img-illustration{
+        width: 240px;
+    }
+}
+
+@media screen and (max-width: 650px){
+
+    
+    .desc_inst{
+        width: 98%;
+        top: 90vh;
+        left: 2%;
+        padding: 10px 0;
+
+    }
+    
+    .desc_inst .descr{
+        font-size: .75em;
+        width: 95%;
+        margin-top: 10px;
+
+    }
+    
+    .desc_inst h2{
+        font-size: 1.2em;
+    }
+    
+    .desc_inst .illustr_bloc{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        width: 99%;
+        margin: 0;
+        text-align: center;
+    }
+
+    .desc_inst .bloc_inverse{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .desc_inst .illustr_bloc .text_descr{
+        width: 95%;
+        font-size: .7em;
+    }
+
+    .desc_inst .illustr_bloc h3{
+        padding-top: 30px ;
+        padding-bottom: 20px ;
+    
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    #about .container_about .news{
+        width: 80%;
+    }
+    #about .container_about .news h3{
+        text-align: center;
+    }
+
+    .Direction_cont .Container_card{
+        width: 90%;
+    }
+
+    .Direction_cont .text_Ancho{
+        font-size: .7em;
+        width: 90%;
+    }
+
+    h2{
+        font-size: 1em;
+    }
+
 }

@@ -4,8 +4,8 @@ import { MapPinIcon, PhoneIcon, InboxArrowDownIcon} from "@heroicons/react/24/ou
 const Footer = () =>{
     return(
         <footer className="footer">
-            <div className="cont ">
-                <div className="">
+            <div className="cont">
+                <div>
                     <span className="title_contact">Ep Neema</span>
                     <p>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
@@ -13,7 +13,7 @@ const Footer = () =>{
                     </p>
                     <span>@Copyright Ep_neema</span>
                 </div>
-                <div className="">
+                <div>
                     <span className="title_contact">Adresse</span>
                     <ul className="contacts">
                         <li><MapPinIcon className="icones"/>Goma, Q. Mabang, Av.Salong ...</li>
@@ -21,7 +21,7 @@ const Footer = () =>{
                         <li><PhoneIcon className="icones"/>+243 386-688-3295</li>
                     </ul>
                 </div>
-                <div className="">
+                <div>
                     <span className="title">Menu</span>
                     <ul className="list">
                         <li>Accueil</li>
@@ -30,7 +30,7 @@ const Footer = () =>{
                         <li>Grille</li>
                     </ul>
                 </div>
-                <div className="">
+                <div className="last_blc">
                     <span className="title">Nos liens</span>
                     <ul className="list">
                         <li>Instagram</li>
