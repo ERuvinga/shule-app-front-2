@@ -48,7 +48,9 @@
 
  .Wrapper .description .btns .link_to_login{
     background-color: #728A8F;
+    font-weight: bolder;
     color: white;
+    font-family: poppinThin;
     padding: 8px 15px;
     border-radius: 5px;
 }
@@ -56,7 +58,7 @@
  .Wrapper .description .btns .link_to_about{
     background-color: white;
     color: #728A8F;
-
+    font-family: poppinThin;
     padding: 8px 15px;
     border-radius: 5px;
     font-weight: bolder;
@@ -421,16 +423,16 @@
 @media screen and (max-width: 500px) {
 
     .Wrapper{
-        height: 92vh;
+        height: 90vh;
     }
 
     .Wrapper .illustrat{
         width: 90%;
-        max-width: 200px;
+        max-width: 230px;
     }
     
     .desc_inst{
-        top: 92vh;
+        top: 89vh;
         padding: 1px 0;
     }
 
@@ -452,7 +454,7 @@
 
 }
 
-@media screen and (max-width: 500px) and (orientation : landscape) {
+@media screen and (max-width: 750px) and (orientation : landscape) {
     .Wrapper{
         height: 90vh;
         justify-content: center;
