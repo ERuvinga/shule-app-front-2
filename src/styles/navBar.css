@@ -34,6 +34,10 @@
   }
 
   .Nav_bar .btn_menu{
+    width: 25px;
+  }
+
+  .Nav_bar .btn_menu{
     color: #728A8F;
     display: none;
   }
@@ -112,7 +116,8 @@
     .Nav_bar{
       width: 100%;
       height: fit-content;
-      padding: 20px 0;
+      min-height: 55px;
+      padding: 10px 0;
     }
 
     .Nav_bar div{  
@@ -165,20 +170,15 @@
     padding: 6px 14px;
     font-size: .9em;
 
-    box-shadow: 0 0 3px 0 #E2E3E9;
     border-radius: 30px;
     opacity: 1;
     transition: all .5s ease-in-out;
   }
 
-  .Nav_bar .btns .link_to_login:hover{
-    opacity: .9;
-  }
 }
 
-  @media screen and (max-width : 320px){
+  @media screen and (max-width : 450px){
   .Nav_bar .btns .link_to_login{
     width: 90%;
   }
-
-  }
+}
