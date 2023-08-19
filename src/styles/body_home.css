@@ -424,6 +424,8 @@
 
     .Wrapper{
         height: 90vh;
+        justify-content: center;
+
     }
 
     .Wrapper .illustrat{
