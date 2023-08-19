@@ -28,9 +28,9 @@ const Navbar = () => {
     },[]);
 
     return(
-        <nav className='Nav_bar border'>
+        <nav className='Nav_bar'>
             <div>
-                <span className='logo border'>
+                <span className='logo'>
                     <span><Image src='/imgs/logo.png' width={25} height={25} alt='logo'/> </span>
                     {toggleMenu ? <XMarkIcon className='btn_menu' onClick={toggleMenuScreen}/> : <Bars3Icon className='btn_menu' onClick={toggleMenuScreen}/>}
                 </span>

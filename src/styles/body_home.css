@@ -378,9 +378,9 @@
 
 @media screen and (max-width: 650px){
 
-    
+
     .desc_inst{
-        width: 98%;
+        width: 96%;
         top: 96vh;
         left: 2%;
         padding: 10px 0;
@@ -421,13 +421,20 @@
         padding-bottom: 20px ;
     
     }
+  
 }
 
 @media screen and (max-width: 500px) {
 
     .Wrapper{
-        height: 95vh;
+        height: 94vh;
     }
+
+    .desc_inst{
+        top: 96vh;
+        padding: 1px 0;
+    }
+
     #about .container_about .news{
         width: 80%;
     }
@@ -442,10 +449,6 @@
     .Direction_cont .text_Ancho{
         font-size: .7em;
         width: 90%;
-    }
-
-    h2{
-        font-size: 1em;
     }
 
 }
