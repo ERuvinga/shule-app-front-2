@@ -5,8 +5,7 @@
     position: sticky;
 }
 
- .Wrapper{    
-    
+ .Wrapper{
     position: sticky;
     top: 55px;
     
@@ -287,11 +286,12 @@
 @media screen and (max-width: 750px) {
         
     .Wrapper{    
-        
+        top: 30px;
         display: flex;
         flex-direction: column-reverse;
         justify-content: flex-end;
         gap: 20px;
+        height: 90vh;
     }
 
     .Wrapper .description{
@@ -338,6 +338,13 @@
 
 }
 
+    
+.desc_inst{
+    width: 94%;
+    top: 94vh;
+    left: 3%;
+}
+
     #about .container_about{
         width: 90%;
         display: flex;
@@ -374,10 +381,9 @@
     
     .desc_inst{
         width: 98%;
-        top: 90vh;
+        top: 96vh;
         left: 2%;
         padding: 10px 0;
-
     }
     
     .desc_inst .descr{
@@ -419,6 +425,9 @@
 
 @media screen and (max-width: 500px) {
 
+    .Wrapper{
+        height: 95vh;
+    }
     #about .container_about .news{
         width: 80%;
     }

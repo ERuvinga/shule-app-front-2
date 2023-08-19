@@ -1,4 +1,5 @@
 import {QuestionMarkCircleIcon, ChatBubbleBottomCenterTextIcon, UserGroupIcon, Bars3Icon, XMarkIcon} from '@heroicons/react/24/outline';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 const Navbar = () => {
@@ -27,11 +28,11 @@ const Navbar = () => {
     },[]);
 
     return(
-        <nav className='Nav_bar'>
+        <nav className='Nav_bar border'>
             <div>
-                <span className='logo'>
-                    <span>Logo</span>
-                    {toggleMenu ? <XMarkIcon className='w-[25px] btn_menu' onClick={toggleMenuScreen}/> : <Bars3Icon className='w-[25px] btn_menu' onClick={toggleMenuScreen}/>}
+                <span className='logo border'>
+                    <span><Image src='/imgs/logo.png' width={25} height={25} alt='logo'/> </span>
+                    {toggleMenu ? <XMarkIcon className='btn_menu' onClick={toggleMenuScreen}/> : <Bars3Icon className='btn_menu' onClick={toggleMenuScreen}/>}
                 </span>
                 {
                     (toggleMenu || (Width_screen > BreakPointNav)) && (
