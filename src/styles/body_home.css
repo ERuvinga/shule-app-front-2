@@ -27,7 +27,6 @@
     width: 40%;
     max-width: 500px;
     height: fit-content;
-
 }
 
  .Wrapper .description h1{
@@ -37,16 +36,13 @@
 }
 
  .Wrapper .description p{
-    font-family: poppinThin;
-    font-size: .9em;
-    font-weight: bolder;
+    font-size: .85em;
     color: #728A8F;
 }
 
  .Wrapper .description .btns{
     margin-top: 30px;
     display: flex;
-    font-family: poppinThin;
     font-size: .9em;
 }
 
@@ -137,9 +133,7 @@
 }
 
 .desc_inst .illustr_bloc p{
-    font-family: poppinThin;
-    font-weight: bolder;
-    font-size: .9em;
+    font-size: .85em;
     color: #787777;
     width:95%;
 }
@@ -290,7 +284,7 @@
         display: flex;
         flex-direction: column-reverse;
         justify-content: flex-end;
-        gap: 20px;
+        gap: 8px;
         height: 90vh;
     }
 
@@ -430,6 +424,11 @@
         height: 92vh;
     }
 
+    .Wrapper .illustrat{
+        width: 90%;
+        max-width: 200px;
+    }
+    
     .desc_inst{
         top: 92vh;
         padding: 1px 0;
@@ -451,4 +450,15 @@
         width: 90%;
     }
 
+}
+
+@media screen and (max-width: 500px) and (orientation : landscape) {
+    .Wrapper{
+        height: 90vh;
+        justify-content: center;
+    }
+
+    .Wrapper .illustrat{
+        display: none;
+    }   
 }
