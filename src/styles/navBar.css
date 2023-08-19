@@ -116,6 +116,7 @@
     .Nav_bar{
       width: 100%;
       height: fit-content;
+      min-height: 55px;
       padding: 10px 0;
     }
 
