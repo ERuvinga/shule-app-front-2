@@ -125,7 +125,6 @@
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      background-color: white;
     }
 
     .Nav_bar .logo{
@@ -171,7 +170,6 @@
     padding: 6px 14px;
     font-size: .9em;
 
-    box-shadow: 0 0 3px 0 #E2E3E9;
     border-radius: 30px;
     opacity: 1;
     transition: all .5s ease-in-out;
@@ -184,4 +182,8 @@
     width: 90%;
   }
 
+  .Nav_bar .H_menu{
+    background-color: white;
+    z-index: 1;
+  }
   }
