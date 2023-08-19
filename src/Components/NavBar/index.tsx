@@ -36,7 +36,7 @@ const Navbar = () => {
                 </span>
                 {
                     (toggleMenu || (Width_screen > BreakPointNav)) && (
-                    <div className='H_menu'>
+                    <>
                          <ul className=' links '>
                             <li><a className='link_selected' href='#home'>accueil</a></li>
                             <li><a href='#'>valve</a></li>
@@ -51,7 +51,7 @@ const Navbar = () => {
                             </ul>
                             <a className='link_to_login' href='/Login'>Connexion</a>
                         </div>
-                    </div>
+                    </>
                  ) 
                 
                 }

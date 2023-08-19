@@ -427,11 +427,11 @@
 @media screen and (max-width: 500px) {
 
     .Wrapper{
-        height: 94vh;
+        height: 92vh;
     }
 
     .desc_inst{
-        top: 96vh;
+        top: 92vh;
         padding: 1px 0;
     }
 

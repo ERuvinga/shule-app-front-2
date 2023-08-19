@@ -181,9 +181,4 @@
   .Nav_bar .btns .link_to_login{
     width: 90%;
   }
-
-  .Nav_bar .H_menu{
-    background-color: white;
-    z-index: 1;
-  }
-  }
+}
