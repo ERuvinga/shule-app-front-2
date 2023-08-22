@@ -2,11 +2,24 @@
 
 const {atom} = require("recoil");
 
-
-const nameState = atom({
-    key:"nameState",
-    default: "Elie Ruvinga"
+const loginDataState = atom({
+    key:"loginDataState",
+    default:{
+        email:"",
+        passWord: ""
+    }
 });
 
-export{nameState}; // export state
+const registerDateState = atom({
+    key:"registerDateState",
+    default:{
+        matricule:"",
+        passWord:""
+    }
+})
+
+export{
+    loginDataState,
+    registerDateState
+}; // export state
 
