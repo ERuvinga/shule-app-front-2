@@ -232,19 +232,7 @@
         animation: loadingAnim 1s linear infinite;
     }
 
-    /*Register and Login Pages*/
-
-    .Register_form, .login_form{
-        margin: 5% auto;
-        padding: 30px;
-        width: 30%;
-        border: #E2E3E9 solid 1px;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
+    /*Register and Login components*/
 
     .groupe_form{
         width: 100%;
@@ -291,4 +279,25 @@
     .form_send_btn:hover{
         transform: scale(1.005);
         opacity: .9;
+    }
+
+    /*BackHome btn*/
+    .backHome{
+        padding: 8px 20px;
+        background-color: #efefef;
+        box-shadow: 0 0 5px 0 #E2E3E9;
+        transition: all .5s ease-in-out;
+        border-radius: 5px;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+    }
+
+    .backHome:hover{
+        background-color: #728A8F;
+        color: white;
+    }
+   
+    .backHome .icone{
+        width: 15px;
     }
