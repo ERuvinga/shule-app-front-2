@@ -1,6 +1,6 @@
 import {QuestionMarkCircleIcon, ChatBubbleBottomCenterTextIcon, UserGroupIcon, Bars3Icon, XMarkIcon} from '@heroicons/react/24/outline';
-import Image from 'next/image';
-import Link from 'next/link';
+import {Link, Image} from 'next/image';
+
 import { useEffect, useState } from 'react';
 
 const Navbar = () => {
