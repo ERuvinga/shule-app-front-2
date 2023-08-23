@@ -12,7 +12,7 @@ const InputField = (datas:proprietyInput) =>{
     return(
     <>
         {
-            (datas.type === "text")? 
+            (datas.type === "text" || datas.type ==="password")? 
             <div className="groupe_form">
                 <label htmlFor={datas.labelText}>{datas.labelText}</label>
                 <input className="log_reg_input" type={datas.type} placeholder={datas.placeholderText} id={datas.labelText}/>

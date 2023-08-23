@@ -13,13 +13,13 @@ interface proprietyInput {
 const index = (datas: proprietyInput)=>{
     return(
         <>
-            <div>
+            <section className="body_log_reg">
                 <section className="Register_form">
                     <InputField labelText="Matricule" placeholderText="neema******" form_name="Register" type="text"/>
                     <InputField labelText="password" placeholderText="******" form_name="Register" type="text"/>
                     <InputField type="button" placeholderText="Register" form_name="Register"/>
                 </section>               
-            </div>
+            </section>
             <Footer/>
         </>
 
