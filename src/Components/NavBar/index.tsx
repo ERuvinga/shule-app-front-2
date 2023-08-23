@@ -1,5 +1,6 @@
 import {QuestionMarkCircleIcon, ChatBubbleBottomCenterTextIcon, UserGroupIcon, Bars3Icon, XMarkIcon} from '@heroicons/react/24/outline';
-import Image from 'next/image';
+import {Link, Image} from 'next/image';
+
 import { useEffect, useState } from 'react';
 
 const Navbar = () => {
@@ -49,7 +50,7 @@ const Navbar = () => {
                                 <li><UserGroupIcon className='w-[25px]'/></li>
                                 <li><QuestionMarkCircleIcon className='w-[25px]'/></li>
                             </ul>
-                            <a className='link_to_login' href='/Login'>Connexion</a>
+                            <Link className='link_to_login' href='/Login'>Connexion</Link>
                         </div>
                     </>
                  ) 

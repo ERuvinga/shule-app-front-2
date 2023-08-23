@@ -2,6 +2,7 @@ import Head from '../Components/Head'
 import Navbar from '../Components/NavBar'
 import DirectorCard from '../Components/DirectorCard'
 import Footer from '../Components/Footer'
+import Link from 'next/link';
 
 export default function Home() {
 
@@ -39,7 +40,7 @@ export default function Home() {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque consectetur ab sed officiis   
               </p> 
               <div className='btns '>
-                <a className='link_to_login mr-5' href='/Login'>Connexion</a>
+                <Link className='link_to_login mr-5' href='/Login'>Connexion</Link>
                 <a className='link_to_about' href='#about'>A propos</a>
               </div>
           </div>

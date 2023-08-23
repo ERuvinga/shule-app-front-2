@@ -49,5 +49,8 @@ body{
 /*Body*/
 @import './body_home.css';
 
+/*Login_Register*/
+@import './Login_Register.css';
+
 /*Components*/
 @import './components.css';
