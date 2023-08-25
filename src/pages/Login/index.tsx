@@ -1,6 +1,7 @@
-import { loginDataState } from "@/src/States"
+//Natives Lib
 import {useSetRecoilState, useRecoilValue} from "recoil";
-import {useState} from 'react';
+
+//Components
 import Loading from "@/src/Components/Loading";
 import InputField from "@/src/Components/InputField";
 import Footer from "@/src/Components/Footer";
@@ -8,12 +9,16 @@ import App_Head from '@/src/Components/Head'
 import Link from "next/link";
 import BackHome from "@/src/Components/BackHome";
 
-const index = ()=>{
+//state
+import { platformData, loginDataState } from "@/src/States";
+
+const Index = ()=>{
+    let ex_platform_datas: object|any;
+    ex_platform_datas = useRecoilValue(platformData);
     return(
         <>
             <App_Head/>
             <section className="body_log_reg">
-
                 <div className="bloc">
                     <section className="login_form ">
                         <BackHome/>
@@ -23,8 +28,8 @@ const index = ()=>{
                         <InputField type="button" placeholderText="Login" form_name="Login"/>
                     </section>  
                     <p className="Register_bloc">
-                        <span >vous n’avez pas de compte ? <Link href="/Register">Enregistrez -vous</Link></span>
-                        <span ><Link href="/#">Mot de pass Oulier ?</Link></span>
+                        <span >vous n’avez pas de compte ? <Link href="/Register">Enregistrez-vous</Link></span>
+                        <span ><Link href="#">Mot de pass Oulier ? {ex_platform_datas.platform+' '+ex_platform_datas.mobile}</Link></span>
                     </p>
                 </div>
                 <div className="illustration_log_Reg">
@@ -38,4 +43,4 @@ const index = ()=>{
     )
 };
 
-export default index;
+export default Index;

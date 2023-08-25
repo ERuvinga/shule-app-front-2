@@ -1,10 +1,26 @@
+//Natives tools
+
+import {useEffect} from 'react';
+import { useSetRecoilState } from 'recoil';
+
+// Components
 import Head from '../Components/Head'
 import Navbar from '../Components/NavBar'
 import DirectorCard from '../Components/DirectorCard'
 import Footer from '../Components/Footer'
 import Link from 'next/link';
 
+//state
+import { platformData } from '../States';
+
 export default function Home() {
+  let DataofPlatform: any;
+  const setUserAgent = useSetRecoilState(platformData);
+
+  useEffect(()=>{
+      DataofPlatform = navigator;
+       setUserAgent(DataofPlatform.userAgentData);
+  },[]);
 
   const Tab_user = [
     {

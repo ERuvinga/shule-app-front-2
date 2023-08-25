@@ -16,10 +16,16 @@ const registerDateState = atom({
         matricule:"",
         passWord:""
     }
-})
+});
+
+const platformData = atom({
+    key: "platformData",
+    default:{}
+});
 
 export{
     loginDataState,
-    registerDateState
+    registerDateState,
+    platformData
 }; // export state
 
