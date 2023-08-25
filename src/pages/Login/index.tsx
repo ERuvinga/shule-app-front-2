@@ -19,7 +19,7 @@ const Index = ()=>{
             <App_Head/>
             <section className="body_log_reg">
                 <div className="bloc">
-                    <section className="login_form ">
+                    <section className="login_form">
                         <BackHome/>
                         <h1 className="title">Login</h1>
                         <InputField labelText="email" placeholderText="neema@gmail.com" form_name="Login" type="text"/>
@@ -33,7 +33,7 @@ const Index = ()=>{
                 </div>
                 <div className="illustration_log_Reg">
                     <img src='/imgs/login.png' alt="login_illustration"/>
-                    <div ></div>
+                    <div></div>
                 </div>              
             </section>
             <Footer/>

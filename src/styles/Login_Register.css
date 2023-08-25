@@ -48,9 +48,6 @@
     gap: 15px;
 }
 
-
- 
-
 .body_log_reg .title{
     font-size: 1.2em;
     font-family: poppinBlack;
@@ -83,7 +80,11 @@
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+}
+
+.reg_illust{
+    justify-content: flex-end;
 }
 
 .illustration_log_Reg img{
@@ -156,4 +157,77 @@
         transform: scale(1.005);
         opacity: .9;
     }
+
+
+@media screen and (max-width: 850px) {
+    .body_log_reg{
+        gap: 0;
+    } 
+
+    .body_log_reg .bloc{
+        width: 48%;
+    }
+    
+    .register_form, .login_form{
+        padding: 30px;
+        width: 100%;
+    }
+
+    .illustration_log_Reg{
+        width: 45%;
+    }
+    
+    .illustration_log_Reg img{
+        width: 70%;
+    }
+    
+    .illustration_log_Reg div{
+        width: 60%;
+        height: 300px;
+        left: 30%;
+    }
+
+    .backHome{
+        padding: 8px 15px;
+        border-radius: 4px;
+        top: 40px;
+        left: 5%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .register_form, .login_form{
+        padding: 5px;
+        margin: auto;
+    }
+    .groupe_form .log_reg_input, .groupe_form ._iPhone_input{
+        width: 100%;
+   }
+    
+    .illustration_log_Reg img{
+        width: 90%;
+    }
+
+    .form_send_btn{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Mobile view */
+
+@media screen and (max-width: 500px) {
+    .body_log_reg .bloc{
+        width: 80%;
+    }
+    .illustration_log_Reg{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .body_log_reg .bloc{
+        width: 95%;
+    }
+}
 

@@ -19,8 +19,8 @@ const index = (datas: proprietyInput)=>{
     return(
         <>
             <App_Head/>
-            <section className="body_log_reg">
-                <div className="illustration_log_Reg">
+            <section className="body_log_reg ">
+                <div className="illustration_log_Reg reg_illust">
                     <img src='/imgs/register.png' alt="login_illustration"/>
                     <div className="div_reg"></div>
                 </div>
