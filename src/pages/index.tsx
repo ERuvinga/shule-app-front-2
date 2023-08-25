@@ -19,7 +19,7 @@ export default function Home() {
 
   useEffect(()=>{
       DataofPlatform = navigator;
-       setUserAgent(DataofPlatform.userAgentData);
+       setUserAgent(DataofPlatform.userAgent);
   },[]);
 
   const Tab_user = [

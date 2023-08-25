@@ -29,7 +29,7 @@ const Index = ()=>{
                     </section>  
                     <p className="Register_bloc">
                         <span >vous n’avez pas de compte ? <Link href="/Register">Enregistrez-vous</Link></span>
-                        <span ><Link href="#">Mot de pass Oulier ? {ex_platform_datas.platform+' '+ex_platform_datas.mobile}</Link></span>
+                        <span ><Link href="#">Mot de pass Oulier ? {ex_platform_datas}</Link></span>
                     </p>
                 </div>
                 <div className="illustration_log_Reg">

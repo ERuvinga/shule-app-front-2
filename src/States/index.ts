@@ -20,7 +20,7 @@ const registerDateState = atom({
 
 const platformData = atom({
     key: "platformData",
-    default:{}
+    default:''
 });
 
 export{
