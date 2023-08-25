@@ -117,7 +117,7 @@
         margin-bottom: 3px;
     }
 
-    .groupe_form .log_reg_input{
+    .groupe_form .log_reg_input, .groupe_form ._iPhone_input{
         width: 90%;
         height: 35px;
         border-radius: 5px;
@@ -135,18 +135,9 @@
         outline: none;
         border-color: #728A8F;
     }
-    .groupe_form .log_reg_input ._iPhone_input:focus{
-        width: 90%;
-        height: 35px;
-        border-radius: 5px;
-        border: solid 2px #E2E3E9 ;
-        padding: 2px 5px;
-        /*Font*/
-        font-family: poppinLight;
-        font-size: 1em;
 
-        display: block;
-        margin: auto; 
+    .groupe_form ._iPhone_input:focus{
+        border-color: red;
     }
 
     .form_send_btn{
