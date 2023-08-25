@@ -35,9 +35,6 @@
 
   .Nav_bar .btn_menu{
     width: 25px;
-  }
-
-  .Nav_bar .btn_menu{
     color: #728A8F;
     display: none;
   }
@@ -115,7 +112,7 @@
   @media screen and (max-width : 850px){
     .Nav_bar{
       width: 100%;
-      height: fit-content;
+      height: 100%;
       min-height: 55px;
       padding: 10px 0;
     }
