@@ -137,7 +137,7 @@
     }
 
     .groupe_form ._iPhone_input:focus{
-        border-color: red;
+        border-color: #E2E3E9;
         outline: none;
         font-size: 100%;
     }
