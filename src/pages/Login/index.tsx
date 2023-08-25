@@ -1,5 +1,6 @@
 //Natives Lib
-import {useSetRecoilState, useRecoilValue} from "recoil";
+import {useRecoilValue, useSetRecoilState} from "recoil";
+import {useEffect} from 'react';
 
 //Components
 import Loading from "@/src/Components/Loading";
@@ -13,8 +14,6 @@ import BackHome from "@/src/Components/BackHome";
 import { platformData, loginDataState } from "@/src/States";
 
 const Index = ()=>{
-    let ex_platform_datas: object|any;
-    ex_platform_datas = useRecoilValue(platformData);
     return(
         <>
             <App_Head/>
@@ -29,7 +28,7 @@ const Index = ()=>{
                     </section>  
                     <p className="Register_bloc">
                         <span >vous n’avez pas de compte ? <Link href="/Register">Enregistrez-vous</Link></span>
-                        <span ><Link href="#">Mot de pass Oulier ? {ex_platform_datas}</Link></span>
+                        <span ><Link href="#">Mot de pass Oulier ?</Link></span>
                     </p>
                 </div>
                 <div className="illustration_log_Reg">
