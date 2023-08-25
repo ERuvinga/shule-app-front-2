@@ -1,11 +1,15 @@
+//Natives tools
+
+// Components
 import Head from '../Components/Head'
 import Navbar from '../Components/NavBar'
 import DirectorCard from '../Components/DirectorCard'
 import Footer from '../Components/Footer'
 import Link from 'next/link';
 
-export default function Home() {
+//state
 
+export default function Home() {
   const Tab_user = [
     {
       name: "BYABULE KILIGHO André",

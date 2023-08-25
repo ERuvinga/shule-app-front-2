@@ -1,4 +1,25 @@
-  /*Register and Login Pages*/
+/*BackHome btn*/
+    .backHome{
+        padding: 8px 20px;
+        background-color: #efefef;
+        box-shadow: 0 0 5px 0 #E2E3E9;
+        transition: all .5s ease-in-out;
+        border-radius: 5px;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+    }
+
+    .backHome:hover{
+        background-color: #728A8F;
+        color: white;
+    }
+   
+    .backHome .icone{
+        width: 15px;
+    }
+
+/*Register and Login Pages*/
 .body_log_reg{
     position: relative;
     width: 100%;
@@ -9,16 +30,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 10px;
 }
 
 .body_log_reg .bloc{
-    width: 30%;
+    width: 40%;
 }
 
-.Register_form, .login_form{
+.register_form, .login_form{
     padding: 30px;
-    width: 100%;
+    width: 95%;
     border-bottom: #E2E3E9 solid 1px;
 
     display: flex;
@@ -26,6 +47,9 @@
     align-items: center;
     gap: 15px;
 }
+
+
+ 
 
 .body_log_reg .title{
     font-size: 1.2em;
@@ -54,7 +78,7 @@
 }
 
 .illustration_log_Reg{
-    width: 35%;
+    width: 40%;
     height: 100%;
     position: relative;
     display: flex;
@@ -74,3 +98,62 @@
     position: absolute;
     left: 25%;
 }
+.illustration_log_Reg .div_reg{
+    left: 3%;
+}
+
+/*Register and Login components*/
+
+    .groupe_form{
+        width: 100%;
+    }
+
+    .groupe_form label{
+        display: block;
+        width: 90%;
+        margin:auto;
+        font-size: .75em;
+        color: #787777;
+        margin-bottom: 3px;
+    }
+
+    .groupe_form .log_reg_input, .groupe_form ._iPhone_input{
+        width: 90%;
+        height: 35px;
+        border-radius: 5px;
+        border: solid 2px #E2E3E9 ;
+        padding: 2px 5px;
+        /*Font*/
+        font-family: poppinLight;
+        font-size: .75em;
+
+        display: block;
+        margin: auto;
+   }
+
+    .groupe_form .log_reg_input:focus{
+        outline: none;
+        border-color: #728A8F;
+    }
+
+    .groupe_form ._iPhone_input:focus{
+        border-color: #E2E3E9;
+        outline: none;
+        font-size: 100%;
+    }
+
+    .form_send_btn{
+        width: 90%;
+        background-color: #728A8F;
+        color:white;
+        padding: 6px 0;
+        border-radius: 5px;
+        box-shadow: 0 0 2px 0 #E2E3E9;
+        transition: all .4s ease-in-out;
+    }
+
+    .form_send_btn:hover{
+        transform: scale(1.005);
+        opacity: .9;
+    }
+
