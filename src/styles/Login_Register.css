@@ -138,6 +138,8 @@
 
     .groupe_form ._iPhone_input:focus{
         border-color: red;
+        outline: none;
+        font-size: 100%;
     }
 
     .form_send_btn{
