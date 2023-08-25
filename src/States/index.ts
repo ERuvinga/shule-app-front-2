@@ -6,26 +6,26 @@ const loginDataState = atom({
     key:"loginDataState",
     default:{
         email:"",
-        passWord: ""
+        passWord: "***"
     }
 });
 
-const registerDateState = atom({
-    key:"registerDateState",
+const registerDataState = atom({
+    key:"registerDataState",
     default:{
         matricule:"",
-        passWord:""
+        passWord:"***"
     }
 });
 
-const platformData = atom({
-    key: "platformData",
+const Link_toApi = atom({
+    key: "Link_toApi",
     default:""
 });
 
 export{
     loginDataState,
-    registerDateState,
-    platformData
+    registerDataState,
+    Link_toApi
 }; // export state
 

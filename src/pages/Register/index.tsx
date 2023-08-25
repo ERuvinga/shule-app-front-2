@@ -1,5 +1,4 @@
 //Natives tools
-import { registerDateState } from "@/src/States";
 import { useState } from "react";
 import Link from "next/link";
 //components
@@ -28,8 +27,8 @@ const index = (datas: proprietyInput)=>{
                     <section className="register_form">
                         <BackHome/>
                         <h1 className="title">Register</h1>
-                        <InputField labelText="Matricule" placeholderText="neema******" form_name="Register" type="text"/>
-                        <InputField labelText="password" placeholderText="******" form_name="Register" type="text"/>
+                        <InputField labelText="Matricule" placeholderText="neema******" form_name="Register" type="text" identity={0}/>
+                        <InputField labelText="password" placeholderText="******" form_name="Register" type="text" identity={1}/>
                         <InputField type="button" placeholderText="Register" form_name="Register"/>
                     </section>  
                     <p className="Register_bloc">
