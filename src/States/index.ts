@@ -15,12 +15,15 @@ export const registerDataState = atom({
     default:{
         matricule:"",
         passWord:"***",
-        confirmPassword:""
+        confirmPassWord:""
     }
 });
 
 export const Link_toApi = atom({
     key: "Link_toApi",
-    default:""
+    default:{
+        remoteLink: "https://shule-app.onrender.com",
+        localLink: "localhost:4002"
+    }
 });
  // export states

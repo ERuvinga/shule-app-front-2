@@ -200,6 +200,11 @@
         padding: 5px;
         margin: auto;
     }
+
+    .groupe_form label{
+        margin-left: 0;
+    }
+
     .groupe_form .log_reg_input, .groupe_form ._iPhone_input{
         width: 100%;
    }
@@ -238,4 +243,10 @@
         width: 100%;
         height: 40px;
    }
+
+   .form_send_btn{
+    width: 100%;
+    padding: 8px 0;
+    margin-bottom: 10px;
+}
 }
