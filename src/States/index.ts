@@ -2,7 +2,7 @@
 
 const {atom} = require("recoil");
 
-const loginDataState = atom({
+export const loginDataState = atom({
     key:"loginDataState",
     default:{
         email:"",
@@ -10,22 +10,17 @@ const loginDataState = atom({
     }
 });
 
-const registerDataState = atom({
+export const registerDataState = atom({
     key:"registerDataState",
     default:{
         matricule:"",
-        passWord:"***"
+        passWord:"***",
+        confirmPassword:""
     }
 });
 
-const Link_toApi = atom({
+export const Link_toApi = atom({
     key: "Link_toApi",
     default:""
 });
-
-export{
-    loginDataState,
-    registerDataState,
-    Link_toApi
-}; // export state
-
+ // export states
