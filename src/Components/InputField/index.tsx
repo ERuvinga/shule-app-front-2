@@ -25,7 +25,7 @@ const sendLoginData = (datasOfUSer: any, url:String) =>{
             'Accept':'application/json',
             'Content-type':'application/json; charset=UTF-8'
         },
-        body: JSON.stringify({"message":"salutation"})
+        body: JSON.stringify(datasOfUSer)
     })
     .then((result)=>{
         console.log(result)

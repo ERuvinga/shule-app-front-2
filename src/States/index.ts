@@ -23,7 +23,7 @@ export const Link_toApi = atom({
     key: "Link_toApi",
     default:{
         remoteLink: "https://shule-app.onrender.com",
-        localLink: "https://127.0.0.1:4002"
+        localLink: "http://127.0.0.1:4002"
     }
 });
  // export states
