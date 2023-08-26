@@ -1,6 +1,10 @@
 /*Cotent input Component*/
 import { type } from "os";
 import {useEffect, useState} from "react";
+import { useRecoilValue } from "recoil";
+
+//state
+import { Link_toApi } from "@/src/States";
 
 interface proprietyInput {
     placeholderText : String|any,
@@ -11,14 +15,35 @@ interface proprietyInput {
     recoilAtom:any
 }
 
-const sendLoginData = (datasOfUSer: any) =>{
-    console.log("Login ");    
-    console.log(datasOfUSer);    
+const sendLoginData = (datasOfUSer: any, url:String) =>{
+    console.log(datasOfUSer);
+    
+    // Send datas to Api
+    fetch(`${url}/Authentification/Login`,{
+        method:"POST",
+        headers:{
+            'Accept':'application/json',
+            'Content-type':'application/json; charset=UTF-8'
+        },
+        body: JSON.stringify({"message":"salutation"})
+    })
+    .then((result)=>{
+        console.log(result)
+    })
+    .catch(error =>{console.log(error)});
 }
 
-const sendRegisterData = (datasOfUSer: any) =>{
-    console.log(`Register : `);
+const sendRegisterData = (datasOfUSer: any, url:String) =>{
     console.log(datasOfUSer);    
+
+    //Send datas to api
+    fetch(`${url}/Authentification/Register`)
+    .then((result)=>{
+        if(result.ok){
+            result.json().then((datas)=> console.log(datas))
+        }
+    })
+    .catch(error =>{console.log(error)});
 }
 
 const datasOfLoginForm = (e:any, idField:number, lastValue:any, updatedLoginDatas:any)=>{
@@ -75,6 +100,7 @@ const InputField = (datas:proprietyInput) =>{
     const [platformInfos, setPlatformInfos] = useState("");
     const LogRegStatesValues = datas.recoilAtom[0]; // values of states
     const setLogRegStatesValues = datas.recoilAtom[1]; // function change States Values
+    const url_to_api:any = useRecoilValue(Link_toApi);
 
     useEffect(()=>{
         setPlatformInfos(navigator.userAgent);
@@ -98,7 +124,7 @@ const InputField = (datas:proprietyInput) =>{
             </div>:
             <button 
             onClick={()=>{
-                (datas.form_name === "Login") ? sendLoginData(LogRegStatesValues) : sendRegisterData(LogRegStatesValues);
+                (datas.form_name === "Login") ? sendLoginData(LogRegStatesValues, url_to_api.localLink) : sendRegisterData(LogRegStatesValues, url_to_api.localLink);
             }} 
             className="form_send_btn">{datas.placeholderText}</button>
         }    
