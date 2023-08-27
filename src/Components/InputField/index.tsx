@@ -15,9 +15,7 @@ interface proprietyInput {
     recoilAtom:any
 }
 
-const sendLoginData = (datasOfUSer: any, url:String) =>{
-    console.log(datasOfUSer);
-    
+const sendLoginData = (datasOfUSer: any, url:String) =>{    
     // Send datas to Api
     fetch(`${url}/Authentification/Login`,{
         method:"POST",
@@ -28,16 +26,22 @@ const sendLoginData = (datasOfUSer: any, url:String) =>{
         body: JSON.stringify(datasOfUSer)
     })
     .then((result)=>{
-        console.log(result)
+        result.json().then((datas)=> console.log(datas))
     })
     .catch(error =>{console.log(error)});
 }
 
 const sendRegisterData = (datasOfUSer: any, url:String) =>{
-    console.log(datasOfUSer);    
-
     //Send datas to api
-    fetch(`${url}/Authentification/Register`)
+    fetch(`${url}/Authentification/ActiveAccount`, {
+        method:"POST",
+        headers:{
+            'Accept':'application/json',
+            'Content-type':'application/json; charset=UTF-8'
+        },
+        body: JSON.stringify(datasOfUSer)
+        }
+    )
     .then((result)=>{
         if(result.ok){
             result.json().then((datas)=> console.log(datas))
