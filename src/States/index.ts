@@ -2,30 +2,28 @@
 
 const {atom} = require("recoil");
 
-const loginDataState = atom({
+export const loginDataState = atom({
     key:"loginDataState",
     default:{
         email:"",
-        passWord: ""
+        passWord: "***"
     }
 });
 
-const registerDateState = atom({
-    key:"registerDateState",
+export const registerDataState = atom({
+    key:"registerDataState",
     default:{
         matricule:"",
-        passWord:""
+        passWord:"***",
+        confirmPassWord:""
     }
 });
 
-const platformData = atom({
-    key: "platformData",
-    default:""
+export const Link_toApi = atom({
+    key: "Link_toApi",
+    default:{
+        remoteLink: "https://shule-app.onrender.com",
+        localLink: "http://127.0.0.1:4002"
+    }
 });
-
-export{
-    loginDataState,
-    registerDateState,
-    platformData
-}; // export state
-
+ // export states

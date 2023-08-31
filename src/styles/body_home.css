@@ -48,9 +48,8 @@
 
  .Wrapper .description .btns .link_to_login{
     background-color: #728A8F;
-    font-weight: bolder;
     color: white;
-    font-family: poppinThin;
+    font-family: poppinRegular;
     padding: 8px 15px;
     border-radius: 5px;
 }
@@ -58,10 +57,9 @@
  .Wrapper .description .btns .link_to_about{
     background-color: white;
     color: #728A8F;
-    font-family: poppinThin;
+    font-family: poppinRegular;
     padding: 8px 15px;
     border-radius: 5px;
-    font-weight: bolder;
     border: #728A8F solid .5px;
 }
 
@@ -320,20 +318,12 @@
     
  .Wrapper .description .btns{
     margin-top: 15px;
-    font-size: .75em;
+    font-size: .8em;
 }
 
- .Wrapper .description .btns .link_to_login{
+ .Wrapper .description .btns .link_to_login, .Wrapper .description .btns .link_to_about{
     padding: 8px 12px;
-    height: fit-content;
 }
-
- .Wrapper .description .btns .link_to_about{
-
-    padding: 8px 12px;
-
-}
-
     
 .desc_inst{
     width: 94%;

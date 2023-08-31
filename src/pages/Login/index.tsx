@@ -1,19 +1,20 @@
 //Natives Lib
-import {useRecoilValue, useSetRecoilState} from "recoil";
-import {useEffect} from 'react';
+import {useRecoilState} from "recoil";
+import Link from "next/link";
+import {useEffect, useState} from 'react';
 
 //Components
 import Loading from "@/src/Components/Loading";
 import InputField from "@/src/Components/InputField";
 import Footer from "@/src/Components/Footer";
 import App_Head from '@/src/Components/Head'
-import Link from "next/link";
 import BackHome from "@/src/Components/BackHome";
 
 //state
-import { platformData, loginDataState } from "@/src/States";
+import { loginDataState} from "@/src/States";
 
 const Index = ()=>{
+    const logRegDatasOfUser = useRecoilState(loginDataState);
     return(
         <>
             <App_Head/>
@@ -22,9 +23,9 @@ const Index = ()=>{
                     <section className="login_form">
                         <BackHome/>
                         <h1 className="title">Login</h1>
-                        <InputField labelText="email" placeholderText="neema@gmail.com" form_name="Login" type="text"/>
-                        <InputField labelText="password" placeholderText="******" form_name="Login" type="password"/>
-                        <InputField type="button" placeholderText="Login" form_name="Login"/>
+                        <InputField labelText="email/Tél" placeholderText="neema@gmail.com/+243" form_name="Login" type="text" recoilAtom={logRegDatasOfUser} identity={0} />
+                        <InputField labelText="password" placeholderText="******" form_name="Login" type="password" recoilAtom={logRegDatasOfUser} identity={1}/>
+                        <InputField type="button" placeholderText="Login" form_name="Login" recoilAtom={logRegDatasOfUser}/>
                     </section>  
                     <p className="Register_bloc">
                         <span >vous n’avez pas de compte ? <Link href="/Register">Enregistrez-vous</Link></span>

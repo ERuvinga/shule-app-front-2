@@ -43,9 +43,9 @@ export default function Home() {
               <p className=''>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque consectetur ab sed officiis   
               </p> 
-              <div className='btns '>
+              <div className='btns'>
                 <Link className='link_to_login mr-5' href='/Login'>Connexion</Link>
-                <a className='link_to_about' href='#about'>A propos</a>
+                <Link className='link_to_about' href='#about'>A propos</Link>
               </div>
           </div>
           <div className='illustrat'>
