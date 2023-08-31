@@ -16,6 +16,7 @@ interface proprietyInput {
 }
 
 const sendLoginData = (datasOfUSer: any, url:String) =>{    
+    console.log(datasOfUSer);    
     // Send datas to Api
     fetch(`${url}/Authentification/Login`,{
         method:"POST",
@@ -32,6 +33,8 @@ const sendLoginData = (datasOfUSer: any, url:String) =>{
 }
 
 const sendRegisterData = (datasOfUSer: any, url:String) =>{
+    console.log(datasOfUSer);    
+
     //Send datas to api
     fetch(`${url}/Authentification/ActiveAccount`, {
         method:"POST",
