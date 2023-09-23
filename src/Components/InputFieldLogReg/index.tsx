@@ -4,8 +4,7 @@ import {useEffect, useState} from "react";
 import { useRecoilValue, useRecoilState } from "recoil";
 
 //state
-import { Link_toApi,errorLogRegisterForm } from "@/src/States";
-import { Console } from "console";
+import { Link_toApi, errorLogRegisterForm , SelectedTypeOfAccount} from "@/src/States";
 
 interface proprietyInput {
     placeholderText : String|any,
@@ -16,42 +15,45 @@ interface proprietyInput {
     recoilAtom:any
 }
 
-const sendLoginData = (datasOfUSer: any, url:String) =>{    
-    console.log(datasOfUSer);    
+const sendLoginData = (datasOfUSer: any, url:String, ComponentTypeAccount:any) =>{ 
+    const LoginData ={
+        ...datasOfUSer,
+        typeAccount: ComponentTypeAccount.value
+    }   
     // Send datas to Api
-    // fetch(`${url}/Authentification/Login`,{
-    //     method:"POST",
-    //     headers:{
-    //         'Accept':'application/json',
-    //         'Content-type':'application/json; charset=UTF-8'
-    //     },
-    //     body: JSON.stringify(datasOfUSer)
-    // })
-    // .then((result)=>{
-    //     result.json().then((datas)=> console.log(datas))
-    // })
-    // .catch(error =>{console.log(error)});
+    fetch(`${url}/Authentification/Login`,{
+        method:"POST",
+        headers:{
+            'Accept':'application/json',
+            'Content-type':'application/json; charset=UTF-8'
+        },
+        body: JSON.stringify(LoginData)
+    })
+    .then((result)=>{
+        result.json().then((datas)=> console.log(datas))
+    })
+    .catch(error =>{console.log(error)});
 }
 
 const sendRegisterData = (datasOfUSer: any, url:String) =>{
     console.log(datasOfUSer);    
 
      //Send datas to api
-    //  fetch(`${url}/Authentification/ActiveAccount`, {
-    //         method:"POST",
-    //         headers:{
-    //             'Accept':'application/json',
-    //             'Content-type':'application/json; charset=UTF-8'
-    //         },
-    //         body: JSON.stringify(datasOfUSer)
-    //         }
-    //     )
-    //     .then((result)=>{
-    //         if(result.ok){
-    //             result.json().then((datas)=> console.log(datas))
-    //         }
-    //     })
-    //     .catch(error =>{console.log(error)});
+     fetch(`${url}/Authentification/ActiveAccount`, {
+            method:"POST",
+            headers:{
+                'Accept':'application/json',
+                'Content-type':'application/json; charset=UTF-8'
+            },
+            body: JSON.stringify(datasOfUSer)
+            }
+        )
+        .then((result)=>{
+            if(result.ok){
+                result.json().then((datas)=> console.log(datas))
+            }
+        })
+        .catch(error =>{console.log(error)});
 }
 
 const datasOfLoginForm = (e:any, idField:number, lastValue:any, updatedLoginDatas:any, lastErrorStates:{disabledBtn:boolean, invalidEmail: boolean, pswdAndCofirmPswd:boolean}, UpdatedErrorStates:any)=>{
@@ -63,7 +65,7 @@ const datasOfLoginForm = (e:any, idField:number, lastValue:any, updatedLoginData
             });
             // check format mail
             const mail = e.target.value;
-            if(mail.match(/@[a-zA-Z0-9]{5,}(.com$)/)){
+            if(mail.match(/@[a-zA-Z0-9]{5,}(.com$)/) || mail.match(/^[+][0-9]{12}$/)){
                 if(lastValue.passWord != ""){
                     UpdatedErrorStates({
                         ... lastErrorStates,
@@ -231,6 +233,7 @@ const InputField = (datas:proprietyInput) =>{
     const LogRegStatesValues = datas.recoilAtom[0]; // values of states
     const setLogRegStatesValues = datas.recoilAtom[1]; // function change States Values
     const url_to_api:any = useRecoilValue(Link_toApi);
+    const SelectedTypeAccountComponent = useRecoilValue(SelectedTypeOfAccount);
 
     useEffect(()=>{
         setPlatformInfos(navigator.userAgent);
@@ -277,7 +280,7 @@ const InputField = (datas:proprietyInput) =>{
             <button 
             disabled={ErrorStates.disabledBtn}
             onClick={()=>{
-                (datas.form_name === "Login") ? sendLoginData(LogRegStatesValues, url_to_api.localLink) : sendRegisterData(LogRegStatesValues, url_to_api.localLink);
+                (datas.form_name === "Login") ? sendLoginData(LogRegStatesValues, url_to_api.localLink,SelectedTypeAccountComponent) : sendRegisterData(LogRegStatesValues, url_to_api.localLink);
             }} 
             className={ErrorStates.disabledBtn ? "disabledBtn" : "form_send_btn"}>{datas.placeholderText}</button>
         }    

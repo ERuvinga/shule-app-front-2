@@ -1,5 +1,5 @@
 //Natives Lib
-import {useRecoilState} from "recoil";
+import {useRecoilState, useSetRecoilState} from "recoil";
 import Link from "next/link";
 import {useEffect, useState} from 'react';
 
@@ -11,10 +11,14 @@ import App_Head from '@/src/Components/Head'
 import BackHome from "@/src/Components/BackHome";
 
 //state
-import { loginDataState} from "@/src/States";
+import { loginDataState, SelectedTypeOfAccount} from "@/src/States";
 
 const Index = ()=>{
     const logRegDatasOfUser = useRecoilState(loginDataState);
+    const setSelectedAccountComponent = useSetRecoilState(SelectedTypeOfAccount);
+    useEffect(()=>{
+        setSelectedAccountComponent(document.querySelector(".SelectionTypeCompte")); // saved a document data
+    },[]);
     return(
         <>
             <App_Head/>
@@ -25,6 +29,11 @@ const Index = ()=>{
                         <h1 className="title">Login</h1>
                         <InputField labelText="email/Tél" placeholderText="neema@gmail.com/+243" form_name="Login" type="text" recoilAtom={logRegDatasOfUser} identity={0} />
                         <InputField labelText="password" placeholderText="******" form_name="Login" type="password" recoilAtom={logRegDatasOfUser} identity={1}/>
+                        <select className="SelectionTypeCompte border">
+                            <option value="Dir">Direction</option>
+                            <option value="Ens">Enseignants</option>
+                            <option value="Elv">Eleves</option>
+                        </select>
                         <InputField type="button" placeholderText="Login" form_name="Login" recoilAtom={logRegDatasOfUser}/>
                     </section>  
                     <p className="Register_bloc">
