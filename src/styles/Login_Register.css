@@ -118,6 +118,23 @@
         margin-bottom: 3px;
     }
 
+    select:focus{
+        border: solid 2px #E2E3E9 ;
+        outline: none;
+    }
+    .SelectionTypeCompte{
+        width: 90%;
+        height: 35px;
+        border-radius: 5px;
+        padding: 2px 5px;
+        /*Font*/
+        font-family: poppinLight;
+        font-size: .75em;
+
+        display: block;
+        margin: auto;       
+    }
+
     .groupe_form .log_reg_input, .groupe_form ._iPhone_input{
         width: 90%;
         height: 35px;
@@ -145,7 +162,7 @@
     margin: auto;
 }
    .invalidEmail::after{
-        content: "Adresse mail ivalid";
+        content: "Adresse mail ou numero ivalid";
         width: 90%;
         display: block;
         margin: auto;
@@ -205,6 +222,7 @@
         border-radius: 5px;
         box-shadow: 0 0 2px 0 #E2E3E9;
         opacity: .6;
+        transition: all .4s ease-in-out;
     }
 
     .form_send_btn:hover{
@@ -259,7 +277,7 @@
         margin-left: 0;
     }
 
-    .groupe_form .log_reg_input, .groupe_form ._iPhone_input{
+    .groupe_form .log_reg_input, .groupe_form ._iPhone_input, .groupe_form .invalidEmailInput{
         width: 100%;
    }
     
@@ -267,7 +285,7 @@
         width: 90%;
     }
 
-    .form_send_btn{
+    .form_send_btn, .disabledBtn{
         width: 100%;
         margin-bottom: 10px;
     }
@@ -293,14 +311,11 @@
         width: 88%;
     }
 
-    .groupe_form .log_reg_input, .groupe_form ._iPhone_input{
-        width: 100%;
+    .groupe_form .log_reg_input, .groupe_form ._iPhone_input,.groupe_form .invalidEmailInput{
         height: 40px;
    }
 
-   .form_send_btn{
-    width: 100%;
-    padding: 8px 0;
+   .form_send_btn, .disabledBtn{
     margin-bottom: 10px;
     }
   }

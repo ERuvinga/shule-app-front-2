@@ -6,7 +6,8 @@ export const loginDataState = atom({
     key:"loginDataState",
     default:{
         email:"",
-        passWord: ""
+        passWord: "",
+        typeAccount:""
     }
 });
 
@@ -36,4 +37,9 @@ export const Link_toApi = atom({
         localLink: "http://127.0.0.1:4002"
     }
 });
+
+export const SelectedTypeOfAccount = atom({
+    key: "SelectedTypeOfAccount",
+    default: ""
+})
  // export states
