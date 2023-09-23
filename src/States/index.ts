@@ -6,7 +6,7 @@ export const loginDataState = atom({
     key:"loginDataState",
     default:{
         email:"",
-        passWord: "***"
+        passWord: ""
     }
 });
 
@@ -14,10 +14,20 @@ export const registerDataState = atom({
     key:"registerDataState",
     default:{
         matricule:"",
-        passWord:"***",
-        confirmPassWord:""
+        passWord:"",
+        confirmpassWord:""
     }
 });
+
+export const errorLogRegisterForm = atom({
+    key:"errorLogRegisterForm",
+    default:{
+        disabledBtn:true,
+        invalidEmail: false,
+        invalidMatricule: false,
+        pswdAndCofirmPswd:false,
+    }
+})
 
 export const Link_toApi = atom({
     key: "Link_toApi",

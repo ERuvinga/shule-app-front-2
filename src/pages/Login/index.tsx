@@ -5,7 +5,7 @@ import {useEffect, useState} from 'react';
 
 //Components
 import Loading from "@/src/Components/Loading";
-import InputField from "@/src/Components/InputField";
+import InputField from "@/src/Components/InputFieldLogReg";
 import Footer from "@/src/Components/Footer";
 import App_Head from '@/src/Components/Head'
 import BackHome from "@/src/Components/BackHome";

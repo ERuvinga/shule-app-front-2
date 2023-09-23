@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useRecoilState } from "recoil";
 import Link from "next/link";
 //components
-import InputField from "@/src/Components/InputField";
+import InputField from "@/src/Components/InputFieldLogReg"
 import App_Head from'@/src/Components/Head'
 import Footer from "@/src/Components/Footer";
 import BackHome from "@/src/Components/BackHome";
