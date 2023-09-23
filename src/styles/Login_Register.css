@@ -131,7 +131,47 @@
         display: block;
         margin: auto;
    }
+   .groupe_form .invalidEmailInput{
+    width: 90%;
+    height: 35px;
+    border-radius: 5px;
+    border: solid 2px rgb(223, 70, 70) ;
+    padding: 2px 5px;
+    /*Font*/
+    font-family: poppinLight;
+    font-size: .75em;
 
+    display: block;
+    margin: auto;
+}
+   .invalidEmail::after{
+        content: "Adresse mail ivalid";
+        width: 90%;
+        display: block;
+        margin: auto;
+
+        color: rgb(223, 70, 70);
+        font-size: .6em;
+   }
+
+   .invalidMatricule::after{
+    content: "Invalid Matricule format";
+    width: 90%;
+    display: block;
+    margin: auto;
+    color: rgb(223, 70, 70);
+    font-size: .6em;
+   }
+   
+   .invalidPassword::after{
+    content: "Different de Mot de pass";
+    width: 90%;
+    display: block;
+    margin: auto;
+
+    color: rgb(223, 70, 70);
+    font-size: .6em;
+   }
     .groupe_form .log_reg_input:focus{
         outline: none;
         border-color: #728A8F;
@@ -142,7 +182,11 @@
         outline: none;
         font-size: 100%;
     }
-
+    .groupe_form .invalidEmailInput:focus{
+        outline: none;
+        border-color: rgb(223, 70, 70);
+    }
+   
     .form_send_btn{
         width: 90%;
         background-color: #728A8F;
@@ -151,6 +195,16 @@
         border-radius: 5px;
         box-shadow: 0 0 2px 0 #E2E3E9;
         transition: all .4s ease-in-out;
+    }
+
+    .disabledBtn{
+        width: 90%;
+        background-color: #787777;
+        color:white;
+        padding: 6px 0;
+        border-radius: 5px;
+        box-shadow: 0 0 2px 0 #E2E3E9;
+        opacity: .6;
     }
 
     .form_send_btn:hover{
