@@ -36,7 +36,6 @@ const sendLoginData = (datasOfUSer: any, url:String, ComponentTypeAccount:any) =
 }
 
 const sendRegisterData = (datasOfUSer: any, url:String) =>{
-    console.log(datasOfUSer);    
 
      //Send datas to api
      fetch(`${url}/Authentification/ActiveAccount`, {
@@ -49,7 +48,7 @@ const sendRegisterData = (datasOfUSer: any, url:String) =>{
             }
         )
         .then((result)=>{
-            if(result.ok){
+            if(result){
                 result.json().then((datas)=> console.log(datas))
             }
         })
@@ -124,7 +123,7 @@ const dataOfRegisterForm = (e:any, idField:number, lastValue:any, updatedRegiste
             });
 
             // Error verifications
-            if( e.target.value.match(/^neema_/)){
+            if( e.target.value.match(/^neema_[0-9a-z]{24}$/)){
                 
                 if(!lastErrorStates.pswdAndCofirmPswd && lastValue.passWord !=""){
                     UpdatedErrorStates({

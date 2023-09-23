@@ -118,8 +118,8 @@
         margin-bottom: 3px;
     }
 
-    select:focus{
-        border: solid 2px #E2E3E9 ;
+    .SelectionTypeCompte:focus{
+        border: solid 2px #728A8F ;
         outline: none;
     }
     .SelectionTypeCompte{
@@ -127,6 +127,7 @@
         height: 35px;
         border-radius: 5px;
         padding: 2px 5px;
+        border: solid 2px #E2E3E9 ;
         /*Font*/
         font-family: poppinLight;
         font-size: .75em;
