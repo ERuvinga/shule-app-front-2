@@ -1,21 +1,23 @@
 //Natives Lib
-import {useRecoilState, useSetRecoilState} from "recoil";
+import {useRecoilState, useSetRecoilState, useRecoilValue} from "recoil";
 import Link from "next/link";
 import {useEffect} from 'react';
 
 //Components
 import Loading from "@/src/Components/Loading";
+import Notification from "@/src/Components/NotificationLogReg";
 import InputField from "@/src/Components/InputFieldLogReg";
 import Footer from "@/src/Components/Footer";
 import App_Head from '@/src/Components/Head'
 import BackHome from "@/src/Components/BackHome";
 
 //state
-import { loginDataState, SelectedTypeOfAccount, registerDataState} from "@/src/States";
+import { loginDataState, SelectedTypeOfAccount, messageOfServer} from "@/src/States";
 
 const Index = ()=>{
     const logRegDatasOfUser = useRecoilState(loginDataState);
     const setSelectedAccountComponent = useSetRecoilState(SelectedTypeOfAccount);
+    const StateNotification:any = useRecoilValue(messageOfServer);
     
     useEffect(()=>{
         setSelectedAccountComponent(document.querySelector(".SelectionTypeCompte")); // saved a document data
@@ -24,6 +26,7 @@ const Index = ()=>{
         <>
             <App_Head/>
             <section className="body_log_reg">
+                {StateNotification.stateMsg && <Notification/>}
                 <div className="bloc">
                     <section className="login_form">
                         <BackHome/>
