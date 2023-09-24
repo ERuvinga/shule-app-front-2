@@ -11,6 +11,14 @@ export const loginDataState = atom({
     }
 });
 
+export const messageOfServer = atom({
+    key:"messageOfServer",
+    default:{
+        content:"No Message Content",
+        stateMsg:false
+    }
+});
+
 export const registerDataState = atom({
     key:"registerDataState",
     default:{

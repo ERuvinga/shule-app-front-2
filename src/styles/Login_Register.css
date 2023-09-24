@@ -19,7 +19,58 @@
         width: 15px;
     }
 
+@keyframes AnimNotificationLg {
+    from{
+        top: 5px;
+        opacity: 0;
+    }
+
+    to{
+        top:40px;
+        opacity:1
+    }  
+}
+@keyframes AnimNotificationSm {
+    from{
+        top: 80px;
+        opacity: 0;
+    }
+
+    to{
+        top:120px;
+        opacity:1
+    }  
+}
 /*Register and Login Pages*/
+.NotificationMsg{
+    position:absolute;
+    width: 250px;
+    top: 40px;
+    background-color: #fff;
+    box-shadow: 0 0 4px 0 #E2E3E9;
+    padding: 5px 15px;
+    animation: AnimNotificationLg 1s ease-in-out;
+}
+
+.NotificationMsg .Icone{
+    width: 15px;
+    color: red;
+    margin-right: 4px;
+}
+.NotificationMsg .TitleNotif{
+     display: flex;
+   color: red;
+    font-size: .7em;
+    font-family: poppinBlack;
+}
+
+.NotificationMsg .msg{
+    margin-top: 5px;
+    color: #787777;
+    font-size: .65em;
+    font-family: poppinLight;
+}
+
 .body_log_reg{
     position: relative;
     width: 100%;
@@ -278,7 +329,7 @@
         margin-left: 0;
     }
 
-    .groupe_form .log_reg_input, .groupe_form ._iPhone_input, .groupe_form .invalidEmailInput{
+    .groupe_form .log_reg_input, .groupe_form ._iPhone_input, .groupe_form .invalidEmailInput, .SelectionTypeCompte{
         width: 100%;
    }
     
@@ -304,6 +355,10 @@
     }
     .illustration_log_Reg{
         display: none;
+    }
+    .NotificationMsg{
+        top: 120px;
+        animation: AnimNotificationSm 1s ease-in-out;
     }
 }
 
