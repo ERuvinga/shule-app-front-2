@@ -203,6 +203,13 @@
 
     }
 
+    
+    @media screen and (max-width: 600px) {
+        .loading_bloc{
+            margin: 10px 0;
+        }
+    
+    }
     @media screen and (max-width: 400px) {
         .card_director{
             min-width: 100%;
@@ -214,12 +221,10 @@
     @keyframes loadingAnim {
         from{
             transform: rotate(0deg);
-            opacity: .8;
         }
 
         to{
             transform: rotate(360deg);
-            opacity: 1;
         }
     }
     .loading_bloc{

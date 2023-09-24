@@ -50,6 +50,7 @@
     box-shadow: 0 0 4px 0 #E2E3E9;
     padding: 5px 15px;
     animation: AnimNotificationLg 1s ease-in-out;
+    z-index: 100;
 }
 
 .NotificationMsg .Icone{

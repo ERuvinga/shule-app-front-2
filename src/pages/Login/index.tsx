@@ -1,10 +1,9 @@
 //Natives Lib
-import {useRecoilState, useSetRecoilState, useRecoilValue} from "recoil";
+import {useRecoilState, useSetRecoilState} from "recoil";
 import Link from "next/link";
 import {useEffect} from 'react';
 
 //Components
-import Loading from "@/src/Components/Loading";
 import Notification from "@/src/Components/NotificationLogReg";
 import InputField from "@/src/Components/InputFieldLogReg";
 import Footer from "@/src/Components/Footer";
@@ -17,10 +16,14 @@ import { loginDataState, SelectedTypeOfAccount, messageOfServer} from "@/src/Sta
 const Index = ()=>{
     const logRegDatasOfUser = useRecoilState(loginDataState);
     const setSelectedAccountComponent = useSetRecoilState(SelectedTypeOfAccount);
-    const StateNotification:any = useRecoilValue(messageOfServer);
+    const [StateNotification,setStateNotification]:any = useRecoilState(messageOfServer);
     
     useEffect(()=>{
         setSelectedAccountComponent(document.querySelector(".SelectionTypeCompte")); // saved a document data
+        setStateNotification({
+            ...StateNotification,
+            stateMsg:false,
+        });
     },[]);
     return(
         <>

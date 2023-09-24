@@ -1,9 +1,12 @@
 /*Cotent input Component*/
 import {useEffect, useState} from "react";
-import { useRecoilValue, useRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState, useRecoilState, useResetRecoilState } from "recoil";
+import { useRouter } from "next/router";
+import Loading from "../Loading";
 
 //state
 import { Link_toApi, errorLogRegisterForm , SelectedTypeOfAccount, messageOfServer} from "@/src/States/LoginRegisterStates";
+import {AuthUser} from "@/src/States/UserAoth";
 
 interface proprietyInput {
     placeholderText : String|any,
@@ -14,12 +17,14 @@ interface proprietyInput {
     recoilAtom:any
 }
 
-const sendLoginData = (datasOfUSer: any, url:String, ComponentTypeAccount:any, setMessageServer:any) =>{ 
+const sendLoginData = (datasOfUSer: any, url:String, ComponentTypeAccount:any, setLoading:any, setMessageServer:any, setDataOfAuthUser:any, Router:any) =>{ 
     const LoginData ={
         ...datasOfUSer,
         typeAccount: ComponentTypeAccount.value
     }   
+
     // Send datas to Api
+    setLoading(true); // activation Animation Component
     fetch(`${url}/Authentification/Login`,{
         method:"POST",
         headers:{
@@ -30,13 +35,33 @@ const sendLoginData = (datasOfUSer: any, url:String, ComponentTypeAccount:any, s
     })
     .then((result)=>{
         if(result.ok){
-            console.log("Utilisateur Authentifié");
             result.json().then((datas)=> {
-                console.log(datas)
+
+                setDataOfAuthUser({
+                    ...datas.DirectorFund // save a Authentification User
+                });
+
+                localStorage.setItem("TokenUser", datas.Token); // save token in localStorageSession
+
+                // Checking type of Account for Redirection AothIndex pages
+                switch(datas.typeAccount){
+                    case "Director":
+                        Router.push("/Director");
+                    break;
+
+                    case "Teacher":
+                        Router.push("/Teacher");
+                    break;
+
+                    case "Student":
+                        Router.push("/Student");
+                    break;
+                }
             })
         }
 
         else{
+        setLoading(false);// desactive Animation Component
             result.json().then((datas)=>{
                 setMessageServer({
                     content:datas.msg,
@@ -48,9 +73,10 @@ const sendLoginData = (datasOfUSer: any, url:String, ComponentTypeAccount:any, s
     .catch(error =>{console.log(error)});
 }
 
-const sendRegisterData = (datasOfUSer: any, url:String, setMessageServer:any) =>{
+const sendRegisterData = (datasOfUSer: any, url:String, setLoading:any, setMessageServer:any, Router:any) =>{
 
      //Send datas to api
+     setLoading(true);// Activation Animation Component
      fetch(`${url}/Authentification/ActiveAccount`, {
             method:"POST",
             headers:{
@@ -61,10 +87,12 @@ const sendRegisterData = (datasOfUSer: any, url:String, setMessageServer:any) =>
             }
         )
         .then((result)=>{
+            setLoading(false);// after fetching data desactive Loading Component
             if(result.ok){
-                console.log("Compte Activé");
                 result.json().then((datas)=> {
-                    console.log(datas)
+                    if(datas.Updating){
+                        Router.push("/Login");
+                    }
                 })
             }
     
@@ -249,14 +277,16 @@ const dataOfRegisterForm = (e:any, idField:number, lastValue:any, updatedRegiste
 }
 
 const InputField = (datas:proprietyInput) =>{
-
-
+    // states variables
     const [platformInfos, setPlatformInfos] = useState("");
-    const [InValidClassname, setInValidClassname] = useState("")
+    const [InValidClassname, setInValidClassname] = useState("");
+    const [loadingState, setLoadingState] = useState(false);
+    const Router = useRouter();
 
     // Atoms
     const [ErrorStates, setErrorStates]:any = useRecoilState(errorLogRegisterForm);
-    const [MessageServer, setMessageServer]:any = useRecoilState(messageOfServer);
+    const setMessageServer:any = useSetRecoilState(messageOfServer);
+    const setAuthUser:any = useSetRecoilState(AuthUser);
     const LogRegStatesValues = datas.recoilAtom[0]; // values of states
     const setLogRegStatesValues = datas.recoilAtom[1]; // function change States Values
     const url_to_api:any = useRecoilValue(Link_toApi);
@@ -304,12 +334,20 @@ const InputField = (datas:proprietyInput) =>{
                     />
                 </div>
             </div>:
-            <button 
-            disabled={ErrorStates.disabledBtn}
-            onClick={()=>{
-                (datas.form_name === "Login") ? sendLoginData(LogRegStatesValues, url_to_api.localLink, SelectedTypeAccountComponent, setMessageServer) : sendRegisterData(LogRegStatesValues, url_to_api.localLink, setMessageServer);
-            }} 
-            className={ErrorStates.disabledBtn ? "disabledBtn" : "form_send_btn"}>{datas.placeholderText}</button>
+            <>
+            {
+                loadingState? 
+                    <Loading/>
+                    :
+                    <button 
+                    disabled={ErrorStates.disabledBtn}
+                    onClick={()=>{
+                        (datas.form_name === "Login") ? sendLoginData(LogRegStatesValues, url_to_api.localLink, SelectedTypeAccountComponent, setLoadingState, setMessageServer, setAuthUser, Router) : sendRegisterData(LogRegStatesValues, url_to_api.localLink, setLoadingState, setMessageServer, Router);
+                    }} 
+                    className={ErrorStates.disabledBtn ? "disabledBtn" : "form_send_btn"}>{datas.placeholderText}</button>
+            }
+            </>
+
         }    
     </>
     )
