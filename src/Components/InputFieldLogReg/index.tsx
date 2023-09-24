@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import { useRecoilValue, useRecoilState } from "recoil";
 
 //state
-import { Link_toApi, errorLogRegisterForm , SelectedTypeOfAccount, messageOfServer} from "@/src/States";
+import { Link_toApi, errorLogRegisterForm , SelectedTypeOfAccount, messageOfServer} from "@/src/States/LoginRegisterStates";
 
 interface proprietyInput {
     placeholderText : String|any,
@@ -148,7 +148,7 @@ const dataOfRegisterForm = (e:any, idField:number, lastValue:any, updatedRegiste
             });
 
             // Error verifications
-            if( e.target.value.match(/^neema_[0-9a-z]{23}[a-f]{1}$/)){
+            if( e.target.value.match(/^neema_[0-9a-z]{23}[0-9a-f]{1}$/)){
                 
                 if(!lastErrorStates.pswdAndCofirmPswd && lastValue.passWord !=""){
                     UpdatedErrorStates({

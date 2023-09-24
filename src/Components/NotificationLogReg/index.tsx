@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil";
-import { messageOfServer } from "@/src/States";
+import { messageOfServer } from "@/src/States/LoginRegisterStates";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import {useEffect} from 'react'
 

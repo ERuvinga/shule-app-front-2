@@ -12,7 +12,7 @@ import Footer from "@/src/Components/Footer";
 import BackHome from "@/src/Components/BackHome";
 
 //state
-import { registerDataState, messageOfServer } from "@/src/States";
+import { registerDataState, messageOfServer } from "@/src/States/LoginRegisterStates";
 
 interface proprietyInput {
     placeholderText : String|any,

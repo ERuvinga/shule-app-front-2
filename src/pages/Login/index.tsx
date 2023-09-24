@@ -12,7 +12,7 @@ import App_Head from '@/src/Components/Head'
 import BackHome from "@/src/Components/BackHome";
 
 //state
-import { loginDataState, SelectedTypeOfAccount, messageOfServer} from "@/src/States";
+import { loginDataState, SelectedTypeOfAccount, messageOfServer} from "@/src/States/LoginRegisterStates";
 
 const Index = ()=>{
     const logRegDatasOfUser = useRecoilState(loginDataState);
