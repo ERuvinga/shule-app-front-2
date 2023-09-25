@@ -4,7 +4,7 @@ import { useRecoilValue, useRecoilState } from "recoil";
 
 //atoms 
 import { Link_toApi } from "@/src/States/LoginRegisterStates";
-import { AuthUser } from "@/src/States/UserAoth";
+import { AuthUser, SelectedMenuItems } from "@/src/States/UserAoth";
 
 // lib
 import { withAuth } from "@/src/Lib/Auth";
@@ -15,7 +15,7 @@ import Loading from "@/src/Components/Loading";
 import MenuComponent from "@/src/Components/Menu";
 import NavBarAuthPages from "@/src/Components/NavBarAuthPages";
 
-const DirectorPageIndex = ()=>{
+const DirectorCotesPageIndex = ()=>{
     const Router = useRouter();
     const [statePage, setStatePage] = useState(false);
 
@@ -51,9 +51,12 @@ const DirectorPageIndex = ()=>{
     //Atoms
     const LinkToApi:any = useRecoilValue(Link_toApi);
     const [UserAuth,setUaseAuth]:any = useRecoilState(AuthUser);
+    const [itemMenuSelected, setItemMenuSelected] = useRecoilState(SelectedMenuItems);
 
     useEffect(()=>{
-
+        if(!itemMenuSelected){
+            setItemMenuSelected(3); // if reloading page
+        }
         withAuth(LinkToApi, localStorage.getItem("TokenUser"), setStatePage, setUaseAuth, UserAuth, Router); // check if token of user is valid
     },[]);
     return(
@@ -64,7 +67,7 @@ const DirectorPageIndex = ()=>{
                 <section className="ContainerFormatPages">
                     <MenuComponent DatasOfMenu= {DataOfMEnu}/>
                     <div className="constainreDatas">
-                        <NavBarAuthPages title="DashBoard" message="Detail sur les informations de l'etablissement"/>
+                        <NavBarAuthPages title="Cotes" message="Detail sur les informations de Cotation des Eleves"/>
                     </div>
                 </section>
                 :
@@ -78,4 +81,4 @@ const DirectorPageIndex = ()=>{
     )
 };
 
-export default DirectorPageIndex;
+export default DirectorCotesPageIndex;
