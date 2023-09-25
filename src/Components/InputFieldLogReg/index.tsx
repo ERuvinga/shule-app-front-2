@@ -38,7 +38,7 @@ const sendLoginData = (datasOfUSer: any, url:String, ComponentTypeAccount:any, s
             result.json().then((datas)=> {
 
                 setDataOfAuthUser({
-                    ...datas.DirectorFund // save a Authentification User
+                    ...datas.DataUser // save a Authentification User
                 });
 
                 localStorage.setItem("TokenUser", datas.Token); // save token in localStorageSession

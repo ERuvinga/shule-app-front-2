@@ -42,7 +42,7 @@ const MenuComponent = (datas : DatasMenu)=>{
             <div className="IdentityUser">
                 <Image className="imageProfil" width={200} height={200} src={"/imgs/AuthImgs/avatar.png"} alt="profil img"/>
                 <span className="nameUser">{DatasUser.allName}</span>
-                <span className="emailUser">{DatasUser.email}</span>
+                <span className="emailUser">{(DatasUser.email) ? DatasUser.email : DatasUser.dataOfTutaire.email}</span>
             </div>
             <div className="menu">
                 <span className="titleMenu">MENU</span>
