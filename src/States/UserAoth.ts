@@ -3,9 +3,15 @@ const  {atom} = require("recoil");
 
 const AuthUser = atom({
     key:"AuhUser",
-    default:{}
+    default:null
+});
+
+const SelectedMenuItems = atom({
+    key:"SelectedMenuItems",
+    default: 0
 })
 
 export {
     AuthUser,
+    SelectedMenuItems
 }

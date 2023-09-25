@@ -1,11 +1,7 @@
 
 // content function check Autentifications user
     // fuction cheking if User Aoutoriz to display this page
-    const withAuth = (api_link:any, Localtoken:String|null, setStatePage:any) =>{
-        let datasReturn ={
-            status:false,
-            content:""
-        };
+    const withAuth = (api_link:any, Localtoken:any, setStatePage:any, setUaseAuth:any, UserAuth:any, Router: any) =>{
 
         fetch(`${api_link.localLink}/AuthUser`, {
             method: "POST",
@@ -18,14 +14,13 @@
             .then((datas) => {
                 datas.json()
                     .then((user: any) => {
-                        console.log(user);
-                        if (!user.userId) { // if not user find, redirect to login page
-                                datasReturn = {
-                                    status:false,
-                                    content:user.userId
-                                }
+                        if (!user.userFund._id) { // if not user find, redirect to login page
+                            Router.push("/Login");
                              }
                         else {
+                            if(!UserAuth){ // if no user saved
+                                setUaseAuth(user.userFund);
+                            }
                             setStatePage(true);
                         }
 
@@ -34,14 +29,11 @@
             })
             .catch(error => {
                 console.error(error);
-                datasReturn = {
-                    status:false,
-                    content:error
-                 }
+                Router.push("/Login");
             })
-        return datasReturn;
-    }
+}
 
     export{
         withAuth
     }
+    
