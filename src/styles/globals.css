@@ -49,3 +49,7 @@ body{
 
 /*Components*/
 @import './components.css';
+
+/*Others*/
+@import './AllIndexPages.css';
+

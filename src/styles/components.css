@@ -236,3 +236,19 @@
         border-radius: 50%;
         animation: loadingAnim 1s linear infinite;
     }
+    .LoaderPage{
+        width: 50%;
+        height: 90vh;
+        margin: auto;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .LoaderPage span{
+        margin-top: 10px;
+        color: #728A8F;
+        font-size: .75em;
+    }
