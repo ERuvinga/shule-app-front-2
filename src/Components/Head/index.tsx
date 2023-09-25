@@ -1,7 +1,7 @@
 // cocntent head of any pages
 import Head from "next/head";
 
-function index(){
+function HeadPages(){
     return(
         <>
             <Head>
@@ -14,4 +14,4 @@ function index(){
     )
 }
 
-export default index;
+export default HeadPages;
