@@ -4,7 +4,7 @@ import { useRecoilValue, useRecoilState } from "recoil";
 
 //atoms 
 import { Link_toApi } from "@/src/States/LoginRegisterStates";
-import { AuthUser } from "@/src/States/UserAoth";
+import { AuthUser, SelectedMenuItems } from "@/src/States/UserAoth";
 
 // lib
 import { withAuth } from "@/src/Lib/Auth";
@@ -51,9 +51,12 @@ const DirectorPageIndex = ()=>{
     //Atoms
     const LinkToApi:any = useRecoilValue(Link_toApi);
     const [UserAuth,setUaseAuth]:any = useRecoilState(AuthUser);
+    const [itemMenuSelected, setItemMenuSelected] = useRecoilState(SelectedMenuItems);
 
     useEffect(()=>{
-
+        if(itemMenuSelected){
+            setItemMenuSelected(0);
+        }
         withAuth(LinkToApi, localStorage.getItem("TokenUser"), setStatePage, setUaseAuth, UserAuth, Router); // check if token of user is valid
     },[]);
     return(

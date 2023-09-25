@@ -14,7 +14,7 @@
             .then((datas) => {
                 datas.json()
                     .then((user: any) => {
-                        if (!user.userFund._id) { // if not user find, redirect to login page
+                        if (!user.userFund) { // if not user find, redirect to login page
                             Router.push("/Login");
                              }
                         else {
