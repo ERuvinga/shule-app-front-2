@@ -52,4 +52,6 @@ body{
 
 /*Others*/
 @import './AllIndexPages.css';
+@import './DataListView.css';
+@import './Director.css';
 

@@ -1,0 +1,131 @@
+
+/*View Datas*/
+.containerDatas .DataFilterContainer .Viewdatas{
+    width: 100%;
+    background-color: white;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 10px;
+
+    max-height: 75vh;
+    overflow-y: auto;
+}
+
+.containerDatas .DataFilterContainer .Viewdatas .HeadView{
+    width: 100%;
+    padding: 5px 0;
+    border-bottom: #D7DFE0 solid 1px;
+}
+
+.Viewdatas .HeadView .InputContent{
+    width: fit-content;
+    max-width: 500px;
+    border-radius: 4px;
+    padding: 4px 10px;
+    display: flex;
+    gap: 5px;
+    border: solid 2px #D7DFE0;
+}
+
+.Viewdatas .HeadView input{
+    color: #324447;
+    font-size: .8em;    
+}
+
+.Viewdatas .HeadView input:focus{
+    outline: none;
+
+}
+
+.Viewdatas .HeadView .InputContent .Icone{
+    width: 20px;
+    color: #787777;
+}
+
+/*Titles of Datas view*/
+.titleDatas{
+    background-color: #eef4f5;
+    border-radius: 4px;
+    padding-bottom:30px ;
+}
+
+.titleDatas th{
+    padding: 10px 0;
+    color: #666565;
+    font-size: .7em;
+    font-weight: normal;
+}
+
+.titleDatas .first{
+    border-radius: 4px 0 0 4px;
+}
+
+.titleDatas .last{
+    border-radius: 0 4px 4px 0;
+}
+
+.Viewdatas .DatasComponents{
+    width: 100%;
+}
+
+.Viewdatas .DatasComponents .CardUser td{
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.Viewdatas .DatasComponents .CardUser .Icone{
+    width: 20px;
+    margin: auto;
+}
+
+.CardUser .UserName{
+    font-weight: bold;
+    color: #728A8F;
+    max-width: 100px;
+    font-size: .7em;
+}
+
+.Viewdatas .DatasComponents img{
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.Viewdatas .emailContente{
+    color: rgb(59, 156, 220);
+    text-decoration: underline;
+    font-size: .7em;
+}
+
+.Viewdatas .Tel{
+    color: #666666;
+    font-size: .65em;
+}
+
+.Viewdatas .ClassPromotion{
+    font-family: poppinBlack;
+    color:#666565;
+    font-size: .65em;
+}
+
+.actifAccount{
+    background-color: rgba(188, 237, 188, 0.3);
+    color: #728A8F;
+    padding: 3px 15px;
+    font-size: .6em;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
+.actifAccountFalse{
+    background-color: rgba(237,188 , 188, 0.3);
+    color: red;
+    padding: 3px 15px;
+    font-size: .6em;
+    border-radius: 10px;
+    font-weight: bolder;
+}

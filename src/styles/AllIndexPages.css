@@ -117,11 +117,14 @@
 
 
 /*Datas and NAvBar*/
-.constainreDatas{
+.constainerDatasNav{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
-.constainreDatas .NavBarInAuthPages{
+.constainerDatasNav .NavBarInAuthPages{
     width: 100%;
     background-color: white;
     padding: 10px 20px;
@@ -130,32 +133,59 @@
     justify-content: space-between;
 }
 
-.constainreDatas .NavText{
+.constainerDatasNav .NavText{
     display: flex;
     flex-direction: column;
 }
 
-.constainreDatas .NavText .titleNav{
+.constainerDatasNav .NavText .titleNav{
     color: #728A8F;
     font-family: poppinBlack;
 }
 
-.constainreDatas .NavText .DescriptionNav{
+.constainerDatasNav .NavText .DescriptionNav{
     color: #787777;
     font-size: .75em;
 }
 
-.constainreDatas .NavPicture{
+.constainerDatasNav .NavPicture{
     display: flex;
     gap:8px
 }
 
-.constainreDatas .NavPicture .NavPicture{
+.constainerDatasNav .NavPicture .NavPicture{
     border-radius: 50%;
     width: 40px;
 }
 
-.constainreDatas .NavPicture .icone{
+.constainerDatasNav .NavPicture .icone{
     color: #787777;
-    width: 15px;
+    width: 10px;
+}
+
+/*Datas Filter Content*/
+.containerDatas{
+    width: 100%;
+    max-height: 90%;
+    display: flex;
+    gap: 5px;
+}
+
+.containerDatas .DataFilterContainer{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+/*Filter Content*/
+.containerDatas .FilterContainer{
+    width: 25%;
+    max-height: 200px;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 0 4px #D7DFE0;
+    display: flex;
+    align-items: center;
 }

@@ -1,0 +1,68 @@
+/*CardType Account*/
+.containerDatas .DataFilterContainer .TypeAccontContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    width: 100%;
+    background-color: white;
+    border-radius:8px;
+}
+
+.CardTypeCompte{
+    width:200px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    background-color:#eef4f5;
+    display: flex;
+    justify-content: space-between;
+    transition: all ease-in-out .3s;
+}
+
+.CardTypeCompteSelected{
+    width:200px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    background-color:#eef4f5;
+    display: flex;
+    justify-content: space-between;
+    transition: all ease-in-out .3s;
+    transform: scale(1.03);
+    box-shadow: 0 0 4px 0 #728A8F;
+    cursor: pointer;
+}
+
+.CardTypeCompte:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 6px 0 #D7DFE0;
+    cursor: pointer;
+}
+
+.CardTypeCompte .title, .CardTypeCompteSelected .title{
+    color: #324447;
+    font-size: .8em;
+    font-family: poppinBlack;
+    display: flex;
+    align-items: center;
+}
+
+.CardTypeCompte .icone, .CardTypeCompteSelected .icone{
+    width: 25px;
+    color: #324447;
+}
+
+/*Loading*/
+.loadingAccount{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.loadingAccount span{
+    color: #787777;
+    font-size: .7em;
+    text-align: center;
+}
