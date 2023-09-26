@@ -37,11 +37,6 @@ const DirectorInfosPageIndex = ()=>{
             icone:"UserGroupIcon"
         },
         {
-            label:"Cotes",
-            Link:"/Director/Cotes",
-            icone:"ClipboardIcon"
-        },
-        {
             label:"Valve",
             Link:"/Director/Informations",
             icone:"ChatBubbleBottomCenterTextIcon"
@@ -66,7 +61,7 @@ const DirectorInfosPageIndex = ()=>{
                 statePage ?
                 <section className="ContainerFormatPages">
                     <MenuComponent DatasOfMenu= {DataOfMEnu}/>
-                    <div className="constainreDatas">
+                    <div className="constainerDatasNav">
                         <NavBarAuthPages title="Communiqués" message="Communiqués de l'établissement"/>
                     </div>
                 </section>
