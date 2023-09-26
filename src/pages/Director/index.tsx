@@ -8,6 +8,7 @@ import { AuthUser, TypeAccountState, AllUserStates, FilterTypeAccountsUser, name
 
 // lib
 import { withAuth } from "@/src/Lib/Auth";
+import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline"
 
 //components
 import HeadPages from "@/src/Components/Head";
@@ -20,9 +21,11 @@ import DirectorCardUser from "@/src/Components/UserCardView";
 import HeadTitleDataView from "@/src/Components/DataViewTitle";
 
 const DirectorPageIndex = ()=>{
+
     const Router = useRouter();
     const [statePage, setStatePage] = useState(false);
     const [stateUserData, setstateUserData] = useState(false);
+    const [ReloadAllDatas, setReloadAllDatas] = useState(false);
     let UserFilters:any|[];
 
     //Atoms
@@ -80,14 +83,6 @@ const DirectorPageIndex = ()=>{
                 )
             }
         }
-        else{
-            return (
-            <div className="UserNotFund">
-                <span className="Tiltle">O oops</span>
-                <span className="Description">Aucun Utilisateur Trouvé</span>
-            </div>
-            )
-        }
     }
 
     // data of Menu
@@ -132,6 +127,10 @@ const DirectorPageIndex = ()=>{
 
     useEffect(()=>{
         withAuth(LinkToApi, localStorage.getItem("TokenUser"), setStatePage, setUaseAuth, UserAuth, Router); // check if token of user is valid
+    },[]);
+
+    useEffect(()=>{
+        setstateUserData(false);
         fetch(`${LinkToApi.localLink}/SeachUsers`,{
             method: "GET",
             headers: {
@@ -152,9 +151,7 @@ const DirectorPageIndex = ()=>{
         .catch(error =>{
                 console.log(error)
             })
-
-    },[]);
-
+    },[ReloadAllDatas])
     useEffect(()=>{
         console.log(UserFilters);
     },[UserFilters])
@@ -162,7 +159,7 @@ const DirectorPageIndex = ()=>{
         <>
             <HeadPages/>
             {
-                (statePage && stateUserData) ?
+                statePage ?
                 <section className="ContainerFormatPages">
                     <MenuComponent DatasOfMenu= {DataOfMEnu}/>
                     <div className="constainerDatasNav">
@@ -187,16 +184,43 @@ const DirectorPageIndex = ()=>{
                                                     }
                                                 }/>
                                         </div>
+                                        <div className="RefreshDatas" 
+                                            onClick={
+                                                ()=> {
+                                                        setReloadAllDatas(!ReloadAllDatas);
+                                                }
+                                            }>
+                                            <ArrowUturnLeftIcon className="Icone"/>
+                                            <span className="numberOfUser">{`(${(UserFilters.length)? UserFilters[0].length : "0"})`}</span>
+                                        </div>
                                     </div>
                                     <div className="Datas">
-                                        <table className="DatasComponents">
-                                            <thead className="titleDatas"><HeadTitleDataView 
-                                                typeCompte={(!typeAccountSearching)? "Dir":((typeAccountSearching == 1)? "Teach": "Stud")}/>
-                                            </thead>
-                                            <tbody className="CardUser">
-                                                    {DataListView()}
-                                            </tbody>
-                                        </table>
+                                        {
+                                            stateUserData ?
+                                            <>
+                                                {
+                                                    (UserFilters.length)?
+                                                        <table className="DatasComponents">
+                                                            <thead className="titleDatas"><HeadTitleDataView 
+                                                                typeCompte={(!typeAccountSearching)? "Dir":((typeAccountSearching == 1)? "Teach": "Stud")}/>
+                                                            </thead>
+                                                            <tbody className="CardUser">
+                                                                    {DataListView()}
+                                                            </tbody>
+                                                        </table>
+                                                        :
+                                                        <div className="UserNotFund">
+                                                            <span className="Title">O oops !</span>
+                                                            <span className="Description">Aucun Utilisateur Trouvé</span>                    
+                                                        </div>
+                                                    
+                                                }
+                                            </>
+                                            :
+                                            <div className="loadSeacherUSers">
+                                                <Loading/>
+                                            </div>
+                                        }
                                     </div>
                                 </div>
                             </div>

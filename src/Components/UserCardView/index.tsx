@@ -15,8 +15,6 @@ interface dataDirector{
 }
 
 const CardUser = (datas:dataDirector)=>{
-    console.log(datas);
-
     // function return Type of card User, denpendancies a type of account to display
     const SelectTypeOfCardUser = (TypeCard:String) =>{
         switch(TypeCard){

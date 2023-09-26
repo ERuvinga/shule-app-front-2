@@ -17,6 +17,8 @@
     width: 100%;
     padding: 5px 0;
     border-bottom: #D7DFE0 solid 1px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .Viewdatas .HeadView .InputContent{
@@ -39,9 +41,36 @@
 
 }
 
-.Viewdatas .HeadView .InputContent .Icone{
+.Viewdatas .HeadView .InputContent .Icone, .Viewdatas .HeadView .RefreshDatas .Icone{
     width: 20px;
     color: #787777;
+}
+
+.Viewdatas .HeadView .RefreshDatas .Icone{
+    width: 18px;
+    color: #324447;
+}
+
+.Viewdatas .HeadView .RefreshDatas .numberOfUser{
+    display: flex;
+    align-items: center;
+    font-size: .7em;
+    color: #728A8F;
+}
+
+.Viewdatas .HeadView .RefreshDatas {
+    background-color: #eef4f5;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    gap: 5px;
+    transition: all .2s ease-in-out;
+}
+
+.Viewdatas .HeadView .RefreshDatas:hover{
+    cursor: pointer;
+    box-shadow: 0 0 4px 0 #D7DFE0;
+    border: #728A8F solid 1px;
 }
 
 /*Titles of Datas view*/
@@ -128,4 +157,29 @@
     font-size: .6em;
     border-radius: 10px;
     font-weight: bolder;
+}
+
+/*NotFundUser*/
+.UserNotFund{    
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.UserNotFund .Title{
+    color: rgb(210, 10, 12);
+    font-size: 1.2em;
+    font-family: poppinBlack;
+    text-align: center;
+}
+
+.UserNotFund .Description{
+    color: #666565;
+    font-size: .7em;
+    text-align: center;
+}
+
+.loadSeacherUSers{    
+    margin: 20px 0;
 }

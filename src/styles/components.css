@@ -235,6 +235,7 @@
         border-bottom-color: transparent;
         border-radius: 50%;
         animation: loadingAnim 1s linear infinite;
+        margin: auto;
     }
     .LoaderPage{
         width: 50%;
