@@ -32,8 +32,9 @@
 }
 
 .Viewdatas .HeadView input{
-    color: #324447;
-    font-size: .8em;    
+    color: #787777;
+    font-size: .75em;
+    min-width: 150px;    
 }
 
 .Viewdatas .HeadView input:focus{
@@ -74,6 +75,9 @@
 }
 
 /*Titles of Datas view*/
+.you{
+    background-color: #324447;
+}
 .titleDatas{
     background-color: #eef4f5;
     border-radius: 4px;

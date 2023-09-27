@@ -30,30 +30,50 @@ const nameUserSeaching = atom({
 const FilterTypeAccountsUser = selector({
     key:"FilterCategoriesUser",
     get:({get}:any) =>{
+
         const FilterTypeAccount = get(TypeAccountState);
         const AllUsers = get(AllUserStates);
         const NameFilter = get(nameUserSeaching);
 
-        let ListUsers:any;
+        let CopyListUser: any = [];
+        let ListUsers:any = [];
 
         switch(FilterTypeAccount) {
             case 0:{
-                ListUsers = AllUsers.filter((item:any) => item[0].typeAccount === "Director");
+                ListUsers = AllUsers.filter((item:any) => item.typeAccount === "Director");
                 break;
             }
             case 1:{
-                ListUsers = AllUsers.filter((item:any) =>item[0].typeAccount === "Teacher");
+                ListUsers = AllUsers.filter((item:any) =>item.typeAccount === "Teacher");
                 break;
             }
             case 2:{
-                ListUsers = AllUsers.filter((item:any) =>item[0].typeAccount === "Student");
+                ListUsers = AllUsers.filter((item:any) =>item.typeAccount === "Student");
                 break;
             }
         }
 
-        if(NameFilter != ""){
-            console.log("filter Name n'est pas vide")
+        // Searching user by input         
+        if(NameFilter.length && ListUsers.length){
+            ListUsers.map((value:any)=>{
+                if(FilterTypeAccount != 2){ // check type compte if Type Compte View != Student
+                    // filter Datas by name,email and TelUser
+                    if(value.allName.toLowerCase().includes(NameFilter.toLowerCase()) || value.email.toLowerCase().includes(NameFilter.toLowerCase())|| value.tel.toLowerCase().includes(NameFilter.toLowerCase())){
+                        CopyListUser.push(value);
+                    }
+                }
+
+                else{ // else, filter by name
+                    if(value.allName.toLowerCase().includes(NameFilter.toLowerCase())){
+                        CopyListUser.push(value);
+                    }
+                }
+
+            });
+            //Quick in function
+            return CopyListUser;
         }
+
     return ListUsers
     }
 })
