@@ -23,7 +23,7 @@ const SelectedPromotion = atom({
 
 const SelectedClass = atom({
     key:"SelectedClass",
-    default:"A"
+    default:"Toutes"
 })
 
 
@@ -68,9 +68,9 @@ const FilterTypeAccountsUser = selector({
 
         if(FilterTypeAccount){
             (FilterTypeAccount == 1)? 
-                ListUsers = ListUsers.filter((item:any)=> ((!PromoFilter)? true : item.PROMOTION === PromoFilter)&&((ClassFilter ==="Toutes")? true : item.CLASS == ClassFilter))
+                ListUsers = ListUsers.filter((item:any)=> ((!PromoFilter)? true : item.PROMOTION == PromoFilter) && ((ClassFilter ==="Toutes")? true : item.CLASS == ClassFilter))
                 :
-                ListUsers = ListUsers.filter((item:any)=> ((!PromoFilter)? true : item.registerDatas.PROMOTION === PromoFilter&&((ClassFilter ==="Toutes")? true : item.registerDatas.CLASS == ClassFilter)));
+                ListUsers = ListUsers.filter((item:any)=> ((!PromoFilter)? true : item.registerDatas.PROMOTION === PromoFilter) && ((ClassFilter ==="Toutes")? true : item.registerDatas.CLASS == ClassFilter));
         }
 
         // Searching user by input         

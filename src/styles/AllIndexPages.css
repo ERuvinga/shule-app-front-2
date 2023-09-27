@@ -199,7 +199,6 @@
     flex-direction: column;
     gap: 8px;
     color: #787777;
-    padding: 8px;
 }
 
 .FilterContainer .TitleFilter{
@@ -223,11 +222,12 @@
 .FilterContainer .PromFilter .itemsPromFilter{
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 5px;
+    padding: 8px 0;
 }
 
 .FilterContainer .PromFilter .itemsPromFilter .itemProm{
-    padding: 4px 5px;
+    padding: 4px 6px;
     width: 80px;
     font-size: .8em;
     color: #787777;
@@ -241,7 +241,7 @@
 .FilterContainer .PromFilter .itemsPromFilter .temPromSelected{
     background-color: rgba(188, 237, 188, 0.3);
     color: #3d6870;
-    padding: 4px 5px;
+    padding: 4px 6px;
     width: 80px;
     font-size: .8em;
     text-align: center;
