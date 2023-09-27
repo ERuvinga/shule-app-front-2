@@ -14,7 +14,18 @@ const SelectedMenuItems = atom({
 const AllUserStates = atom({
     key:"AllUserStates",
     default:[]
+});
+
+const SelectedPromotion = atom({
+    key:"SelectedPromotion",
+    default:0
 })
+
+const SelectedClass = atom({
+    key:"SelectedClass",
+    default:"A"
+})
+
 
 // filters data
 const TypeAccountState = atom({
@@ -34,6 +45,8 @@ const FilterTypeAccountsUser = selector({
         const FilterTypeAccount = get(TypeAccountState);
         const AllUsers = get(AllUserStates);
         const NameFilter = get(nameUserSeaching);
+        const PromoFilter = get(SelectedPromotion);
+        const ClassFilter = get(SelectedClass);
 
         let CopyListUser: any = [];
         let ListUsers:any = [];
@@ -51,6 +64,13 @@ const FilterTypeAccountsUser = selector({
                 ListUsers = AllUsers.filter((item:any) =>item.typeAccount === "Student");
                 break;
             }
+        }
+
+        if(FilterTypeAccount){
+            (FilterTypeAccount == 1)? 
+                ListUsers = ListUsers.filter((item:any)=> ((!PromoFilter)? true : item.PROMOTION === PromoFilter)&&((ClassFilter ==="Toutes")? true : item.CLASS == ClassFilter))
+                :
+                ListUsers = ListUsers.filter((item:any)=> ((!PromoFilter)? true : item.registerDatas.PROMOTION === PromoFilter&&((ClassFilter ==="Toutes")? true : item.registerDatas.CLASS == ClassFilter)));
         }
 
         // Searching user by input         
@@ -84,5 +104,7 @@ export {
     AllUserStates,
     FilterTypeAccountsUser,
     TypeAccountState,
-    nameUserSeaching
+    nameUserSeaching,
+    SelectedPromotion,
+    SelectedClass
 }
