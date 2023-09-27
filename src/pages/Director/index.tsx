@@ -152,9 +152,7 @@ const DirectorPageIndex = ()=>{
                 console.log(error)
             })
     },[ReloadAllDatas])
-    useEffect(()=>{
-        console.log(UserFilters);
-    },[UserFilters])
+
     return(
         <>
             <HeadPages/>

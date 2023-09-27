@@ -19,7 +19,8 @@ const PromotionFilter =()=>{
                             key={i}
                             onClick={()=>setPromSelected(i)}
                         >
-                            {value}
+                           <span className={promSelected == i ? "boxChekSelected" : "boxChek"}></span>
+                           <span>{value}</span>
                         </span>)
                 }
             </div>

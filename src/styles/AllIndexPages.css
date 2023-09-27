@@ -199,6 +199,7 @@
     flex-direction: column;
     gap: 8px;
     color: #787777;
+    padding: 8px;
 }
 
 .FilterContainer .TitleFilter{
@@ -229,15 +230,17 @@
     padding: 4px 5px;
     width: 80px;
     font-size: .8em;
-    color: #324447;
-    text-align: center;
+    color: #787777;
     border-radius: 8px;
     transition: all .5s ease-in-out;
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 .FilterContainer .PromFilter .itemsPromFilter .temPromSelected{
     background-color: rgba(188, 237, 188, 0.3);
-    color: #728A8F;
+    color: #3d6870;
     padding: 4px 5px;
     width: 80px;
     font-size: .8em;
@@ -245,6 +248,10 @@
     border-radius: 8px;
     font-weight: bolder;
     box-shadow: 0 0 4px 0 #D7DFE0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    transition: all .5s ease-in-out;
 }
 
 .FilterContainer .PromFilter .itemsPromFilter .temPromSelected:hover{
@@ -253,10 +260,24 @@
 
 .FilterContainer .PromFilter .itemsPromFilter .itemProm:hover{
     cursor: pointer;
-    box-shadow: 0 0 4px 0 #D7DFE0;
-
+    box-shadow: 0 0 2px 0 #D7DFE0;
 }
 
+.FilterContainer .PromFilter .itemsPromFilter .boxChek{
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: solid 1px #D7DFE0;
+    transition: all .5s ease-in-out;
+}
+
+.FilterContainer .PromFilter .itemsPromFilter .boxChekSelected{
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    box-shadow: 0 0 1px 0 #D7DFE0;
+    background-color: #3d6870;
+}
 .classSelection{
     width: 100px;
     border: solid 1px #D7DFE0;
