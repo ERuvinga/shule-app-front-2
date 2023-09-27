@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { useRecoilValue, useRecoilState } from "recoil";
+import { useRecoilValue, useRecoilState, useSetRecoilState } from "recoil";
 
 //atoms and Selectors
 import { Link_toApi } from "@/src/States/LoginRegisterStates";
-import { AuthUser, TypeAccountState, AllUserStates, FilterTypeAccountsUser, nameUserSeaching } from "@/src/States/UserAoth";
+import { AuthUser, TypeAccountState, AllUserStates, FilterTypeAccountsUser } from "@/src/States/UserAoth";
 
 // lib
 import { withAuth } from "@/src/Lib/Auth";
-import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline"
+import { ArrowPathIcon } from "@heroicons/react/24/outline"
 
 //components
 import HeadPages from "@/src/Components/Head";
@@ -16,9 +16,10 @@ import Loading from "@/src/Components/Loading";
 import MenuComponent from "@/src/Components/Menu";
 import NavBarAuthPages from "@/src/Components/NavBarAuthPages";
 import TypeAccount from "@/src/Components/Director/typeAccountFilter";
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import DirectorCardUser from "@/src/Components/UserCardView";
 import HeadTitleDataView from "@/src/Components/DataViewTitle";
+import SearchInput from "@/src/Components/SearchUser";
+import {PromotionFilter, ClassFilter} from "@/src/Components/Filters";
 
 const DirectorPageIndex = ()=>{
 
@@ -29,9 +30,8 @@ const DirectorPageIndex = ()=>{
     let UserFilters:any|[];
 
     //Atoms
-    const [typeAccountSearching, setTypeAccountSearching] = useRecoilState(TypeAccountState);
-    const [nameFilterSearching, setNameFilterSearching] = useRecoilState(nameUserSeaching);
-    const [AllUSers, setAllUsers] = useRecoilState(AllUserStates)
+    const typeAccountSearching = useRecoilValue(TypeAccountState);
+    const setAllUsers = useSetRecoilState(AllUserStates)
     const LinkToApi:any = useRecoilValue(Link_toApi);
     const [UserAuth,setUaseAuth]:any = useRecoilState(AuthUser);
 
@@ -43,7 +43,7 @@ const DirectorPageIndex = ()=>{
             switch(typeAccountSearching){
                 case 0:
                     return(
-                        UserFilters[0].map((value:any, index:any)=>
+                        UserFilters.map((value:any, index:any)=>
                         <DirectorCardUser 
                             key={index} 
                             name={value.allName}
@@ -56,7 +56,7 @@ const DirectorPageIndex = ()=>{
 
                 case 1:
                     return(
-                        UserFilters[0].map((value:any, index:any)=>
+                        UserFilters.map((value:any, index:any)=>
                         <DirectorCardUser 
                             key={index} 
                             name={value.allName}
@@ -69,7 +69,7 @@ const DirectorPageIndex = ()=>{
                 )
                 case 2:
                     return(
-                        UserFilters[0].map((value:any, index:any)=>
+                        UserFilters.map((value:any, index:any)=>
                         <DirectorCardUser 
                             key={index} 
                             name={value.allName}
@@ -143,8 +143,8 @@ const DirectorPageIndex = ()=>{
                 if(response.ok){
                     response.json()
                     .then(datasOfusers =>{
-                        setAllUsers(datasOfusers.AllUsers)
-                        setstateUserData(true);
+                        setAllUsers(datasOfusers.AllUsers);
+                        setTimeout(()=>setstateUserData(true),1000); // secondes secondes after reload data Display it 
                     })
                 }
             })
@@ -173,25 +173,15 @@ const DirectorPageIndex = ()=>{
                                 </div>
                                 <div className="Viewdatas">
                                     <div className="HeadView">
-                                        <div className="InputContent">
-                                            <MagnifyingGlassIcon className="Icone"/>
-                                            <input 
-                                                placeholder="Search" 
-                                                type="text"
-                                                onChange={
-                                                    (event:any)=>{
-                                                        setNameFilterSearching(event.target.value);
-                                                    }
-                                                }/>
-                                        </div>
+                                        <SearchInput/>
                                         <div className="RefreshDatas" 
                                             onClick={
                                                 ()=> {
                                                         setReloadAllDatas(!ReloadAllDatas);
                                                 }
                                             }>
-                                            <ArrowUturnLeftIcon className="Icone"/>
-                                            <span className="numberOfUser">{`(${(UserFilters.length)? UserFilters[0].length : "0"})`}</span>
+                                            <ArrowPathIcon className="Icone"/>
+                                            <span className="numberOfUser">{`(${(UserFilters.length)? UserFilters.length : "0"})`}</span>
                                         </div>
                                     </div>
                                     <div className="Datas">
@@ -224,19 +214,20 @@ const DirectorPageIndex = ()=>{
                                     </div>
                                 </div>
                             </div>
-                            <aside className="FilterContainer">
+                            <div className="FilterContainer">
                                 {
                                     (!typeAccountSearching)? 
                                     <div className="loadingAccount">
                                         <Loading/>
-                                        <span>Patientez ...</span>
+                                        <span>Auncun filtre pour la Direction</span>
                                     </div>
                                     :
-                                    <div className="border">
-
-                                    </div>
+                                    <>
+                                        <PromotionFilter/>
+                                        <ClassFilter/>
+                                    </>
                                 }
-                            </aside>
+                            </div>
                         </div> 
                     </div>
 

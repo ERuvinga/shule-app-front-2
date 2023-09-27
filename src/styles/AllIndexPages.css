@@ -172,7 +172,7 @@
 }
 
 .containerDatas .DataFilterContainer{
-    width: 75%;
+    width: 74%;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -182,10 +182,94 @@
 /*Filter Content*/
 .containerDatas .FilterContainer{
     width: 25%;
-    max-height: 200px;
+    height: fit-content;
     border-radius: 4px;
     background-color: white;
     box-shadow: 0 0 4px #D7DFE0;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    padding: 8px;
+    gap: 5px;
+}
+
+.FilterContainer .PromFilter{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #787777;
+}
+
+.FilterContainer .TitleFilter{
+    width: 100%;
+    padding: 3px;
+    display: flex;
+    color: #787777;
+    gap: 5px;
+    border: solid 1px #D7DFE0;
+    border-radius: 4px;
+}
+
+.FilterContainer .PromFilter .Icone{
+    width: 20px;
+}
+
+.FilterContainer .PromFilter span{
+    font-size: .9em;
+}
+
+.FilterContainer .PromFilter .itemsPromFilter{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.FilterContainer .PromFilter .itemsPromFilter .itemProm{
+    padding: 4px 5px;
+    width: 80px;
+    font-size: .8em;
+    color: #324447;
+    text-align: center;
+    border-radius: 8px;
+    transition: all .5s ease-in-out;
+}
+
+.FilterContainer .PromFilter .itemsPromFilter .temPromSelected{
+    background-color: rgba(188, 237, 188, 0.3);
+    color: #728A8F;
+    padding: 4px 5px;
+    width: 80px;
+    font-size: .8em;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bolder;
+    box-shadow: 0 0 4px 0 #D7DFE0;
+}
+
+.FilterContainer .PromFilter .itemsPromFilter .temPromSelected:hover{
+    cursor: pointer;
+}
+
+.FilterContainer .PromFilter .itemsPromFilter .itemProm:hover{
+    cursor: pointer;
+    box-shadow: 0 0 4px 0 #D7DFE0;
+
+}
+
+.classSelection{
+    width: 100px;
+    border: solid 1px #D7DFE0;
+    padding: 3px;
+    border-radius: 20px;
+    color: #787777;
+    font-size: .8em;
+}
+
+.classSelection:focus{
+    outline: none;
+}
+
+.classSelection:focus option:hover{
+    cursor: pointer;
 }
