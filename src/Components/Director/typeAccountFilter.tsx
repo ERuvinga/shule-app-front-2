@@ -3,7 +3,7 @@ import {ShieldCheckIcon, AcademicCapIcon, UsersIcon} from "@heroicons/react/24/o
 import { useRecoilState } from "recoil"
 
 // atom
-import { TypeAccountState } from "@/src/States/UserAoth"
+import { TypeAccountState } from "@/src/States/Director"
 
 interface typeaccount{
     title:String

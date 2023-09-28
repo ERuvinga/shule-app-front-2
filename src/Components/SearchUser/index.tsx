@@ -1,6 +1,6 @@
 //atom and Recoil datas
 import { useSetRecoilState } from "recoil";
-import { nameUserSeaching } from "@/src/States/UserAoth";
+import { nameUserSeaching } from "@/src/States/Director";
 
 //icons
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";

@@ -1,7 +1,8 @@
 import { useRecoilValue, useRecoilState } from "recoil";
 
 //atoms
-import { AuthUser, SelectedMenuItems } from "@/src/States/UserAoth";
+import { AuthUser} from "@/src/States/UserAoth" 
+import {SelectedMenuItems } from "@/src/States/Director";
 import Image from "next/image";
 
 //icones

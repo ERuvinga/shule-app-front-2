@@ -43,7 +43,6 @@ const CardUser = (datas:dataDirector)=>{
                 )
             case "Student":{
                 const InscriptionDate = new Date(datas.dateOfStudentaccount);
-                console.log()
                 return(
                     <>
                         <td><Image width={100} height={100} src={"/imgs/AuthImgs/avatar.png"} alt="directors Profil"/></td>
