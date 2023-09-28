@@ -129,11 +129,29 @@ const FilterTypeAccountsUser = selector({
 const DirectorStudentsFilter = selector({
     key:"DirectorStudentsFilter",
     get:({get}:any)=>{
-        const DatasFiltered:any =[];
+        let DatasFilteredByFilter:any =[];
+        let DatasFilteredBySearching:any =[];
+        const NameFilter = get(nameUserSeaching);
         const AllStudent = get(AllStudentState);
+        const PromoFilter = get(SelectedPromotion);
+        const ClassFilter = get(SelectedClass);
 
+        //filter by promotion and Class
+        DatasFilteredByFilter = AllStudent.filter((item:any)=> ((!PromoFilter)? true : item.registerDatas.PROMOTION === PromoFilter) && ((ClassFilter ==="Toutes")? true : item.registerDatas.CLASS == ClassFilter));
+        
+        // Searching user by input         
+        if(NameFilter.length && AllStudent.length){
+                AllStudent.map((value:any)=>{
+                    if(value.allName.toLowerCase().includes(NameFilter.toLowerCase())){
+                            DatasFilteredBySearching.push(value);
+                            
+                    }
+                });
+                    //Quick in function
+                return DatasFilteredBySearching;
+        }
 
-        return DatasFiltered;
+        return DatasFilteredByFilter;
     }
 });
 
