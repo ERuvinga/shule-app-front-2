@@ -4,7 +4,8 @@ import { useRecoilValue, useRecoilState, useSetRecoilState } from "recoil";
 
 //atoms and Selectors
 import { Link_toApi } from "@/src/States/LoginRegisterStates";
-import { AuthUser, TypeAccountState, AllUserStates, FilterTypeAccountsUser } from "@/src/States/UserAoth";
+import { AuthUser } from "@/src/States/UserAoth";
+import {TypeAccountState, AllUserStates, FilterTypeAccountsUser, DataOfMenuState} from "@/src/States/Director"
 
 // lib
 import { withAuth } from "@/src/Lib/Auth";
@@ -19,7 +20,7 @@ import TypeAccount from "@/src/Components/Director/typeAccountFilter";
 import DirectorCardUser from "@/src/Components/UserCardView";
 import HeadTitleDataView from "@/src/Components/DataViewTitle";
 import SearchInput from "@/src/Components/SearchUser";
-import {PromotionFilter, ClassFilter} from "@/src/Components/Filters";
+import {PromotionFilter, ClassFilter} from "@/src/Components/PromotionFilter";
 
 const DirectorPageIndex = ()=>{
 
@@ -27,16 +28,14 @@ const DirectorPageIndex = ()=>{
     const [statePage, setStatePage] = useState(false);
     const [stateUserData, setstateUserData] = useState(false);
     const [ReloadAllDatas, setReloadAllDatas] = useState(false);
-    let UserFilters:any|[];
 
-    //Atoms
+    //Atoms and selector
     const typeAccountSearching = useRecoilValue(TypeAccountState);
     const setAllUsers = useSetRecoilState(AllUserStates)
     const LinkToApi:any = useRecoilValue(Link_toApi);
     const [UserAuth,setUaseAuth]:any = useRecoilState(AuthUser);
-
-    // selector
-    UserFilters = useRecoilValue(FilterTypeAccountsUser);
+    const DataOfMEnu = useRecoilValue(DataOfMenuState);
+    const UserFilters:any = useRecoilValue(FilterTypeAccountsUser);
 
     const DataListView = ()=>{
         if(UserFilters.length){
@@ -86,28 +85,7 @@ const DirectorPageIndex = ()=>{
     }
 
     // data of Menu
-    const DataOfMEnu = [
-        {
-            label:"DashBoard",
-            Link:"/Director",
-            icone:"Squares2X2Icon"
-        },
-        {
-            label:"Comptabilité",
-            Link:"/Director/Comptability",
-            icone:"CurrencyDollarIcon"
-        },
-        {
-            label:"Classe",
-            Link:"/Director/ClassRoom",
-            icone:"UserGroupIcon"
-        },
-        {
-            label:"Valve",
-            Link:"/Director/Informations",
-            icone:"ChatBubbleBottomCenterTextIcon" 
-        }
-    ];
+
 
     const dataOfTypeAccount = [
         {
@@ -131,7 +109,7 @@ const DirectorPageIndex = ()=>{
 
     useEffect(()=>{
         setstateUserData(false);
-        fetch(`${LinkToApi.localLink}/SeachUsers`,{
+        fetch(`${LinkToApi.localLink}/SearchUsers`,{
             method: "GET",
             headers: {
                 "Accept": 'application/json',
@@ -151,13 +129,13 @@ const DirectorPageIndex = ()=>{
         .catch(error =>{
                 console.log(error)
             })
-    },[ReloadAllDatas])
+    },[ReloadAllDatas]);
 
     return(
         <>
             <HeadPages/>
             {
-                statePage ?
+                (statePage || UserAuth) ?
                 <section className="ContainerFormatPages">
                     <MenuComponent DatasOfMenu= {DataOfMEnu}/>
                     <div className="constainerDatasNav">
@@ -233,7 +211,7 @@ const DirectorPageIndex = ()=>{
                 :
                 <div className="LoaderPage">
                     <Loading/>
-                    <span>Patientez...</span>
+                    <span>Chargement...</span>
                 </div>
             }
             

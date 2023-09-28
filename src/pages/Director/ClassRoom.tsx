@@ -4,7 +4,8 @@ import { useRecoilValue, useRecoilState } from "recoil";
 
 //atoms 
 import { Link_toApi } from "@/src/States/LoginRegisterStates";
-import { AuthUser, SelectedMenuItems } from "@/src/States/UserAoth";
+import { AuthUser } from "@/src/States/UserAoth";
+import {SelectedMenuItems} from "@/src/States/Director"
 
 // lib
 import { withAuth } from "@/src/Lib/Auth";
@@ -58,7 +59,7 @@ const DirectorClassPageIndex = ()=>{
         <>
             <HeadPages/>
             {
-                statePage ?
+                (statePage || UserAuth) ?
                 <section className="ContainerFormatPages">
                     <MenuComponent DatasOfMenu= {DataOfMEnu}/>
                     <div className="constainerDatasNav">
