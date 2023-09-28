@@ -3,10 +3,15 @@ import { QueueListIcon, Square3Stack3DIcon } from "@heroicons/react/24/outline";
 //Recoil
 import { SelectedPromotion,SelectedClass } from "@/src/States/Director";
 import { useRecoilState, useSetRecoilState } from "recoil";
+import { useEffect } from "react";
 
 const PromotionFilter =()=>{
     const listPromotion = ["Toutes","1 ère", "2 em", "3 em", "4 em", "5 em", "6 em"];
     const [promSelected,setPromSelected] = useRecoilState(SelectedPromotion);
+
+    useEffect(()=>{
+        setPromSelected(0);
+    },[])
 
     return(
         <div className="PromFilter">
@@ -30,6 +35,10 @@ const PromotionFilter =()=>{
 
 const ClassFilter =()=>{
     const setClassSelected = useSetRecoilState(SelectedClass);
+    
+    useEffect(()=>{
+        setClassSelected("Toutes");
+    },[])
 
     return(
         <div className="PromFilter">

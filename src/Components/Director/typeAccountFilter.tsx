@@ -4,6 +4,7 @@ import { useRecoilState } from "recoil"
 
 // atom
 import { TypeAccountState } from "@/src/States/Director"
+import { useEffect } from "react"
 
 interface typeaccount{
     title:String
@@ -11,6 +12,9 @@ interface typeaccount{
 }
 const TypeAccount = (datas:typeaccount)=>{
     const [TypeAccountSelected, setTypeAccountSelected]:any = useRecoilState(TypeAccountState);
+    useEffect(()=>{
+        setTypeAccountSelected(0);
+    },[]);
 
     const searchIcone = (item:number) =>{
         switch(item){

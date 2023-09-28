@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { useRecoilValue, useRecoilState, useSetRecoilState } from "recoil";
+import { useRecoilValue, useRecoilState } from "recoil";
 
 //atoms 
 import { Link_toApi } from "@/src/States/LoginRegisterStates";
@@ -17,9 +17,9 @@ import MenuComponent from "@/src/Components/Menu";
 import NavBarAuthPages from "@/src/Components/NavBarAuthPages";
 import SearchInput from "@/src/Components/SearchUser";
 import { ArrowPathIcon } from "@heroicons/react/24/outline";
-import HeadTitleDataView from "@/src/Components/DataViewTitle";
 import { ClassFilter, PromotionFilter } from "@/src/Components/PromotionFilter";
 import StudentsCardUser from "@/src/Components/StudentCard";
+import HeadTitleStudentDatas from "@/src/Components/Director/HeadTitleStudentDatas";
 
 const DirectorComptPageIndex = ()=>{
     const Router = useRouter();
@@ -81,7 +81,7 @@ const DirectorComptPageIndex = ()=>{
                     <MenuComponent DatasOfMenu= {DataOfMEnu}/>
                     <div className="constainerDatasNav">
                         <NavBarAuthPages title="Comptabilité" message="Detail sur les informations de payement"/>
-                        <div className="containerDatas border">
+                        <div className="containerDatas">
                             <div className="DataFilterContainer">
                                 <div className="Viewdatas">
                                         <div className="HeadView">
@@ -104,7 +104,7 @@ const DirectorComptPageIndex = ()=>{
                                                         (UserFilters.length)?
                                                             <table className="DatasComponents">
                                                                 <thead className="titleDatas">
-                                                                    <HeadTitleDataView typeCompte={"Stud"}/>
+                                                                    <HeadTitleStudentDatas/>
                                                                 </thead>
                                                                 <tbody className="CardUser">
                                                                         {
@@ -113,8 +113,9 @@ const DirectorComptPageIndex = ()=>{
                                                                                 key={index} 
                                                                                 name={value.allName}
                                                                                 statusCompte={value.stateAccount}
-                                                                                promotion={"2-B"}
-                                                                                DateUser={12535363373737}
+                                                                                promotion={`${value.registerDatas.PROMOTION}-${value.registerDatas.CLASS}`}
+                                                                                DateUser={125353633737}
+                                                                                balance={""}
                                                                     />)
                                                                         }
                                                                 </tbody>
