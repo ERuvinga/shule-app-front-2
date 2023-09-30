@@ -30,7 +30,24 @@ const DataOfMenuState = atom({
             icone:"ChatBubbleBottomCenterTextIcon"
         }
     ]
-})
+});
+
+const DataOfMenuComptable = atom({
+    key:"DataOfMenuState",
+    default:[
+
+        {
+            label:"Comptabilité",
+            Link:"/Comptable",
+            icone:"CurrencyDollarIcon"
+        },
+        {
+            label:"Valve",
+            Link:"/Comptable/Informations",
+            icone:"ChatBubbleBottomCenterTextIcon"
+        }
+    ]
+});
 
 const AllUserStates = atom({
     key:"AllUserStates",
@@ -143,8 +160,7 @@ const DirectorStudentsFilter = selector({
         if(NameFilter.length && AllStudent.length){
                 AllStudent.map((value:any)=>{
                     if(value.allName.toLowerCase().includes(NameFilter.toLowerCase())){
-                            DatasFilteredBySearching.push(value);
-                            
+                            DatasFilteredBySearching.push(value);                            
                     }
                 });
                     //Quick in function
@@ -165,5 +181,6 @@ export {
     nameUserSeaching,
     SelectedPromotion,
     SelectedClass,
-    DataOfMenuState
+    DataOfMenuState,
+    DataOfMenuComptable
 }

@@ -1,5 +1,4 @@
 // file content principals states of App
-
 const {atom} = require("recoil");
 
 export const loginDataState = atom({
@@ -36,7 +35,7 @@ export const errorLogRegisterForm = atom({
         invalidMatricule: false,
         pswdAndCofirmPswd:false,
     }
-})
+});
 
 export const Link_toApi = atom({
     key: "Link_toApi",
@@ -49,5 +48,5 @@ export const Link_toApi = atom({
 export const SelectedTypeOfAccount = atom({
     key: "SelectedTypeOfAccount",
     default: ""
-})
+});
  // export states
