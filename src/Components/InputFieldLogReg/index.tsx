@@ -42,11 +42,23 @@ const sendLoginData = (datasOfUSer: any, url:String, ComponentTypeAccount:any, s
                 });
 
                 localStorage.setItem("TokenUser", datas.Token); // save token in localStorageSession
-
+                console.log(datas)
                 // Checking type of Account for Redirection AothIndex pages
                 switch(datas.typeAccount){
                     case "Director":
-                        Router.push("/Director");
+                        switch(datas.DataUser.task.funct){
+                            case "DIRECTOR":
+                                Router.push("/Director");
+                                break;
+
+                            case "DIRECTEUR ADJ":
+                                Router.push("/DirectorAdj");
+                                break;
+
+                            case "COMPTABLE":
+                                Router.push("/Comptable");
+                                break;                          
+                        }
                     break;
 
                     case "Teacher":
