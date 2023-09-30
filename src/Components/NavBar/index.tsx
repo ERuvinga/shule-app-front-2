@@ -1,12 +1,17 @@
-import {QuestionMarkCircleIcon, ChatBubbleBottomCenterTextIcon, UserGroupIcon, Bars3Icon, XMarkIcon} from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon} from '@heroicons/react/24/outline';
 import  Image from 'next/image';
 import Link from 'next/link';
 
+// States Recoiljs
 import { useEffect, useState } from 'react';
+import { useRecoilValue, useRecoilState } from 'recoil';
+import { NavBarSelectedItem, DataTabOfNavBAr } from '@/src/States/UserAoth';
 
 const Navbar = () => {
     const [toggleMenu, setToggleMenu] = useState(false);
     const [Width_screen, setWidth_screen] = useState(0);
+    const [itemNavSelected, setItemNavSelected]:any = useRecoilState(NavBarSelectedItem);
+    const [DataOfNav, setDataOfNav]:any = useRecoilState(DataTabOfNavBAr);
     const BreakPointNav = 850;
 
     const toggleMenuScreen = ()=>{
@@ -27,11 +32,12 @@ const Navbar = () => {
         return () =>{
             window.removeEventListener('resize', onChangeWidth);
         }
+
     },[]);
 
     return(
         <nav className='Nav_bar'>
-            <div>
+            <div className='NavBarContent'>
                 <span className='logo'>
                     <span><Image src='/imgs/logo.png' width={25} height={25} alt='logo'/> </span>
                     {toggleMenu ? <XMarkIcon className='btn_menu' onClick={toggleMenuScreen}/> : <Bars3Icon className='btn_menu' onClick={toggleMenuScreen}/>}
@@ -39,20 +45,16 @@ const Navbar = () => {
                 {
                     (toggleMenu || (Width_screen > BreakPointNav)) && (
                     <div className='navigation_links'>
-                         <ul className=' links '>
-                            <li><a className='link_selected' href='#home'>accueil</a></li>
-                            <li><a href='#'>valve</a></li>
-                            <li><a href='#about'>a propos</a></li>
-                            <li><a href='#'>Grille</a></li>
+                         <ul className='links'>
+                            {
+                                DataOfNav.map((value:any, index:any)=>
+                                    <li key={index} onClick={()=> setItemNavSelected(index)}>
+                                        <a className={index === itemNavSelected ?'link_selected': ""} href={value.link}>{value.label}</a>
+                                    </li>
+                                )
+                            }
                         </ul>
-                        <div className='btns '>
-                            <ul className='icons '>
-                                <li><ChatBubbleBottomCenterTextIcon className='w-[25px]'/></li>
-                                <li><UserGroupIcon className='w-[25px]'/></li>
-                                <li><QuestionMarkCircleIcon className='w-[25px]'/></li>
-                            </ul>
-                            <Link className='link_to_login' href='/Login'>Connexion</Link>
-                        </div>
+                        <Link className='link_to_login' href='/Login'>Connexion</Link>
                     </div>
                  ) 
                 

@@ -6,6 +6,31 @@ const AuthUser = atom({
     default:null
 });
 
+const NavBarSelectedItem = atom({
+    key:"NavBarSelectedItem",
+    default:0
+});
+
+const DataTabOfNavBAr = atom({
+    key:"DataTabOfNavBAr",
+    default:[
+        {
+            label:"accueil",
+            link:"/#home"
+        },
+        {
+            label:"valve",
+            link:"/valve"
+        },
+        {
+            label:"a propos",
+            link:"/#about"
+        }
+    ]
+})
+
 export {
     AuthUser,
+    NavBarSelectedItem,
+    DataTabOfNavBAr
 }
