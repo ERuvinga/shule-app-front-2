@@ -191,6 +191,8 @@
     align-items: center;
     padding: 8px;
     gap: 5px;
+    z-index: 0;
+    position: relative;
 }
 
 .FilterContainer .PromFilter{
