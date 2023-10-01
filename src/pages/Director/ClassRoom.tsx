@@ -63,7 +63,7 @@ const DirectorClassPageIndex = ()=>{
                 <section className="ContainerFormatPages">
                     <MenuComponent DatasOfMenu= {DataOfMEnu}/>
                     <div className="constainerDatasNav">
-                        <NavBarAuthPages title="Classe" message="Informations des Classes"/>
+                        <NavBarAuthPages title="Classe" message="Creation des Comptes Utilisateurs"/>
                     </div>
                 </section>
                 :

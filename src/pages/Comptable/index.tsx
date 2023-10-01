@@ -21,6 +21,8 @@ import { ArrowPathIcon, UserCircleIcon, XCircleIcon } from "@heroicons/react/24/
 import { ClassFilter, PromotionFilter } from "@/src/Components/PromotionFilter";
 import StudentsCardUser from "@/src/Components/StudentCard";
 import HeadTitleStudentDatas from "@/src/Components/Director/HeadTitleStudentDatas";
+import { messageOfServer } from "@/src/States/LoginRegisterStates";
+import Notification from "@/src/Components/NotificationLogReg";
 
 const DirectorComptPageIndex = ()=>{
     const Router = useRouter();
@@ -36,6 +38,7 @@ const DirectorComptPageIndex = ()=>{
     const DataOfMEnu = useRecoilValue(DataOfMenuComptable);
     const [WrappePageState, setWrappePageState] = useRecoilState(ContainerUserCard);
     const [DataOfUserPayed, setDataOfUserPayed] = useRecoilState(StudentPayedDatas);
+    const [NotificationMsg, setNotificationMsg]:any = useRecoilState(messageOfServer);
 
     // send DataOf payed
     const payStudent = () =>{
@@ -56,10 +59,24 @@ const DirectorComptPageIndex = ()=>{
             })
             .then((result)=>{
                 if(result.ok){
-                    result.json().then((datas)=> console.log(datas))
+
+                    result.json().then((datas)=> {
+                        setNotificationMsg({
+                            content:datas.msg,
+                            stateMsg:true
+                        });
+                        setWrappePageState(false);
+                        console.log(datas)
+                    })
                 }
                 else{
-                    result.json().then((datas)=> console.log(datas))
+                    result.json().then((datas)=> {
+                        setNotificationMsg({
+                            content:"Error !, Payement Echoué",
+                            stateMsg:true
+                        });
+                        console.log(datas);
+                    })
                 }
             })
             .catch((error)=> console.log(error))
@@ -100,7 +117,8 @@ const DirectorComptPageIndex = ()=>{
             {
                 (statePage || UserAuth) ?
                 <section className="ContainerFormatPages">
-                    <MenuComponent DatasOfMenu= {DataOfMEnu}/>
+                    {NotificationMsg.stateMsg && <div className="MessageServerContainer"><Notification/></div>}
+                    <MenuComponent DatasOfMenu= {DataOfMEnu}/> 
                     <div className="constainerDatasNav">
                         <NavBarAuthPages title="Comptabilité" message="Detail sur les informations de payement"/>
                         <div className="containerDatas">
@@ -137,8 +155,8 @@ const DirectorComptPageIndex = ()=>{
                                                                                     name={value.allName}
                                                                                     statusCompte={value.stateAccount}
                                                                                     promotion={`${value.registerDatas.PROMOTION}-${value.registerDatas.CLASS}`}
-                                                                                    DateUser={125353633737}
-                                                                                    balance={""}
+                                                                                    DateUser={value.LastDatePayed}
+                                                                                    balance={`${value.valuePayed}$`}
                                                                                     idUser={value._id}
                                                                         />)
                                                                             }
@@ -177,6 +195,7 @@ const DirectorComptPageIndex = ()=>{
             {
                 WrappePageState && (
                     <section className="WrapperComponent">
+                        {NotificationMsg.stateMsg && <div className="MessageServerContainer"><Notification/></div>}
                         <div className="formPayement">
                             <div className="identityUser">
                                 <span className="nameUser"><UserCircleIcon className="Icone"/> {DataOfUserPayed.name} </span>
