@@ -33,7 +33,7 @@ const DataOfMenuState = atom({
 });
 
 const DataOfMenuComptable = atom({
-    key:"DataOfMenuState",
+    key:"DataOfMenuComptable",
     default:[
 
         {

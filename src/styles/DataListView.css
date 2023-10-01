@@ -214,7 +214,11 @@
     font-size: .7em;
 }
 
-.Viewdatas .Tel{
+.Viewdatas .Balance{
+    font-size: .8em;
+}
+
+.Viewdatas .Tel, .DatePayed{
     color: #666666;
     font-size: .65em;
 }
