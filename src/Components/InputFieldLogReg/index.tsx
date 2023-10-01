@@ -47,7 +47,7 @@ const sendLoginData = (datasOfUSer: any, url:String, ComponentTypeAccount:any, s
                 switch(datas.typeAccount){
                     case "Director":
                         switch(datas.DataUser.task.funct){
-                            case "DIRECTOR":
+                            case "DIRECTEUR":
                                 Router.push("/Director");
                                 break;
 
