@@ -40,8 +40,30 @@ const DirectorClassPageIndex = ()=>{
             promition:Promo.value,
             classTeacher:ClassTeaching.value
         });
+        
+        fetch(`${LinkToApi.localLink}/Users/newTeacher`,{
+            method:"POST",
+            headers:{
+                'Accept':'application/json',
+                'Content-type':'application/json; charset=UTF-8',
+                "Autorization": `Bearer ${localStorage.getItem("TokenUser")}`
+            },
+            body: JSON.stringify(DatasOfTeacher)
+        })
+        .then((result)=>{
+            if(result.ok){
 
-        console.log(DatasOfTeacher);
+                result.json().then((datas)=> {
+                    console.log(datas)
+                })
+            }
+            else{
+                result.json().then((datas)=> {
+                    console.log(datas);
+                })
+            }
+        })
+        .catch((error)=> console.log(error))
     };
 
     const SendNewStudentDatas = ()=>{
@@ -53,9 +75,32 @@ const DirectorClassPageIndex = ()=>{
             promition:Promo.value,
             classStudent:ClassTeaching.value
         });
+        
+        fetch(`${LinkToApi.localLink}/Users/newStudent`,{
+                method:"POST",
+                headers:{
+                    'Accept':'application/json',
+                    'Content-type':'application/json; charset=UTF-8',
+                    "Autorization": `Bearer ${localStorage.getItem("TokenUser")}`
+                },
+                body: JSON.stringify(DatasOfStudent)
+            })
+            .then((result)=>{
+                if(result.ok){
+    
+                    result.json().then((datas)=> {
+                        console.log(datas)
+                    })
+                }
+                else{
+                    result.json().then((datas)=> {
+                        console.log(datas);
+                    })
+                }
+            })
+            .catch((error)=> console.log(error))
+    };
 
-        console.log(DatasOfTeacher);
-    }
     // data of Menu
     const DataOfMEnu = [
         {

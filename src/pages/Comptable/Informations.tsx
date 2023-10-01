@@ -15,12 +15,12 @@ import HeadPages from "@/src/Components/Head";
 import Loading from "@/src/Components/Loading";
 import MenuComponent from "@/src/Components/Menu";
 import NavBarAuthPages from "@/src/Components/NavBarAuthPages";
+import NewsCard from "@/src/Components/NewsCard";
 
 const DirectorComptPageIndex = ()=>{
     const Router = useRouter();
     const [statePage, setStatePage] = useState(false);
-    const [stateUserData, setstateUserData] = useState(false);
-    const [ReloadAllDatas, setReloadAllDatas] = useState(false);
+    const [AllNews, setAllNews] = useState([]);
 
     //Atoms
     const LinkToApi:any = useRecoilValue(Link_toApi);
@@ -36,28 +36,17 @@ const DirectorComptPageIndex = ()=>{
     },[]);
 
     useEffect(()=>{
-        setstateUserData(false);
-        fetch(`${LinkToApi.localLink}/SearchUsers/News`,{
-            method: "GET",
-            headers: {
-                "Accept": 'application/json',
-                "Content-type": 'application/json; charset=UTF-8',
-                "Autorization": `Bearer ${localStorage.getItem("TokenUser")}`
+        fetch(`${LinkToApi.localLink}/News`)
+        .then((result)=>{
+            if(result.ok){
+                result.json().then((datas)=>{
+                    //console.log(datas);
+                    setAllNews(datas.News);
+                })
             }
-            })
-        .then(response =>{
-                if(response.ok){
-                    response.json()
-                    .then(datasOfusers =>{
-                        setTimeout(()=>setstateUserData(true),1000); // secondes secondes after reload data Display it 
-                    })
-                }
-            })
-        .catch(error =>{
-                console.log(error)
-            })
-    },[ReloadAllDatas]);
-
+        })
+        .catch((error)=> console.log(error))
+    },[])
     return(
         <>
             <HeadPages/>
@@ -66,19 +55,22 @@ const DirectorComptPageIndex = ()=>{
                 <section className="ContainerFormatPages">
                     <MenuComponent DatasOfMenu= {DataOfMEnu}/>
                     <div className="constainerDatasNav">
-                    <NavBarAuthPages title="Communications" message="Communications Publiées"/>
-                        <div className="containerDatas">
-
-                        </div> 
+                        <NavBarAuthPages title="Communiqués" message="Communiqués de l'établissement"/>
+                        <div>
+                            <div className="ContainerAllCardNews mt-news">
+                                {
+                                    AllNews.map((value:any, index:any)=><NewsCard title={value.title} text={value.Content} time={value.time} key={index}/> )
+                                }
+                            </div>
+                        </div>
                     </div>
                 </section>
                 :
                 <div className="LoaderPage">
                     <Loading/>
-                    <span>Chargement...</span>
+                    <span>Patientez...</span>
                 </div>
             }
-            
         </>
     )
 };

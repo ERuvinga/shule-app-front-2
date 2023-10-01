@@ -20,6 +20,12 @@ import NewsCard from "@/src/Components/NewsCard";
 const DirectorInfosPageIndex = ()=>{
     const Router = useRouter();
     const [statePage, setStatePage] = useState(false);
+    const [AllNews, setAllNews] = useState([]);
+
+    //Atoms
+    const LinkToApi:any = useRecoilValue(Link_toApi);
+    const [UserAuth,setUaseAuth]:any = useRecoilState(AuthUser);
+    const [itemMenuSelected, setItemMenuSelected] = useRecoilState(SelectedMenuItems);
 
     // data of Menu
     const DataOfMEnu = [
@@ -45,35 +51,25 @@ const DirectorInfosPageIndex = ()=>{
         }
     ]
 
-    const NewsTab = [
-        {
-            Date:1233345666777777,
-            Title:"Examen Premier Semestre",
-            Content:"Exercice 3 Ecrire un programme qui permet de calculer le solde de 5 enseignants, le programme doit stocker le nom de l'enseignant, les cours dispensés, le solde. Chaque enseignant beneficie d'une collation de 50$ pour la fete de fin d'année , le programme doit calculer le montant global à decaisser de ses 5 enseignants dont chaque ensignant est payait 120$"
-        },
-        {
-            Date:1233345627617777,
-            Title:"Frais Scolaires",
-            Content:"creer un programme qui permet de calculer les pourcentage des etudiants et doit recuperer le nom, la promotion, le departement, le matricule et l'annee academique des etudiants, cet meme programme devra stocker les points, les maximums selon les departements et calculer les pourcentages de chaque etudiant le programme limitera de 50 etudiants pour commencer a enregistrer le departement"
-        },
-        {
-            Date:1233345666777777,
-            Title:"Proclammation resultat odjidjd",
-            Content:"Ecrire un programme qui calcul la somme de deux nombres et afficher la valeur de retour le programme doit calculer la valeur de ces deux nombres."
-        },
-    ]
-
-    //Atoms
-    const LinkToApi:any = useRecoilValue(Link_toApi);
-    const [UserAuth,setUaseAuth]:any = useRecoilState(AuthUser);
-    const [itemMenuSelected, setItemMenuSelected] = useRecoilState(SelectedMenuItems);
-
     useEffect(()=>{
         if(!itemMenuSelected){
-            setItemMenuSelected(4); // if reloading page
+            setItemMenuSelected(3); // if reloading page
         }
         withAuth(LinkToApi, localStorage.getItem("TokenUser"), setStatePage, setUaseAuth, UserAuth, Router); // check if token of user is valid
     },[]);
+
+    useEffect(()=>{
+        fetch(`${LinkToApi.localLink}/News`)
+        .then((result)=>{
+            if(result.ok){
+                result.json().then((datas)=>{
+                    //console.log(datas);
+                    setAllNews(datas.News);
+                })
+            }
+        })
+        .catch((error)=> console.log(error))
+    },[])
     return(
         <>
             <HeadPages/>
@@ -89,7 +85,7 @@ const DirectorInfosPageIndex = ()=>{
                             </div>
                             <div className="ContainerAllCardNews">
                                 {
-                                    NewsTab.map((value:any, index:any)=><NewsCard title={value.Title} text={value.Content} time={value.Date} key={index}/> )
+                                    AllNews.map((value:any, index:any)=><NewsCard title={value.title} text={value.Content} time={value.time} key={index}/> )
                                 }
                             </div>
                         </div>
