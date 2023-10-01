@@ -1,7 +1,8 @@
-
 // content function check Autentifications user
-    // fuction cheking if User Aoutoriz to display this page
-    const withAuth = (api_link:any, Localtoken:any, setStatePage:any, setUaseAuth:any, UserAuth:any, Router: any) =>{
+
+// fuction cheking if User Aoutoriz to display this page
+const withAuth = (api_link:any, Localtoken:any, setStatePage:any, setUaseAuth:any, UserAuth:any, Router: any) =>{
+        const ActualiUrl = window.location.href;
 
         fetch(`${api_link.localLink}/AuthUser`, {
             method: "POST",
@@ -19,6 +20,8 @@
                              }
                         else {
                             if(!UserAuth){ // if no user saved
+                                console.log(ActualiUrl);
+                                console.log(user.userFund)
                                 setUaseAuth(user.userFund);
                             }
                             setStatePage(true);
@@ -33,7 +36,7 @@
             })
 }
 
-    export{
+export {
         withAuth
     }
     

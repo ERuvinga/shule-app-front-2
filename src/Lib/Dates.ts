@@ -1,4 +1,70 @@
-    // function Convert Number moth to String
+// file content function convert number Date time to String value useable in UI
+
+const OneWeekMs = 604800000;
+const OneDayMs = 86400000;
+enum FormatDay {long= 0, short};
+
+const DayToString = (day:number, formatterDay: number) => {
+    let dayString = " ";
+    if(formatterDay === FormatDay.long){
+        switch(day){
+            case 0:
+                dayString = "Dimanche"
+                break;
+            case 1:
+                dayString = "Lundi"
+                break;
+            case 2:
+                dayString = "Mardi"
+                break;
+            case 3:
+                dayString = "Mercredi"
+                break;
+            case 4:
+                dayString = "Jeudi"
+                break;
+            case 5:
+                dayString = "Vendredi"
+                break;
+            case 6:
+                dayString = "Samedi"
+                break;
+            }        
+    }
+
+    else{
+        switch(day){
+            case 0:
+                dayString = "Dim"
+                break;
+            case 1:
+                dayString = "Lun"
+                break;
+            case 2:
+                dayString = "Mar"
+                break;
+            case 3:
+                dayString = "Mer"
+                break;
+            case 4:
+                dayString = "Jeu"
+                break;
+            case 5:
+                dayString = "Ven"
+                break;
+            case 6:
+                dayString = "Sam"
+                break;
+            }        
+    }
+
+
+    return dayString;
+};
+
+
+
+// function Convert Number moth to String
 const monthNumberToString = (month:number)=>{
         let monthString = "";
         switch(month){
@@ -41,7 +107,39 @@ const monthNumberToString = (month:number)=>{
             }
             return monthString;
     }
+    
+    const PayDateFunction = (LastTimePayed: number)=> {
+        const timeNow = new Date(Date.now()); //save now time
+        const userLastPayedTime = new Date(LastTimePayed);
+        const OneWeekAfter = new Date(LastTimePayed + OneWeekMs); // save date of after One Week  
+        let dataToDisplay = '';
+    
+            if(timeNow.valueOf() < OneWeekAfter.valueOf()){
+                const numberDay : number = parseInt(((Date.now() - LastTimePayed)/OneDayMs).toString());
+                switch(numberDay){
+                    case 0:
+                        if(userLastPayedTime.getDate() === timeNow.getDate())
+                            dataToDisplay = `Aujourd'hui à ${userLastPayedTime.getHours()}:${userLastPayedTime.getMinutes()}`;
+                        else                        
+                            dataToDisplay = `hier à ${userLastPayedTime.getHours()}:${userLastPayedTime.getMinutes()}`;
+                        break;
+                    case 1:
+                        dataToDisplay = `hier à ${userLastPayedTime.getHours()}:${userLastPayedTime.getMinutes()}`;
+                        break;   
+                    default :
+                        dataToDisplay = `${DayToString(userLastPayedTime.getDay(),FormatDay.short)} à ${userLastPayedTime.getHours()}:${userLastPayedTime.getMinutes()}`;
+                        break;              
+                }            
+            }
+    
+            else{
+                dataToDisplay = `${userLastPayedTime.getDate()} ${monthNumberToString(userLastPayedTime.getMonth())} ${userLastPayedTime.getFullYear()} à ${userLastPayedTime.getHours()}:${userLastPayedTime.getMinutes()}`;
+            }
+    
+        return dataToDisplay;
+    };
 
     export {
-        monthNumberToString
+        monthNumberToString,
+        PayDateFunction
     }
