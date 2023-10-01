@@ -67,11 +67,6 @@ const DirectorComptPageIndex = ()=>{
             })
     },[ReloadAllDatas]);
 
-    useEffect(()=>{
-        console.log(AllStudent);
-        console.log(UserFilters);
-    },[UserFilters])
-    
     return(
         <>
             <HeadPages/>

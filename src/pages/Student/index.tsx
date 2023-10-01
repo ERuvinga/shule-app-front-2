@@ -59,7 +59,7 @@ const StudentPageIndex = ()=>{
         <>
             <HeadPages/>
             {
-                statePage ?
+                (statePage || UserAuth) ?
                 <section className="ContainerFormatPages">
                     <MenuComponent DatasOfMenu= {DataOfMEnu}/>
                     <div className="constainreDatas">

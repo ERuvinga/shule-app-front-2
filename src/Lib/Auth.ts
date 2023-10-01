@@ -21,14 +21,64 @@ const withAuth = (api_link:any, Localtoken:any, setStatePage:any, setUaseAuth:an
                         else {
                             if(!UserAuth){ // if no user saved
                                 console.log(ActualiUrl);
-                                console.log(user.userFund)
-                                setUaseAuth(user.userFund);
+                                console.log(user.userFund.typeAccount);
+                                switch(user.userFund.typeAccount){// checking Type Account
+                                    case "Director":
+                                        switch(user.userFund.task.funct){
+                                            case "DIRECTEUR":
+                                                if(ActualiUrl.includes("/Director")){
+                                                    console.log("Autorisation Accordé Director");
+                                                    setStatePage(true);
+                                                    setUaseAuth(user.userFund);
+                                                }
+                                                else{
+                                                    console.log(`Acces refusé : ${ActualiUrl}`);
+                                                    Router.push("/Login");
+                                                } 
+                                            break;
+                                            
+                                            case "COMPTABLE":
+                                                if(ActualiUrl.includes("/Comptable")){
+                                                    console.log("Autorisation Accordé Comptable");
+                                                    setStatePage(true);
+                                                    setUaseAuth(user.userFund);
+                                                }
+                                                else{
+                                                    console.log(`Acces refusé : ${ActualiUrl}`);
+                                                    Router.push("/Login");
+                                                } 
+                                            break;                                                
+                                        }
+                                    break;
+
+                                    case "Student":
+                                        if(ActualiUrl.includes("/Student")){
+                                            console.log("Autorisation Accordé Student");
+                                            setStatePage(true);
+                                            setUaseAuth(user.userFund);
+                                        }
+                                        else{
+                                            console.log(`Acces refusé : ${ActualiUrl}`);
+                                            Router.push("/Login");
+                                        }
+                                    break;
+
+                                    case "Teacher":
+                                        if(ActualiUrl.includes("/Teacher")){
+                                            console.log("Autorisation Accordé Teacher");
+                                            setStatePage(true);
+                                            setUaseAuth(user.userFund);
+                                        }
+                                        else{
+                                            console.log(`Acces refusé : ${ActualiUrl}`);
+                                            Router.push("/Login");
+                                        }
+                                    break;
+                                }
                             }
-                            setStatePage(true);
                         }
 
                     })
-
             })
             .catch(error => {
                 console.error(error);

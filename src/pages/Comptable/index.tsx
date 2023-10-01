@@ -100,7 +100,7 @@ const DirectorComptPageIndex = ()=>{
             {
                 (statePage || UserAuth) ?
                 <section className="ContainerFormatPages">
-                    <MenuComponent DatasTabOfMenu= {DataOfMEnu}/>
+                    <MenuComponent DatasOfMenu= {DataOfMEnu}/>
                     <div className="constainerDatasNav">
                         <NavBarAuthPages title="Comptabilité" message="Detail sur les informations de payement"/>
                         <div className="containerDatas">
