@@ -97,7 +97,7 @@ const DirectorPageIndex = ()=>{
             item:1
         },
         {
-            label:"Eleves",
+            label:"Ecoliers",
             item:2
         }
 
