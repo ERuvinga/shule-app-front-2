@@ -1,11 +1,9 @@
 /*Cotent input Component*/
 import {useEffect, useState} from "react";
-import { useRecoilValue, useSetRecoilState, useRecoilState, useResetRecoilState } from "recoil";
-import { useRouter } from "next/router";
-import Loading from "../Loading";
+import { useRecoilState} from "recoil";
 
 //state
-import { NewTeacherDatas} from "@/src/States/Director";
+import { NewTeacherDatas, NewStudentDatas} from "@/src/States/Director";
 
 interface proprietyInput {
     placeholderText : String|any,
@@ -15,53 +13,80 @@ interface proprietyInput {
     identity? : number|any,
 }
 
-
-// const sendRegisterData = (datasOfUSer: any, url:String, setLoading:any, setMessageServer:any, Router:any) =>{
-
-//      //Send datas to api
-//      setLoading(true);// Activation Animation Component
-//      fetch(`${url}/Authentification/ActiveAccount`, {
-//             method:"POST",
-//             headers:{
-//                 'Accept':'application/json',
-//                 'Content-type':'application/json; charset=UTF-8'
-//             },
-//             body: JSON.stringify(datasOfUSer)
-//             }
-//         )
-//         .then((result)=>{
-//             setLoading(false);// after fetching data desactive Loading Component
-//             if(result.ok){
-//                 result.json().then((datas)=> {
-//                     if(datas.Updating){
-//                         Router.push("/Login");
-//                     }
-//                 })
-//             }
-    
-//             else{
-//                 result.json().then((datas)=>{
-//                     setMessageServer({
-//                         content:datas.msg,
-//                         stateMsg:true
-//                     })
-//                 })
-//             }
-//         })
-//         .catch(error =>{console.log(error)});
-// }
-
-
-
 const InputCreatedNewAccount = (datas:proprietyInput) =>{
     // states variables
     const [platformInfos, setPlatformInfos] = useState("");
-    const [InValidClassname, setInValidClassname] = useState("");
-    const [TeacherDatas, setTeacherDatas]:any = useRecoilState(NewTeacherDatas)
+    const [TeacherDatas, setTeacherDatas]:any = useRecoilState(NewTeacherDatas);
+    const [StudentDatas, setStudentDatas]:any = useRecoilState(NewStudentDatas);
 
     const dataOfNewStudentForm = (e:any, idField:number) =>{
-        console.log(e.target.value)
+        switch(idField){
+            case 1:{ 
+                setStudentDatas({
+                    ...StudentDatas,
+                    firstName:e.target.value
+                });
+            break;
+            }
+    
+            case 2:{
+                setStudentDatas({
+                    ...StudentDatas,
+                    SecondName:e.target.value
+                });
+            break;
+            }
+            case 3:{
+                setStudentDatas({
+                    ...StudentDatas,
+                    LastName:e.target.value
+                });
+            break;
+            }
 
+            case 4:{
+                setStudentDatas({
+                    ...StudentDatas,
+                    BornDay:e.target.value
+                });
+            break;
+            }
+            case 5:{
+                setStudentDatas({
+                    ...StudentDatas,
+                    BordLocation:e.target.value
+                });
+            break;
+            }
+            case 6:{
+                setStudentDatas({
+                    ...StudentDatas,
+                    RespFirstName:e.target.value
+                });
+            break;
+            }
+            case 7:{
+                setStudentDatas({
+                    ...StudentDatas,
+                    RespSecondName:e.target.value
+                });
+            break;
+            }
+            case 8:{
+                setStudentDatas({
+                    ...StudentDatas,
+                    RespEmail:e.target.value
+                });
+            break;
+            }
+            case 9:{
+                setStudentDatas({
+                    ...StudentDatas,
+                    RespTel:e.target.value
+                });
+            break;
+            }
+        }
     }    
     const datasOfNewTeacherForm = (e:any, idField:number)=>{
         switch(idField){
@@ -83,7 +108,7 @@ const InputCreatedNewAccount = (datas:proprietyInput) =>{
             case 3:{
                 setTeacherDatas({
                     ...TeacherDatas,
-                    email:e.target.value
+                    LastName:e.target.value
                 });
             break;
             }
@@ -104,6 +129,8 @@ const InputCreatedNewAccount = (datas:proprietyInput) =>{
             }
         }
     }
+    console.log(StudentDatas);
+    console.log(TeacherDatas);
 
     useEffect(()=>{
         setPlatformInfos(navigator.userAgent);
@@ -113,9 +140,9 @@ const InputCreatedNewAccount = (datas:proprietyInput) =>{
     
             <div className="groupe_form">
                 <label htmlFor={datas.labelText}>{datas.labelText}</label>
-                <div className={InValidClassname}>
+                <div>
                     <input 
-                        className={platformInfos.match(/iPhone/) ? ( InValidClassname !== ''? "invalidEmailInput" :"_iPhone_input"):(InValidClassname !== '' ?"invalidEmailInput":"log_reg_input")} 
+                        className={platformInfos.match(/iPhone/) ? "_iPhone_input":"log_reg_input"} 
                         type={datas.type} 
                         placeholder={datas.placeholderText} 
                         id={datas.labelText}

@@ -99,6 +99,10 @@
     outline: none;
 }
 
+.titleForm select:hover{
+    cursor: pointer;
+}
+
 .containerNewsaccount{
     width: 99%;
     height: 100vh;

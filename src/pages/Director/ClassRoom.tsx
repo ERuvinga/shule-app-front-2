@@ -5,7 +5,7 @@ import { useRecoilValue, useRecoilState } from "recoil";
 //atoms 
 import { Link_toApi } from "@/src/States/LoginRegisterStates";
 import { AuthUser } from "@/src/States/UserAoth";
-import {SelectedMenuItems, NewTeacherDatas} from "@/src/States/Director"
+import {SelectedMenuItems, NewTeacherDatas, NewStudentDatas} from "@/src/States/Director"
 
 // lib
 import { withAuth } from "@/src/Lib/Auth";
@@ -28,9 +28,32 @@ const DirectorClassPageIndex = ()=>{
     const LinkToApi:any = useRecoilValue(Link_toApi);
     const [UserAuth,setUaseAuth]:any = useRecoilState(AuthUser);
     const [itemMenuSelected, setItemMenuSelected] = useRecoilState(SelectedMenuItems);
-    const [DatasOfTeacher, setDatasOfTeacher] = useRecoilState(NewTeacherDatas);
+    const [DatasOfTeacher, setDatasOfTeacher]:any = useRecoilState(NewTeacherDatas);
+    const [DatasOfStudent, setDatasOfStudent]:any = useRecoilState(NewStudentDatas);
 
     const SendNewTeacherDatas = ()=>{
+        const Promo:any = document.querySelector("#PromotionSelectedTeacher");
+        const ClassTeaching:any = document.querySelector("#ClassSelectedTecher");
+
+        setDatasOfTeacher({
+            ...DatasOfTeacher,
+            promition:Promo.value,
+            classTeacher:ClassTeaching.value
+        });
+
+        console.log(DatasOfTeacher);
+    };
+
+    const SendNewStudentDatas = ()=>{
+        const Promo:any = document.querySelector("#PromotionSelectedStudent");
+        const ClassTeaching:any = document.querySelector("#ClassSelectedStudent");
+
+        setDatasOfStudent({
+            ...DatasOfStudent,
+            promition:Promo.value,
+            classStudent:ClassTeaching.value
+        });
+
         console.log(DatasOfTeacher);
     }
     // data of Menu
@@ -117,8 +140,8 @@ const DirectorClassPageIndex = ()=>{
                                             <span className="TitleBloc">Titeur de L`Ecolier</span>
                                             <InputCreatedNewAccount labelText="nom" placeholderText="Kahambu" form_name="Student" type="text"  identity={6}/>
                                             <InputCreatedNewAccount labelText="post-nom" placeholderText="Ruvinga" form_name="Student" type="text"  identity={7}/>
-                                            <InputCreatedNewAccount labelText="email" placeholderText="email" form_name="Student" type="text"  identity={8}/>
-                                            <InputCreatedNewAccount labelText="Tel" placeholderText="" form_name="Student" type="text"  identity={10}/>
+                                            <InputCreatedNewAccount labelText="email" placeholderText="@email" form_name="Student" type="text"  identity={8}/>
+                                            <InputCreatedNewAccount labelText="Tel" placeholderText="+243" form_name="Student" type="text"  identity={9}/>
                                             
                                         </div>           
                                     </div>
@@ -128,6 +151,9 @@ const DirectorClassPageIndex = ()=>{
                                             <span className="descr"> Informations de l`écolier</span>
                                         </div>
                                         <Image width={400} height={400} src="/imgs/AuthImgs/NewStudent.png" className="imgDescription" alt="new student"/>
+                                        <div className="containerBtn">
+                                            <button disabled={false} onClick={()=>SendNewStudentDatas()} className={false ? "disabledBtn" : "form_send_btn"}>Envoyer</button>
+                                        </div>                                   
                                     </div>
                                 </div>:
                                 <div className="containerNewsaccount">

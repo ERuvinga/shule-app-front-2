@@ -185,6 +185,24 @@ const NewTeacherDatas = atom({
     }
 });
 
+const NewStudentDatas = atom({
+    key:"NewStudentDatas",
+    default:{
+        firstName:"",
+        SecondName:"",
+        LastName:"",
+        BornDay:"",
+        BordLocation:"",
+        promition:"",
+        classStudent:"",
+
+        RespFirstName:"",
+        RespSecondName:"",
+        RespTel:"",
+        RespEmail:"",
+    }
+});
+
 export {
     SelectedMenuItems,
     AllUserStates,
@@ -197,5 +215,6 @@ export {
     SelectedClass,
     DataOfMenuState,
     DataOfMenuComptable,
-    NewTeacherDatas
+    NewTeacherDatas,
+    NewStudentDatas
 }
