@@ -107,8 +107,9 @@
 .Viewdatas .ContainerTab{
     display: block;
     width: 100%;
-    max-height: 300px;
+    max-height: 80vh;
     overflow-y: auto;
+    z-index:0
 }
 
 
@@ -119,7 +120,7 @@
 }
 
 .ContainerTab::-webkit-scrollbar-thumb {
-    background-color: #E2E3E9;
+    background-color: #787777c0;
     border-radius: 10px;
 }
 
@@ -144,7 +145,7 @@
 
 .Viewdatas .DatasComponents .CardUser .ContainerActions{
     position: absolute;
-    top: 14px;
+    top: -40px;
     right: 50px;
     z-index: 1;
 

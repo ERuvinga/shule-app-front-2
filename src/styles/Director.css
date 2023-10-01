@@ -66,3 +66,136 @@
     font-size: .7em;
     text-align: center;
 }
+
+.titleForm{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px;
+    margin: auto;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow:  0 0 5px 0 #D7DFE0 ;
+    margin-top: 20px;
+    width: 99%;
+}
+
+.titleForm span{
+    color: #324447;
+    font-family: poppinBlack;
+    font-size: .8em;
+    display: flex;
+    align-items: center;
+}
+
+.titleForm select{
+    border: 2px #D7DFE0 solid;
+    padding: 5px 5px;
+    color: #324447;
+    font-size: .7em;
+    border-radius: 5px;
+}
+
+.titleForm select:focus{
+    outline: none;
+}
+
+.containerNewsaccount{
+    width: 99%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    overflow-y: auto;
+}
+
+.containerNewsaccount .Formulaire{
+    height: fit-content;
+    margin: 10px 0;
+    width: 45%;
+    overflow-y: auto;
+}
+
+
+.containerNewsaccount::-webkit-scrollbar {
+    background-color: #F9F9FC;
+    width: 5px;
+    border-radius: 10px;
+}
+
+.containerNewsaccount::-webkit-scrollbar-thumb {
+    background-color: #787777c0;
+    border-radius: 10px;
+}
+
+.containerNewsaccount::-webkit-scrollbar-button {
+    background-color: #E2E3E9;
+    height: 5px;
+    border-radius: 10px;
+}
+
+
+.containerNewsaccount .StudentFormulaire{
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.StudentFormulaire .TitleBloc{
+    display: block;
+    text-align: center;
+    font-size: .9em;
+    color: #787777;
+    font-weight: bold;
+}
+
+.containerNewsaccount .DescriptionDatas{
+    width: 55%;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerNewsaccount .DescriptionDatas .stapeDescr{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        color: #787777;
+        font-size: .8em;
+}
+.containerNewsaccount .DescriptionDatas .stape{
+    display: flex;
+    align-items: center;
+    color: #728A8F;
+    font-weight: bold;
+    gap: 5px;
+    padding: 5px 10px;
+    background-color: rgba(188, 237, 188, 0.3);
+    width: fit-content;
+    border-radius: 4px;
+}
+
+.containerNewsaccount .DescriptionDatas .Icone{
+    width: 25px;
+}
+
+.containerNewsaccount .DescriptionForm .imgDescription{
+    width: 100%;
+}
+.containerNewsaccount .Formulaire{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.containerNewsaccount .containerBtn{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}

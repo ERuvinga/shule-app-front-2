@@ -125,6 +125,7 @@
 }
 
 .constainerDatasNav .NavBarInAuthPages{
+    max-height: 80px;
     width: 100%;
     background-color: white;
     padding: 10px 20px;

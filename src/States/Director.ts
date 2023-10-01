@@ -171,6 +171,20 @@ const DirectorStudentsFilter = selector({
     }
 });
 
+// Form New Users Datas
+const NewTeacherDatas = atom({
+    key:"NewTeacherDatas",
+    default:{
+        firstName:"",
+        SecondName:"",
+        LastName:"",
+        email:"",
+        tel:"",
+        promition:"",
+        classTeacher:"",
+    }
+});
+
 export {
     SelectedMenuItems,
     AllUserStates,
@@ -182,5 +196,6 @@ export {
     SelectedPromotion,
     SelectedClass,
     DataOfMenuState,
-    DataOfMenuComptable
+    DataOfMenuComptable,
+    NewTeacherDatas
 }
