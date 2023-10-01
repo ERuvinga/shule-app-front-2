@@ -203,3 +203,99 @@
     display: flex;
     justify-content: center;
 }
+
+/*News*/
+.LinkToNewS{
+    padding: 10px 0;
+    margin: 0 5%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.LinkToNewS .newPub{
+    color: white;
+    background-color: #728A8F;
+    font-size: .8em;
+    padding: 5px 15px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px 0 #D7DFE0;
+    transition: all .4s ease-in-out;
+}
+.LinkToNewS .newPub:hover{
+    opacity: .8;
+}
+
+
+.ContainerAllCardNews{
+    height: 100vh;
+    width: 98%;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.CardNews{
+    width: 30%;
+    max-height: 280px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 4px 0 #D7DFE0;
+}
+
+.CardNews .decor{
+    width: 100%;
+    height: 100px;
+    border-radius:5px 5px 0 0;
+    background-color: #D7DFE0;
+}
+
+.CardNews .ContainerDatas{
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0;
+}
+
+.CardNews .TitleCard{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.CardNews .TitleCard .title{
+    font-size: .8em;
+    font-family: poppinBlack;
+    color: #728A8F;
+    max-width: 70%;
+    max-height: 20px;
+    overflow: hidden;
+}
+
+.CardNews .TitleCard .date{
+    color: #787777;
+    font-size: .7em;
+}
+
+.CardNews .contanierMsg{
+    font-size: .75em;
+    color: #787777;
+    margin: 5px 0;
+    text-align: left;
+    height: fit-content;
+    height: 90px;
+    overflow-y:hidden;
+}
+.CardNews .ContainerLink{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.CardNews .ContainerLink .Link{
+    padding: 5px 15px;
+    font-size: .8em;
+    color: white;
+    background-color: #728A8F;
+    border-radius: 4px;
+    box-shadow: 0 0 4px 0 #D7DFE0 ;
+}
