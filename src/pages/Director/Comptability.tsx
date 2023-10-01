@@ -114,8 +114,8 @@ const DirectorComptPageIndex = ()=>{
                                                                                 name={value.allName}
                                                                                 statusCompte={value.stateAccount}
                                                                                 promotion={`${value.registerDatas.PROMOTION}-${value.registerDatas.CLASS}`}
-                                                                                DateUser={125353633737}
-                                                                                balance={""}
+                                                                                balance={`${value.valuePayed}$`}
+                                                                                DateUser={value.LastDatePayed}
                                                                     />)
                                                                         }
                                                                 </tbody>

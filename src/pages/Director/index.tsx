@@ -34,7 +34,7 @@ const DirectorPageIndex = ()=>{
     const setAllUsers = useSetRecoilState(AllUserStates)
     const LinkToApi:any = useRecoilValue(Link_toApi);
     const [UserAuth,setUaseAuth]:any = useRecoilState(AuthUser);
-    const DataOfMEnu = useRecoilValue(DataOfMenuState);
+    const DataOfMEnuDirector = useRecoilValue(DataOfMenuState);
     const UserFilters:any = useRecoilValue(FilterTypeAccountsUser);
 
     const DataListView = ()=>{
@@ -137,7 +137,7 @@ const DirectorPageIndex = ()=>{
             {
                 (statePage || UserAuth) ?
                 <section className="ContainerFormatPages">
-                    <MenuComponent DatasOfMenu= {DataOfMEnu}/>
+                    <MenuComponent DatasOfMenu={DataOfMEnuDirector}/>
                     <div className="constainerDatasNav">
                         <NavBarAuthPages title="DashBoard" message="Detail sur les informations de l'etablissement"/>
                         <div className="containerDatas">
