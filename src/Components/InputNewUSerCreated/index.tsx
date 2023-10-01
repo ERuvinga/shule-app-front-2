@@ -129,9 +129,6 @@ const InputCreatedNewAccount = (datas:proprietyInput) =>{
             }
         }
     }
-    console.log(StudentDatas);
-    console.log(TeacherDatas);
-
     useEffect(()=>{
         setPlatformInfos(navigator.userAgent);
     },[]);

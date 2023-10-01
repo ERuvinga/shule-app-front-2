@@ -216,7 +216,7 @@
     color: white;
     background-color: #728A8F;
     font-size: .8em;
-    padding: 5px 15px;
+    padding: 8px 15px;
     border-radius: 4px;
     box-shadow: 0 0 5px 0 #D7DFE0;
     transition: all .4s ease-in-out;
@@ -225,15 +225,35 @@
     opacity: .8;
 }
 
-
 .ContainerAllCardNews{
-    height: 100vh;
+    max-height: 100vh;
     width: 98%;
     margin: auto;
     padding: 10px;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow: auto;
 }
+
+
+.ContainerAllCardNews::-webkit-scrollbar {
+    background-color: #F9F9FC;
+    width: 5px;
+    border-radius: 10px;
+}
+
+.ContainerAllCardNews::-webkit-scrollbar-thumb {
+    background-color: #787777c0;
+    border-radius: 10px;
+}
+
+.ContainerAllCardNews::-webkit-scrollbar-button {
+    background-color: #E2E3E9;
+    height: 5px;
+    border-radius: 10px;
+}
+
 
 .CardNews{
     width: 30%;
@@ -241,6 +261,7 @@
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 4px 0 #D7DFE0;
+    margin-bottom: 20px;
 }
 
 .CardNews .decor{
@@ -298,4 +319,78 @@
     background-color: #728A8F;
     border-radius: 4px;
     box-shadow: 0 0 4px 0 #D7DFE0 ;
+}
+
+/*New Pub*/
+.ContainerNewsInfo{
+    width: 70%;
+    margin: auto;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.ContainerNewsInfo .TiltePub{
+    width: 50%;
+    margin: 20px 0;
+}
+
+.ContainerNewsInfo .TextEditable{
+    margin: 0 20px;
+    color: #787777;
+    font-size: .9em;
+    background-color: white;
+    box-shadow:  0 0 3px 0 #D7DFE0;
+    border-radius: 4px; 
+    padding: 10px;
+    text-align: left;
+    min-height: 150px;
+    max-height: 300px;
+    overflow: auto;   
+}
+
+.ContainerNewsInfo .TextEditable::-webkit-scrollbar {
+    display: none;
+}
+
+.ContainerNewsInfo .TextEditable::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+.ContainerNewsInfo .TextEditable::-webkit-scrollbar-button {
+    display: none;
+}
+
+.ContainerNewsInfo .TextEditable:focus{
+    outline: none;
+}
+
+.ContainerNewsInfo .BtnsLink{
+    margin: 5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.ContainerNewsInfo .BtnsLink a, .ContainerNewsInfo .BtnsLink button{
+    font-size: .9em;
+    padding: 6px 18px;
+    border-radius: 4px;
+    box-shadow: 0 0 4px 0 #D7DFE0;
+}
+
+.ContainerNewsInfo .BtnsLink .returnBtn{
+    color: #728A8F;
+    border: solid 1px #728A8F;
+}
+
+.ContainerNewsInfo .BtnsLink .SendBtn{
+    background-color: #728A8F;
+    color: white;
+}
+.mt-news{
+    margin-top: 20px;
 }

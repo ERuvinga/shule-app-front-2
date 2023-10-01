@@ -203,6 +203,15 @@ const NewStudentDatas = atom({
     }
 });
 
+const NewsPublication = atom({
+    key:"NewsPublication",
+    default:{
+        time:0,
+        content:"",
+        Title:"",
+    }
+});
+
 export {
     SelectedMenuItems,
     AllUserStates,
@@ -216,5 +225,6 @@ export {
     DataOfMenuState,
     DataOfMenuComptable,
     NewTeacherDatas,
-    NewStudentDatas
+    NewStudentDatas,
+    NewsPublication
 }
