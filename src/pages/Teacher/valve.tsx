@@ -16,7 +16,7 @@ import Loading from "@/src/Components/Loading";
 import MenuComponent from "@/src/Components/Menu";
 import NavBarAuthPages from "@/src/Components/NavBarAuthPages";
 import NewsCard from "@/src/Components/NewsCard";
-import { DataOfStudentMenu } from "@/src/States/Student";
+import { DataOfTeachertMenu } from "@/src/States/Teacher";
 
 const StudentNewsPage = ()=>{
     const Router = useRouter();
@@ -27,11 +27,11 @@ const StudentNewsPage = ()=>{
     const LinkToApi:any = useRecoilValue(Link_toApi);
     const [UserAuth,setUaseAuth]:any = useRecoilState(AuthUser);
     const [itemMenuSelected, setItemMenuSelected] = useRecoilState(SelectedMenuItems);
-    const DataOfMenu = useRecoilValue(DataOfStudentMenu);
+    const DataOfMenu = useRecoilValue(DataOfTeachertMenu);
 
     useEffect(()=>{
         if(!itemMenuSelected){
-            setItemMenuSelected(3); // if reloading page
+            setItemMenuSelected(2); // if reloading page
         }
         withAuth(LinkToApi, localStorage.getItem("TokenUser"), setStatePage, setUaseAuth, UserAuth, Router); // check if token of user is valid
     },[]);

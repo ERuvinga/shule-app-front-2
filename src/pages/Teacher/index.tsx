@@ -15,34 +15,16 @@ import HeadPages from "@/src/Components/Head";
 import Loading from "@/src/Components/Loading";
 import MenuComponent from "@/src/Components/Menu";
 import NavBarAuthPages from "@/src/Components/NavBarAuthPages";
+import { DataOfTeachertMenu } from "@/src/States/Teacher";
 
 const TeacherPageIndex = ()=>{
     const Router = useRouter();
     const [statePage, setStatePage] = useState(false);
-
-    // data of Menu
-    const DataOfMEnu = [
-        {
-            label:"Classe",
-            Link:"/Teacher",
-            icone:"UserGroupIcon"
-        },
-        {
-            label:"Cotes",
-            Link:"/Teacher/Cotes",
-            icone:"ClipboardIcon"
-        },
-        {
-            label:"Valve",
-            Link:"/Teacher/Informations",
-            icone:"ChatBubbleBottomCenterTextIcon"
-        }
-    ]
-
     //Atoms
     const LinkToApi:any = useRecoilValue(Link_toApi);
-    const [UserAuth,setUaseAuth]:any = useRecoilState(AuthUser);
+    const [UserAuth, setUaseAuth]:any = useRecoilState(AuthUser);
     const [itemMenuSelected, setItemMenuSelected] = useRecoilState(SelectedMenuItems);
+    const DataOfMenu = useRecoilValue(DataOfTeachertMenu);
 
     useEffect(()=>{
         if(itemMenuSelected){
@@ -54,10 +36,10 @@ const TeacherPageIndex = ()=>{
         <>
             <HeadPages/>
             {
-                statePage ?
+                (statePage || UserAuth) ?
                 <section className="ContainerFormatPages">
-                    <MenuComponent DatasOfMenu= {DataOfMEnu}/>
-                    <div className="constainreDatas">
+                    <MenuComponent DatasOfMenu= {DataOfMenu}/>
+                    <div className="constainerDatasNav">
                         <NavBarAuthPages title="Comptabilité" message="Detail sur le payement de l'eleve"/>
                     </div>
                 </section>
