@@ -15,9 +15,9 @@ import HeadPages from "@/src/Components/Head";
 import Loading from "@/src/Components/Loading";
 import MenuComponent from "@/src/Components/Menu";
 import NavBarAuthPages from "@/src/Components/NavBarAuthPages";
-import { DataOfTeachertMenu } from "@/src/States/Teacher";
+import { DataOfStudentMenu } from "@/src/States/Student";
 
-const StudentNewsPage = ()=>{
+const StudentClassRoomPage = ()=>{
     const Router = useRouter();
     const [statePage, setStatePage] = useState(false);
 
@@ -25,10 +25,10 @@ const StudentNewsPage = ()=>{
     const LinkToApi:any = useRecoilValue(Link_toApi);
     const [UserAuth, setUaseAuth]:any = useRecoilState(AuthUser);
     const [itemMenuSelected, setItemMenuSelected] = useRecoilState(SelectedMenuItems);
-    const DataOfMenu = useRecoilValue(DataOfTeachertMenu);
+    const DataOfMenu = useRecoilValue(DataOfStudentMenu);
 
     useEffect(()=>{
-        setItemMenuSelected(0); // if reloading page
+        setItemMenuSelected(1); // if reloading page
         withAuth(LinkToApi, localStorage.getItem("TokenUser"), setStatePage, setUaseAuth, UserAuth, Router); // check if token of user is valid
     },[]);
 
@@ -61,4 +61,4 @@ const StudentNewsPage = ()=>{
     )
 };
 
-export default StudentNewsPage;
+export default StudentClassRoomPage;

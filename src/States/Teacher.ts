@@ -12,7 +12,7 @@ const  {atom, selector} = require("recoil");
             },
             {
                 label:"Cotes",
-                Link:"/Teacher/Cotes",
+                Link:"/Teacher/cotes",
                 icone:"ClipboardIcon"
             },
             {

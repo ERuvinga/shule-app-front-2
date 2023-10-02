@@ -28,7 +28,9 @@ const StudentNewsPage = ()=>{
     const DataOfMenu = useRecoilValue(DataOfTeachertMenu);
 
     useEffect(()=>{
-        setItemMenuSelected(0); // if reloading page
+        if(!itemMenuSelected){
+            setItemMenuSelected(1); // if reloading page
+        }
         withAuth(LinkToApi, localStorage.getItem("TokenUser"), setStatePage, setUaseAuth, UserAuth, Router); // check if token of user is valid
     },[]);
 
@@ -42,11 +44,8 @@ const StudentNewsPage = ()=>{
                     <div className="constainerDatasNav">
                         <NavBarAuthPages title="Communiqués" message="Communiqués de l'établissement"/>
                         <div>
-                            <div className="ContainerAllCardNews">
-                                <div className="LoaderPage">
-                                    <Loading/>
-                                    <span>Patientez...</span>
-                                </div>                                
+                            <div className="ContainerAllCardNews border">
+                        
                             </div>
                         </div>
                     </div>
