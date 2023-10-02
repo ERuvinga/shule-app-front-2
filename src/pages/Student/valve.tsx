@@ -5,8 +5,7 @@ import { useRecoilValue, useRecoilState } from "recoil";
 //atoms 
 import { Link_toApi } from "@/src/States/LoginRegisterStates";
 import { AuthUser } from "@/src/States/UserAoth";
-import { SelectedMenuItems } from "@/src/States/Director";
-import { DataOfStudentMenu } from "@/src/States/Student";
+import {SelectedMenuItems} from "@/src/States/Director"
 
 // lib
 import { withAuth } from "@/src/Lib/Auth";
@@ -16,11 +15,13 @@ import HeadPages from "@/src/Components/Head";
 import Loading from "@/src/Components/Loading";
 import MenuComponent from "@/src/Components/Menu";
 import NavBarAuthPages from "@/src/Components/NavBarAuthPages";
-import Image from "next/image";
+import NewsCard from "@/src/Components/NewsCard";
+import { DataOfStudentMenu } from "@/src/States/Student";
 
-const StudentPageIndex = ()=>{
+const StudentNewsPage = ()=>{
     const Router = useRouter();
     const [statePage, setStatePage] = useState(false);
+    const [AllNews, setAllNews] = useState([]);
 
     //Atoms
     const LinkToApi:any = useRecoilValue(Link_toApi);
@@ -28,14 +29,25 @@ const StudentPageIndex = ()=>{
     const [itemMenuSelected, setItemMenuSelected] = useRecoilState(SelectedMenuItems);
     const DataOfMenu = useRecoilValue(DataOfStudentMenu);
 
-    console.log(UserAuth);
     useEffect(()=>{
-        if(itemMenuSelected){
-            setItemMenuSelected(0);
+        if(!itemMenuSelected){
+            setItemMenuSelected(1); // if reloading page
         }
         withAuth(LinkToApi, localStorage.getItem("TokenUser"), setStatePage, setUaseAuth, UserAuth, Router); // check if token of user is valid
     },[]);
 
+    useEffect(()=>{
+        fetch(`${LinkToApi.localLink}/News`)
+        .then((result)=>{
+            if(result.ok){
+                result.json().then((datas)=>{
+                    //console.log(datas);
+                    setAllNews(datas.News);
+                })
+            }
+        })
+        .catch((error)=> console.log(error))
+    },[])
     return(
         <>
             <HeadPages/>
@@ -44,12 +56,12 @@ const StudentPageIndex = ()=>{
                 <section className="ContainerFormatPages">
                     <MenuComponent DatasOfMenu= {DataOfMenu}/>
                     <div className="constainerDatasNav">
-                        <NavBarAuthPages title="Comptabilité" message="Detail sur le payement de l'eleve"/>
-                        <div className="ContainerPaid">
-                            <Image width={500} height={500} src="/imgs/AuthImgs/paid.png" alt="student_Paid"/>
-                            <div className="PaidWrapper">
-                                <span className="TitlePaid">Cette Annee vous Avez deja payé</span>
-                                <span className="paid">{`${UserAuth.valuePayed}$`}</span>
+                        <NavBarAuthPages title="Communiqués" message="Communiqués de l'établissement"/>
+                        <div>
+                            <div className="ContainerAllCardNews mt-news">
+                                {
+                                    AllNews.map((value:any, index:any)=><NewsCard title={value.title} text={value.Content} time={value.time} key={index}/> )
+                                }
                             </div>
                         </div>
                     </div>
@@ -60,9 +72,8 @@ const StudentPageIndex = ()=>{
                     <span>Patientez...</span>
                 </div>
             }
-            
         </>
     )
 };
 
-export default StudentPageIndex;
+export default StudentNewsPage;

@@ -47,14 +47,14 @@ const InputCreatedNewAccount = (datas:proprietyInput) =>{
             case 4:{
                 setStudentDatas({
                     ...StudentDatas,
-                    BornDay:e.target.value
+                    BordLocation:e.target.value
                 });
             break;
             }
             case 5:{
                 setStudentDatas({
                     ...StudentDatas,
-                    BordLocation:e.target.value
+                    BornDay:e.target.value
                 });
             break;
             }
