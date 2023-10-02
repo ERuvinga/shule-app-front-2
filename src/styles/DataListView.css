@@ -1,0 +1,394 @@
+
+/*View Datas*/
+.containerDatas .DataFilterContainer .Viewdatas{
+    position: relative;
+    width: 100%;
+    background-color: white;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 10px;
+    z-index: 0;
+}
+
+.containerDatas .DataFilterContainer .Viewdatas .HeadView{
+    width: 100%;
+    padding: 5px 0;
+    border-bottom: #D7DFE0 solid 1px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Viewdatas .HeadView .InputContent{
+    width: fit-content;
+    max-width: 500px;
+    border-radius: 4px;
+    padding: 4px 10px;
+    display: flex;
+    gap: 5px;
+    border: solid 2px #D7DFE0;
+}
+
+.Viewdatas .HeadView input{
+    color: #787777;
+    font-size: .75em;
+    min-width: 150px;    
+}
+
+.Viewdatas .HeadView input:focus{
+    outline: none;
+
+}
+
+.Viewdatas .HeadView .InputContent .Icone, .Viewdatas .HeadView .RefreshDatas .Icone{
+    width: 20px;
+    color: #787777;
+}
+
+.Viewdatas .HeadView .RefreshDatas .Icone{
+    width: 18px;
+    color: #324447;
+}
+
+.Viewdatas .HeadView .RefreshDatas .numberOfUser{
+    display: flex;
+    align-items: center;
+    font-size: .7em;
+    color: #728A8F;
+}
+
+.Viewdatas .HeadView .RefreshDatas {
+    background-color: #eef4f5;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    gap: 5px;
+    transition: all .2s ease-in-out;
+}
+
+.Viewdatas .HeadView .RefreshDatas:hover{
+    cursor: pointer;
+    box-shadow: 0 0 4px 0 #D7DFE0;
+    border: #728A8F solid 1px;
+}
+
+/*Titles of Datas view*/
+
+.DatasComponents{
+    max-height: 98vh;
+    overflow-y: auto;
+}
+
+.titleDatas{
+    background-color: #eef4f5;
+    border-radius: 4px;
+    padding-bottom:30px ;
+}
+
+.titleDatas th{
+    padding: 10px 0;
+    color: #666565;
+    font-size: .7em;
+    font-weight: normal;
+}
+
+.titleDatas .first{
+    border-radius: 4px 0 0 4px;
+}
+
+.titleDatas .last{
+    border-radius: 0 4px 4px 0;
+}
+
+.Viewdatas .DatasComponents{
+    width: 100%;
+}
+
+.Viewdatas .DatasComponents .rowCardStudentUSer{
+    position: relative;
+}
+
+.Viewdatas .ContainerTab{
+    display: block;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index:0
+}
+
+
+.ContainerTab::-webkit-scrollbar {
+    background-color: #F9F9FC;
+    width: 5px;
+    border-radius: 10px;
+}
+
+.ContainerTab::-webkit-scrollbar-thumb {
+    background-color: #787777c0;
+    border-radius: 10px;
+}
+
+.ContainerTab::-webkit-scrollbar-button {
+    background-color: #E2E3E9;
+    height: 5px;
+    border-radius: 10px;
+}
+
+.Viewdatas .DatasComponents .CardUser td{
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.Viewdatas .DatasComponents .CardUser .Icone{
+    width: 20px;
+    margin: auto;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.Viewdatas .DatasComponents .CardUser .ContainerActions{
+    position: absolute;
+    top: -40px;
+    right: 50px;
+    z-index: 1;
+
+    padding: 10px;
+    box-shadow: 0 0 4px 0 #D7DFE0;
+    background-color: white;
+    transition: all 1s ease-in-out;
+    border-radius: 4px;
+}
+
+.Viewdatas .DatasComponents .CardUser .ContainerActions ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.Viewdatas .DatasComponents .CardUser .ContainerActions .itemsActions{
+    display: flex;
+    gap: 5px;
+    font-size: .8em;
+    color: #787777;
+    transition: all .5s ease-in-out;
+    padding: 3px;
+    border-radius: 5px;
+    border: solid 1px white;
+}
+
+.Viewdatas .DatasComponents .CardUser .ContainerActions .itemsActions:hover{
+    display: flex;
+    gap: 5px;
+    font-size: .8em;
+    color: #728A8F;
+    background-color: #eef4f5;
+    border: solid 1px #D7DFE0;
+}
+
+.Viewdatas .DatasComponents .CardUser .ContainerActions .icone{
+    width: 20px;
+}
+
+.Viewdatas .DatasComponents .CardUser .Icone:hover{
+    width: 20px;
+    margin: auto;
+    background-color: rgba(188, 237, 188, 0.3);
+    color: #728A8F;
+    box-shadow: 0 0 4px 0 #D7DFE0;
+}
+
+.CardUser .UserName{
+    font-weight: bold;
+    color: #728A8F;
+    max-width: 100px;
+    font-size: .7em;
+}
+
+.Viewdatas .DatasComponents img{
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.Viewdatas .emailContente{
+    color: rgb(59, 156, 220);
+    text-decoration: underline;
+    font-size: .7em;
+}
+
+.Viewdatas .Balance{
+    font-size: .8em;
+}
+
+.Viewdatas .Tel, .DatePayed{
+    color: #666666;
+    font-size: .65em;
+}
+
+.Viewdatas .ClassPromotion{
+    font-family: poppinBlack;
+    color:#666565;
+    font-size: .65em;
+}
+
+.actifAccount{
+    background-color: rgba(188, 237, 188, 0.3);
+    color: #728A8F;
+    padding: 3px 15px;
+    font-size: .6em;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
+.actifAccountFalse{
+    background-color: rgba(237,188 , 188, 0.3);
+    color: red;
+    padding: 3px 15px;
+    font-size: .6em;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
+/*NotFundUser*/
+.UserNotFund{    
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.UserNotFund .Title{
+    color: rgb(210, 10, 12);
+    font-size: 1.2em;
+    font-family: poppinBlack;
+    text-align: center;
+}
+
+.UserNotFund .Description{
+    color: #666565;
+    font-size: .7em;
+    text-align: center;
+}
+
+.loadSeacherUSers{
+    display: flex;
+    justify-content: center;    
+    margin: 20px 0;
+}
+
+/*Comptable*/
+.WrapperComponent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+
+    background-color: rgba(51, 53, 51, 0.5);
+}
+
+.WrapperComponent .formPayement{
+    min-width: 35%;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 5px 0 #787777;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    background-color: white;
+}
+.WrapperComponent .identityUser{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.WrapperComponent .nameUser{
+    gap: 5px;
+    display: flex;
+    color: #787777;
+    font-size: .8em;
+    font-family: poppinBlack;
+    padding: 5px;
+}
+
+.WrapperComponent .Icone{
+    color: #787777;
+    width: 20px;
+}
+
+.closepayForm{
+    width: 22px;
+    transition: all .4s ease-in-out;
+    color: #787777c0;
+}
+
+.closepayForm:hover{
+    color: #728A8F;
+    transform: scale(1.03);
+    cursor: pointer;
+}
+.WrapperComponent .formPayement select{
+    border-radius: 20px;
+    font-size: .75em;
+    padding: 5px;
+    border:  solid 2px #D7DFE0;
+    color: #787777;
+}
+
+.WrapperComponent .formPayement select:focus{
+    outline: none;
+}
+
+.WrapperComponent .formPayement .inputGroup{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;
+}
+
+.WrapperComponent .formPayement .inputGroup label{
+    color: #787777;
+    font-size: .75em;
+}
+
+.WrapperComponent .formPayement .inputGroup #InPutPayement{
+    color: #787777;
+    font-size: .8em;
+    padding: 5px;
+    width: 100%;
+    border-radius: 4px;
+    border: solid 2px #D7DFE0;
+}
+
+input:focus{
+    outline: none;
+}
+
+.WrapperComponent .formPayement .btnPayement{
+    color: white;
+    background-color: #728A8F;
+    font-size: .8em;
+    padding: 5px 15px;
+    border-radius: 3px;
+    margin-top: 5px;
+    transition: all .4s ease-in-out;
+    opacity: .9;
+}
+
+.WrapperComponent .formPayement .btnPayement:hover{
+    opacity: 1;
+    box-shadow:  0 0 4px 0 #D7DFE0;
+}

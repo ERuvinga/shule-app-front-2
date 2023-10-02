@@ -49,3 +49,10 @@ body{
 
 /*Components*/
 @import './components.css';
+
+/*Others*/
+@import './AllIndexPages.css';
+@import './DataListView.css';
+@import './Director.css';
+@import './Student.css';
+

@@ -1,15 +1,17 @@
 //Natives tools
-import { useState } from "react";
+import { useEffect} from "react";
 import { useRecoilState } from "recoil";
 import Link from "next/link";
+
 //components
-import InputField from "@/src/Components/InputField";
+import Notification from "@/src/Components/NotificationLogReg";
+import InputField from "@/src/Components/InputFieldLogReg"
 import App_Head from'@/src/Components/Head'
 import Footer from "@/src/Components/Footer";
 import BackHome from "@/src/Components/BackHome";
 
 //state
-import { registerDataState } from "@/src/States";
+import { registerDataState, messageOfServer } from "@/src/States/LoginRegisterStates";
 
 interface proprietyInput {
     placeholderText : String|any,
@@ -20,11 +22,19 @@ interface proprietyInput {
 
 const Index = (datas: proprietyInput)=>{
     const logRegDatasOfUser = useRecoilState(registerDataState);
+    const [StateNotification,setStateNotification]:any = useRecoilState(messageOfServer);
 
+    useEffect(()=>{
+        setStateNotification({
+            ...StateNotification,
+            stateMsg:false,
+        });
+    },[])
     return(
         <>
             <App_Head/>
-            <section className="body_log_reg ">
+            <section className="body_log_reg">
+                {StateNotification.stateMsg && <Notification/>}
                 <div className="illustration_log_Reg reg_illust">
                     <img src='/imgs/register.png' alt="login_illustration"/>
                     <div className="div_reg"></div>

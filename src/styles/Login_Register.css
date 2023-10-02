@@ -19,7 +19,67 @@
         width: 15px;
     }
 
+@keyframes AnimNotificationLg {
+    from{
+        top: 5px;
+        opacity: 0;
+    }
+
+    to{
+        top:40px;
+        opacity:1
+    }  
+}
+@keyframes AnimNotificationSm {
+    from{
+        top: 80px;
+        opacity: 0;
+    }
+
+    to{
+        top:120px;
+        opacity:1
+    }  
+}
 /*Register and Login Pages*/
+.NotificationMsg{
+    position:absolute;
+    width: 250px;
+    top: 40px;
+    background-color: #fff;
+    box-shadow: 0 0 4px 0 #E2E3E9;
+    padding: 5px 15px;
+    animation: AnimNotificationLg 1s ease-in-out;
+    z-index: 100;
+}
+
+.MessageServerContainer{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.NotificationMsg .Icone{
+    width: 15px;
+    color: red;
+    margin-right: 4px;
+}
+.NotificationMsg .TitleNotif{
+     display: flex;
+   color: red;
+    font-size: .7em;
+    font-family: poppinBlack;
+}
+
+.NotificationMsg .msg{
+    margin-top: 5px;
+    color: #787777;
+    font-size: .65em;
+    font-family: poppinLight;
+}
+
 .body_log_reg{
     position: relative;
     width: 100%;
@@ -118,6 +178,24 @@
         margin-bottom: 3px;
     }
 
+    .SelectionTypeCompte:focus{
+        border: solid 2px #728A8F ;
+        outline: none;
+    }
+    .SelectionTypeCompte{
+        width: 90%;
+        height: 35px;
+        border-radius: 5px;
+        padding: 2px 5px;
+        border: solid 2px #E2E3E9 ;
+        /*Font*/
+        font-family: poppinLight;
+        font-size: .75em;
+
+        display: block;
+        margin: auto;       
+    }
+
     .groupe_form .log_reg_input, .groupe_form ._iPhone_input{
         width: 90%;
         height: 35px;
@@ -131,7 +209,47 @@
         display: block;
         margin: auto;
    }
+   .groupe_form .invalidEmailInput{
+    width: 90%;
+    height: 35px;
+    border-radius: 5px;
+    border: solid 2px rgb(223, 70, 70) ;
+    padding: 2px 5px;
+    /*Font*/
+    font-family: poppinLight;
+    font-size: .75em;
 
+    display: block;
+    margin: auto;
+}
+   .invalidEmail::after{
+        content: "Adresse mail ou numero ivalid";
+        width: 90%;
+        display: block;
+        margin: auto;
+
+        color: rgb(223, 70, 70);
+        font-size: .6em;
+   }
+
+   .invalidMatricule::after{
+    content: "Invalid Matricule format";
+    width: 90%;
+    display: block;
+    margin: auto;
+    color: rgb(223, 70, 70);
+    font-size: .6em;
+   }
+   
+   .invalidPassword::after{
+    content: "Different de Mot de pass";
+    width: 90%;
+    display: block;
+    margin: auto;
+
+    color: rgb(223, 70, 70);
+    font-size: .6em;
+   }
     .groupe_form .log_reg_input:focus{
         outline: none;
         border-color: #728A8F;
@@ -142,7 +260,11 @@
         outline: none;
         font-size: 100%;
     }
-
+    .groupe_form .invalidEmailInput:focus{
+        outline: none;
+        border-color: rgb(223, 70, 70);
+    }
+   
     .form_send_btn{
         width: 90%;
         background-color: #728A8F;
@@ -150,6 +272,17 @@
         padding: 6px 0;
         border-radius: 5px;
         box-shadow: 0 0 2px 0 #E2E3E9;
+        transition: all .4s ease-in-out;
+    }
+
+    .disabledBtn{
+        width: 90%;
+        background-color: #787777;
+        color:white;
+        padding: 6px 0;
+        border-radius: 5px;
+        box-shadow: 0 0 2px 0 #E2E3E9;
+        opacity: .6;
         transition: all .4s ease-in-out;
     }
 
@@ -205,7 +338,7 @@
         margin-left: 0;
     }
 
-    .groupe_form .log_reg_input, .groupe_form ._iPhone_input{
+    .groupe_form .log_reg_input, .groupe_form ._iPhone_input, .groupe_form .invalidEmailInput, .SelectionTypeCompte{
         width: 100%;
    }
     
@@ -213,7 +346,7 @@
         width: 90%;
     }
 
-    .form_send_btn{
+    .form_send_btn, .disabledBtn{
         width: 100%;
         margin-bottom: 10px;
     }
@@ -232,6 +365,10 @@
     .illustration_log_Reg{
         display: none;
     }
+    .NotificationMsg{
+        top: 120px;
+        animation: AnimNotificationSm 1s ease-in-out;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -239,14 +376,11 @@
         width: 88%;
     }
 
-    .groupe_form .log_reg_input, .groupe_form ._iPhone_input{
-        width: 100%;
+    .groupe_form .log_reg_input, .groupe_form ._iPhone_input,.groupe_form .invalidEmailInput{
         height: 40px;
    }
 
-   .form_send_btn{
-    width: 100%;
-    padding: 8px 0;
+   .form_send_btn, .disabledBtn{
     margin-bottom: 10px;
     }
   }

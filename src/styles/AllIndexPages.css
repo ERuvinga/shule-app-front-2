@@ -1,0 +1,299 @@
+
+.ContainerFormatPages{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    background-color: #f9f9f9;
+    gap: 5px;
+}
+
+.containerMenu{
+    width: 45%;
+    max-width: 250px;
+    background-color: white;
+    padding:5px;
+}
+
+.IdentityUser{
+    width: 95%;
+    margin: auto;
+    margin-top: 6vh;
+    padding: 3vh 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.IdentityUser .imageProfil{
+    border-radius: 50%;
+    width: 70px;
+    margin: auto;
+}
+
+.IdentityUser .nameUser{
+    color:#324447;
+    font-family: poppinBlack;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.IdentityUser .emailUser{
+    text-align: center;
+    font-size: .8em;
+    color: #728A8F;
+}
+
+.menu{
+    width: 100%;
+    margin: 4vh 0;
+    margin-left: 15px;
+}
+.menu .titleMenu{
+    color: #728A8F;
+    font-size: .8em;
+    font-family: poppinBlack;
+}
+
+.menu .ListItems{
+    margin: 20px 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu .ListItems .itemsMenu{
+    width: 85%;
+    color: #3d6870;
+    display: flex;
+    font-size: .8em;
+    gap: 16px;
+    padding: 6px;
+    border-radius: 4px;
+    transition: all .4s ease-in;
+}
+
+.menu .ListItems .itemsMenu:hover{
+    background-color: #D7DFE0;
+    box-shadow: 0 0 2px 0 #f9f9f9;
+    color: #728A8F;
+}
+
+.menu .ListItems .itemsMenu .icone, .SelecteditemsMenu .icone{
+    width: 20px;
+}
+
+.SelecteditemsMenu{
+    width: 85%;
+    color: white;
+    background-color: #728A8F;
+    display: flex;
+    font-size: .8em;
+    gap: 16px;
+    padding: 6px;
+    border-radius: 4px;
+    transition: all ease-in .5s;
+}
+
+/*footer Menu*/
+.parameters{
+    display: flex;
+    gap:10px;
+    flex-direction: column;
+    position: absolute;
+    bottom: 8vh;
+    color: #3d6870;
+    font-size: .8em;
+}
+
+.parameters .ContenairePara{
+    display: flex;
+    gap: 15px;
+    padding-left: 5px;
+}
+.parameters .iconePar{
+    width: 20px;
+}
+
+
+/*Datas and NAvBar*/
+.constainerDatasNav{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.constainerDatasNav .NavBarInAuthPages{
+    max-height: 80px;
+    width: 100%;
+    background-color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.constainerDatasNav .NavText{
+    display: flex;
+    flex-direction: column;
+}
+
+.constainerDatasNav .NavText .titleNav{
+    color: #728A8F;
+    font-family: poppinBlack;
+}
+
+.constainerDatasNav .NavText .DescriptionNav{
+    color: #787777;
+    font-size: .75em;
+}
+
+.constainerDatasNav .NavPicture{
+    display: flex;
+    gap:8px
+}
+
+.constainerDatasNav .NavPicture .NavPicture{
+    border-radius: 50%;
+    width: 40px;
+}
+
+.constainerDatasNav .NavPicture .icone{
+    color: #787777;
+    width: 10px;
+}
+
+/*Datas Filter Content*/
+.containerDatas{
+    width: 100%;
+    max-height: 90%;
+    display: flex;
+    gap: 5px;
+}
+
+.containerDatas .DataFilterContainer{
+    width: 74%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+/*Filter Content*/
+.containerDatas .FilterContainer{
+    width: 25%;
+    height: fit-content;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 0 4px #D7DFE0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    gap: 5px;
+    z-index: 0;
+    position: relative;
+}
+
+.FilterContainer .PromFilter{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #787777;
+}
+
+.FilterContainer .TitleFilter{
+    width: 100%;
+    padding: 3px;
+    display: flex;
+    color: #787777;
+    gap: 5px;
+    border: solid 1px #D7DFE0;
+    border-radius: 4px;
+}
+
+.FilterContainer .PromFilter .Icone{
+    width: 20px;
+}
+
+.FilterContainer .PromFilter span{
+    font-size: .9em;
+}
+
+.FilterContainer .PromFilter .itemsPromFilter{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px 0;
+}
+
+.FilterContainer .PromFilter .itemsPromFilter .itemProm{
+    padding: 4px 6px;
+    width: 80px;
+    font-size: .8em;
+    color: #787777;
+    border-radius: 8px;
+    transition: all .5s ease-in-out;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.FilterContainer .PromFilter .itemsPromFilter .temPromSelected{
+    background-color: rgba(188, 237, 188, 0.3);
+    color: #3d6870;
+    padding: 4px 6px;
+    width: 80px;
+    font-size: .8em;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bolder;
+    box-shadow: 0 0 4px 0 #D7DFE0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    transition: all .5s ease-in-out;
+}
+
+.FilterContainer .PromFilter .itemsPromFilter .temPromSelected:hover{
+    cursor: pointer;
+}
+
+.FilterContainer .PromFilter .itemsPromFilter .itemProm:hover{
+    cursor: pointer;
+    box-shadow: 0 0 2px 0 #D7DFE0;
+}
+
+.FilterContainer .PromFilter .itemsPromFilter .boxChek{
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: solid 1px #D7DFE0;
+    transition: all .5s ease-in-out;
+}
+
+.FilterContainer .PromFilter .itemsPromFilter .boxChekSelected{
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    box-shadow: 0 0 1px 0 #D7DFE0;
+    background-color: #3d6870;
+}
+.classSelection{
+    width: 100px;
+    border: solid 1px #D7DFE0;
+    padding: 3px;
+    border-radius: 20px;
+    color: #787777;
+    font-size: .8em;
+}
+
+.classSelection:focus{
+    outline: none;
+}
+
+.classSelection:focus option:hover{
+    cursor: pointer;
+}

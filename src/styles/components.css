@@ -203,6 +203,13 @@
 
     }
 
+    
+    @media screen and (max-width: 600px) {
+        .loading_bloc{
+            margin: 10px 0;
+        }
+    
+    }
     @media screen and (max-width: 400px) {
         .card_director{
             min-width: 100%;
@@ -214,12 +221,10 @@
     @keyframes loadingAnim {
         from{
             transform: rotate(0deg);
-            opacity: .8;
         }
 
         to{
             transform: rotate(360deg);
-            opacity: 1;
         }
     }
     .loading_bloc{
@@ -230,4 +235,21 @@
         border-bottom-color: transparent;
         border-radius: 50%;
         animation: loadingAnim 1s linear infinite;
+    }
+
+    .LoaderPage{
+        width: 50%;
+        height: 90vh;
+        margin: auto;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .LoaderPage span{
+        margin-top: 10px;
+        color: #728A8F;
+        font-size: .75em;
     }
