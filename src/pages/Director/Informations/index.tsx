@@ -16,6 +16,7 @@ import Loading from "@/src/Components/Loading";
 import MenuComponent from "@/src/Components/Menu";
 import NavBarAuthPages from "@/src/Components/NavBarAuthPages";
 import NewsCard from "@/src/Components/NewsCard";
+import Link from "next/link";
 
 const DirectorInfosPageIndex = ()=>{
     const Router = useRouter();
@@ -81,7 +82,7 @@ const DirectorInfosPageIndex = ()=>{
                         <NavBarAuthPages title="Communiqués" message="Communiqués de l'établissement"/>
                         <div>
                             <div className="LinkToNewS">
-                                <a href="/Director/Informations/News" className="newPub">+ New Pub</a>
+                                <Link href="Informations/News" className="newPub">+ New Pub</Link>
                             </div>
                             <div className="ContainerAllCardNews">
                                 {

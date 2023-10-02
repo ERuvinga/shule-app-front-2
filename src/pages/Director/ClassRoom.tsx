@@ -41,7 +41,7 @@ const DirectorClassPageIndex = ()=>{
             classTeacher:ClassTeaching.value
         });
         
-        fetch(`${LinkToApi.localLink}/Users/newTeacher`,{
+        fetch(`${LinkToApi.localLink}/Authentification/newTeacher`,{
             method:"POST",
             headers:{
                 'Accept':'application/json',
@@ -52,14 +52,9 @@ const DirectorClassPageIndex = ()=>{
         })
         .then((result)=>{
             if(result.ok){
-
                 result.json().then((datas)=> {
+                    Router.push("/Director")
                     console.log(datas)
-                })
-            }
-            else{
-                result.json().then((datas)=> {
-                    console.log(datas);
                 })
             }
         })
@@ -76,7 +71,7 @@ const DirectorClassPageIndex = ()=>{
             classStudent:ClassTeaching.value
         });
         
-        fetch(`${LinkToApi.localLink}/Users/newStudent`,{
+        fetch(`${LinkToApi.localLink}/Authentification/newStudent`,{
                 method:"POST",
                 headers:{
                     'Accept':'application/json',
@@ -89,12 +84,8 @@ const DirectorClassPageIndex = ()=>{
                 if(result.ok){
     
                     result.json().then((datas)=> {
+                        Router.push("/Director")
                         console.log(datas)
-                    })
-                }
-                else{
-                    result.json().then((datas)=> {
-                        console.log(datas);
                     })
                 }
             })
@@ -163,7 +154,7 @@ const DirectorClassPageIndex = ()=>{
                                             <div className="groupe_form">
                                                 <label>promotion</label>
                                                 <select className="SelectionTypeCompte" id="PromotionSelectedStudent">
-                                                    <option value="1">1</option>
+                                                    <option value="1" selected>1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
                                                     <option value="4">4</option>
@@ -175,7 +166,7 @@ const DirectorClassPageIndex = ()=>{
                                             <div className="groupe_form">
                                                 <label>classe</label>
                                                 <select className="SelectionTypeCompte" id="ClassSelectedStudent">
-                                                    <option value="A">A</option>
+                                                    <option value="A" selected>A</option>
                                                     <option value="B">B</option>
                                                     <option value="C">C</option>
                                                 </select>
@@ -212,7 +203,7 @@ const DirectorClassPageIndex = ()=>{
                                         <div className="groupe_form">
                                             <label>promotion</label>
                                             <select className="SelectionTypeCompte" id="PromotionSelectedTeacher">
-                                                <option value="1">1</option>
+                                                <option value="1" selected>1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
                                                 <option value="4">4</option>
@@ -224,7 +215,7 @@ const DirectorClassPageIndex = ()=>{
                                         <div className="groupe_form">
                                             <label>classe</label>
                                             <select className="SelectionTypeCompte" id="ClassSelectedTecher">
-                                                <option value="A">A</option>
+                                                <option value="A" selected>A</option>
                                                 <option value="B">B</option>
                                                 <option value="C">C</option>
                                             </select>

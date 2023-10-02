@@ -5,7 +5,7 @@ import { useRecoilValue, useRecoilState, useSetRecoilState } from "recoil";
 //atoms and Selectors
 import { Link_toApi } from "@/src/States/LoginRegisterStates";
 import { AuthUser } from "@/src/States/UserAoth";
-import {TypeAccountState, AllUserStates, FilterTypeAccountsUser, DataOfMenuState} from "@/src/States/Director"
+import {TypeAccountState, AllUserStates, FilterTypeAccountsUser, DataOfMenuState, SelectedMenuItems} from "@/src/States/Director"
 
 // lib
 import { withAuth } from "@/src/Lib/Auth";
@@ -36,6 +36,7 @@ const DirectorPageIndex = ()=>{
     const [UserAuth,setUaseAuth]:any = useRecoilState(AuthUser);
     const DataOfMEnuDirector = useRecoilValue(DataOfMenuState);
     const UserFilters:any = useRecoilValue(FilterTypeAccountsUser);
+    const setItemMenuSelected = useSetRecoilState(SelectedMenuItems);
 
     const DataListView = ()=>{
         if(UserFilters.length){
@@ -104,6 +105,7 @@ const DirectorPageIndex = ()=>{
     ];
 
     useEffect(()=>{
+        setItemMenuSelected(0)
         withAuth(LinkToApi, localStorage.getItem("TokenUser"), setStatePage, setUaseAuth, UserAuth, Router); // check if token of user is valid
     },[]);
 

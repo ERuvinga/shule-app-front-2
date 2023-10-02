@@ -75,6 +75,11 @@
 
 /*Titles of Datas view*/
 
+.DatasComponents{
+    max-height: 98vh;
+    overflow-y: auto;
+}
+
 .titleDatas{
     background-color: #eef4f5;
     border-radius: 4px;
