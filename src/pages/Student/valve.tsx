@@ -31,7 +31,7 @@ const StudentNewsPage = ()=>{
 
     useEffect(()=>{
         if(!itemMenuSelected){
-            setItemMenuSelected(3); // if reloading page
+            setItemMenuSelected(2); // if reloading page
         }
         withAuth(LinkToApi, localStorage.getItem("TokenUser"), setStatePage, setUaseAuth, UserAuth, Router); // check if token of user is valid
     },[]);
