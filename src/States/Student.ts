@@ -11,13 +11,8 @@ const  {atom, selector} = require("recoil");
             icone:"CurrencyDollarIcon"
         },
         {
-            label:"Classe",
-            Link:"/Student/ClassRoom",
-            icone:"UserGroupIcon"
-        },
-        {
             label:"Cotes",
-            Link:"/Student/Cotes",
+            Link:"/Student/Cote",
             icone:"ClipboardIcon"
         },
         {
@@ -28,6 +23,12 @@ const  {atom, selector} = require("recoil");
     ]
   });
 
+  const FinalResult = atom({
+    key:"FinalResults",
+    default:{}
+  })
+
 export {
     DataOfStudentMenu,
+    FinalResult
 }
