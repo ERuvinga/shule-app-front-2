@@ -225,38 +225,94 @@
     opacity: .8;
 }
 
-.ContainerAllCardNews{
-    max-height: 100vh;
-    width: 98%;
-    margin: auto;
+.DatasValve{
+    max-width: 100%;
     padding: 10px;
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     overflow: auto;
+}
+
+.ContainerAllCardNews{
+    width: 100%;
+    max-height: 100vh;
+    display: flex;
+    overflow: auto;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 4.8%;
+}
+
+.ValveNews{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 4.8%;
+}
+
+.DatasValve .HeadView{
+    width: 100%;
+    padding: 5px 0;
+    border-bottom: #D7DFE0 solid 1px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.DatasValve .HeadView .RefreshDatas .Icone{
+    width: 20px;
+    color: #787777;
+}
+
+.DatasValve .HeadView .RefreshDatas .Icone{
+    width: 18px;
+    color: #324447;
+}
+
+.DatasValve .HeadView .RefreshDatas .numberOfUser{
+    display: flex;
+    align-items: center;
+    font-size: .7em;
+    color: #728A8F;
+}
+
+.DatasValve .HeadView .RefreshDatas {
+    background-color: #eef4f5;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    gap: 5px;
+    transition: all .2s ease-in-out;
+    border: #D7DFE0 solid 1px;
+}
+
+.DatasValve .HeadView .RefreshDatas:hover{
+    cursor: pointer;
+    box-shadow: 0 0 4px 0 #D7DFE0;
+    border: #728A8F solid 1px;
 }
 
 
 .ContainerAllCardNews::-webkit-scrollbar {
-    background-color: #F9F9FC;
+    background-color: #E2E3E9;
     width: 5px;
     border-radius: 10px;
 }
 
 .ContainerAllCardNews::-webkit-scrollbar-thumb {
-    background-color: #787777c0;
+    background-color: #787777;
+    width: 5px;
     border-radius: 10px;
 }
 
-.ContainerAllCardNews::-webkit-scrollbar-button {
-    background-color: #E2E3E9;
-    height: 5px;
-    border-radius: 10px;
+.ContainerAllCardNews::-webkit-scrollbar-button {display: none;
 }
 
 
 .CardNews{
     width: 30%;
+    min-width: 150px;
     max-height: 280px;
     background-color: white;
     border-radius: 5px;
