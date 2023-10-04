@@ -209,7 +209,8 @@
     padding: 10px 0;
     margin: 0 5%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    border-bottom: solid 1px #D7DFE0;
 }
 
 .LinkToNewS .newPub{
@@ -225,6 +226,38 @@
     opacity: .8;
 }
 
+.LinkToNewS .RefreshDatas .Icone{
+    width: 20px;
+    color: #787777;
+}
+
+.LinkToNewS  .RefreshDatas .Icone{
+    width: 18px;
+    color: #324447;
+}
+
+.LinkToNewS .RefreshDatas .numberOfUser{
+    display: flex;
+    align-items: center;
+    font-size: .7em;
+    color: #728A8F;
+}
+
+.LinkToNewS .RefreshDatas {
+    background-color: #eef4f5;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    gap: 5px;
+    transition: all .2s ease-in-out;
+}
+
+.LinkToNewS .RefreshDatas:hover{
+    cursor: pointer;
+    box-shadow: 0 0 4px 0 #D7DFE0;
+    border: #728A8F solid 1px;
+}
+
 .DatasValve{
     max-width: 100%;
     padding: 10px;
@@ -237,6 +270,17 @@
 .ContainerAllCardNews{
     width: 100%;
     max-height: 100vh;
+    display: flex;
+    overflow: auto;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 4.8%;
+}
+
+
+.ContainerAllCardNewsDir{
+    margin: 0 5%;
+    max-height: 90vh;
     display: flex;
     overflow: auto;
     justify-content: flex-start;
@@ -310,6 +354,23 @@
 }
 
 
+.ContainerAllCardNewsDir::-webkit-scrollbar {
+    background-color: #E2E3E9;
+    width: 5px;
+    border-radius: 10px;
+}
+
+.ContainerAllCardNewsDir::-webkit-scrollbar-thumb {
+    background-color: #787777;
+    width: 5px;
+    border-radius: 10px;
+}
+
+.ContainerAllCardNewsDir::-webkit-scrollbar-button {display: none;
+}
+
+
+
 .CardNews{
     width: 30%;
     min-width: 150px;
@@ -329,7 +390,7 @@
 
 .CardNews .ContainerDatas{
     width: 100%;
-    padding: 5px;
+    padding: 5px 10px;
     margin: 10px 0;
 }
 

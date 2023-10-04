@@ -17,11 +17,14 @@ import MenuComponent from "@/src/Components/Menu";
 import NavBarAuthPages from "@/src/Components/NavBarAuthPages";
 import NewsCard from "@/src/Components/NewsCard";
 import Link from "next/link";
+import { ArrowPathIcon } from "@heroicons/react/24/outline";
 
 const DirectorInfosPageIndex = ()=>{
     const Router = useRouter();
     const [statePage, setStatePage] = useState(false);
     const [AllNews, setAllNews] = useState([]);
+    const [ReloadAllDatas, setReloadAllDatas] = useState(false);
+    const [searching, setsearching] = useState(false);
 
     //Atoms
     const LinkToApi:any = useRecoilValue(Link_toApi);
@@ -60,17 +63,18 @@ const DirectorInfosPageIndex = ()=>{
     },[]);
 
     useEffect(()=>{
+        setsearching(false);
         fetch(`${LinkToApi.localLink}/News`)
         .then((result)=>{
             if(result.ok){
                 result.json().then((datas)=>{
-                    //console.log(datas);
+                    setTimeout(()=>setsearching(true),1500);
                     setAllNews(datas.News);
                 })
             }
         })
         .catch((error)=> console.log(error))
-    },[])
+    },[ReloadAllDatas])
     return(
         <>
             <HeadPages/>
@@ -80,16 +84,31 @@ const DirectorInfosPageIndex = ()=>{
                     <MenuComponent DatasOfMenu= {DataOfMEnu}/>
                     <div className="constainerDatasNav">
                         <NavBarAuthPages title="Communiqués" message="Communiqués de l'établissement"/>
-                        <div>
                             <div className="LinkToNewS">
                                 <Link href="Informations/News" className="newPub">+ New Pub</Link>
+                                <div className="RefreshDatas" 
+                                        onClick={
+                                                ()=> {
+                                                    setReloadAllDatas(!ReloadAllDatas);
+                                                }
+                                        }>
+                                            <ArrowPathIcon className="Icone"/>
+                                            <span className="numberOfUser">{`(${(AllNews.length)? AllNews.length : "0"})`}</span>
+                                </div>
                             </div>
-                            <div className="ContainerAllCardNews">
-                                {
-                                    AllNews.map((value:any, index:any)=><NewsCard title={value.title} text={value.Content} time={value.time} key={index}/> )
-                                }
+
+                            {searching ?
+                            <div className="ContainerAllCardNewsDir mt-news">
+                                    {
+                                        AllNews.map((value:any, index:any)=><NewsCard title={value.title} text={value.Content} time={value.time} key={index}/> )
+                                    }
                             </div>
-                        </div>
+                            :
+                            <div className="LoaderPage">
+                                <Loading/>
+                                <span>Chargement...</span>
+                            </div>
+                        }
                     </div>
                 </section>
                 :
