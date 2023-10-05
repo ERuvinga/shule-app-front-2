@@ -57,13 +57,11 @@ const StudentNewsPage = ()=>{
                     <MenuComponent DatasOfMenu= {DataOfMenu}/>
                     <div className="constainerDatasNav">
                         <NavBarAuthPages title="Communiqués" message="Communiqués de l'établissement"/>
-                        <div>
                             <div className="ContainerAllCardNews mt-news">
                                 {
                                     AllNews.map((value:any, index:any)=><NewsCard title={value.title} text={value.Content} time={value.time} key={index}/> )
                                 }
                             </div>
-                        </div>
                     </div>
                 </section>
                 :
