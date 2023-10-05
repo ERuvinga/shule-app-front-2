@@ -97,6 +97,24 @@
     padding: 5px;
 }
 
+.EyesIcone{
+    width: 25px;
+    margin: auto;
+    color: #787777;
+    opacity: .8;
+    transition: all .3s ease-in-out;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.EyesIcone:hover{
+    color: white;
+    opacity: 1;
+    background-color:#728A8F ;
+    box-shadow: 0 0 5px #D7DFE0;
+    cursor: pointer;
+}
+
 /*Button send Cotes*/
 .containerBtnCote{
     display: flex;
@@ -234,4 +252,67 @@
     margin-top: 10px;
     color: #728A8F;
     font-size: .75em;
+}
+
+/*Fiche Student*/
+
+.CoteDatas{
+    margin: 2%;
+}
+
+.descriptionStudent{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 4px #D7DFE0;
+}
+
+.descriptionStudent .Return {
+    background-color: #eef4f5;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    gap: 5px;
+    transition: all .2s ease-in-out;
+    border: solid 1px #D7DFE0;
+}
+
+.descriptionStudent .Return .Icone{
+    width: 15px;
+    color: #324447;
+}
+
+.descriptionStudent .Return:hover{
+    cursor: pointer;
+    box-shadow: 0 0 4px 0 #D7DFE0;
+    border: #728A8F solid 1px;
+}
+
+.descriptionStudent .Return span{
+    display: flex;
+    align-items: center;
+    font-size: .8em;
+    color: #728A8F;
+}
+
+.CotesTable{
+    width: 100%;
+}
+
+.descriptionStudent .NameStudent{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    color: #787777;
+    font-size: .7em;
+}
+
+.descriptionStudent .namePromClass{
+    color: #728A8F;
+    font-size: 1em;
+    font-family: poppinBlack;
 }

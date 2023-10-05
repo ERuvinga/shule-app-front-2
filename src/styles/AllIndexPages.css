@@ -191,7 +191,7 @@
     flex-direction: column;
     align-items: center;
     padding: 8px;
-    gap: 5px;
+    gap: 30px;
     z-index: 0;
     position: relative;
 }

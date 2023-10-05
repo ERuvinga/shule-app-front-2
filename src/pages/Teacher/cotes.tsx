@@ -14,13 +14,14 @@ import { withAuth } from "@/src/Lib/Auth";
 import HeadPages from "@/src/Components/Head";
 import Loading from "@/src/Components/Loading";
 import MenuComponent from "@/src/Components/Menu";
-import NavBarAuthPages from "@/src/Components/NavBarAuthPages";
 import { DataOfTeachertMenu, AllCourseInClass, AllStudentsInClass, FilterUsersOfClassByName } from "@/src/States/Teacher";
 import { CoursFilter, PeriodeFilter } from "@/src/Components/CotationFilters";
 import SearchInput from "@/src/Components/SearchUser";
 import { ArrowPathIcon } from "@heroicons/react/24/outline";
 import { HeadTitleStudentCotation, StudentsCardCotation } from "@/src/Components/StudentCardCotation";
 import { CourseSelected, PeriodeSelected, CotesOfUsers } from "@/src/States/Teacher";
+import { IdentityUserSelected } from "@/src/States/Student";
+import FicheOfSudent from "@/src/Components/FicheStudent";
 
 const StudentNewsPage = ()=>{
     const Router = useRouter();
@@ -28,6 +29,7 @@ const StudentNewsPage = ()=>{
     const [stateUserData, setstateUserData] = useState(false);
     const [reloadDate, SetReloadDatas] = useState(true);
     const [UserOfClass, setUserOfClass]:any = useRecoilState(AllStudentsInClass);
+    const [togglePage, setTooglePage] = useState(true);
 
     //Atoms
     const LinkToApi:any = useRecoilValue(Link_toApi);
@@ -36,6 +38,7 @@ const StudentNewsPage = ()=>{
     const [itemMenuSelected, setItemMenuSelected] = useRecoilState(SelectedMenuItems);
     const DataOfMenu = useRecoilValue(DataOfTeachertMenu);
     const UserFiltered:any = useRecoilValue(FilterUsersOfClassByName);
+    const StudentSelected:any = useRecoilValue(IdentityUserSelected);
 
     // period and Course Selected
     const CoursSelect:any = useRecoilValue(CourseSelected);
@@ -102,8 +105,7 @@ const StudentNewsPage = ()=>{
                 <section className="ContainerFormatPages">
                     <MenuComponent DatasOfMenu= {DataOfMenu}/>
                     <div className="constainerDatasNav">
-                        <NavBarAuthPages title="" message=""/>
-                        <div>
+                        { togglePage ?
                             <div className="containerDatas">
                                 <div className="DataFilterContainer">
                                     <div className="Viewdatas">
@@ -152,6 +154,7 @@ const StudentNewsPage = ()=>{
                                                                                 idTab={index}
                                                                                 CLASS={value.registerDatas.CLASS}
                                                                                 idUser={value._id}
+                                                                                setTooglePageState = {setTooglePage}
                                                                     />)
                                                                         }
                                                                 </tbody>
@@ -179,8 +182,9 @@ const StudentNewsPage = ()=>{
                                         <PeriodeFilter/>
                                         <CoursFilter/>
                                 </div>                      
-                            </div>
-                        </div>
+                            </div>:
+                            <FicheOfSudent Courses={AllsCourse} returnFunction={setTooglePage}/>
+                            }
                     </div>
                 </section>
                 :
