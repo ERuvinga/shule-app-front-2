@@ -67,6 +67,14 @@
     text-align: center;
 }
 
+
+.constainerDatasNewAccountDir{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
 .titleForm{
     display: flex;
     justify-content: space-between;
@@ -75,7 +83,6 @@
     background-color: white;
     border-radius: 4px;
     box-shadow:  0 0 5px 0 #D7DFE0 ;
-    margin-top: 20px;
     width: 99%;
 }
 
@@ -102,6 +109,7 @@
 .titleForm select:hover{
     cursor: pointer;
 }
+
 
 .containerNewsaccount{
     width: 99%;
@@ -369,8 +377,6 @@
 .ContainerAllCardNewsDir::-webkit-scrollbar-button {display: none;
 }
 
-
-
 .CardNews{
     width: 30%;
     min-width: 150px;
@@ -510,4 +516,156 @@
 }
 .mt-news{
     margin-top: 20px;
+}
+
+/*Proclammations Dates Limites*/
+
+.ContainerDefineDatesProclam{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ContainerDefineDatesProclam .disponsitionContent{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+}
+
+.ContainerDefineDatesProclam table{
+    box-shadow: 0 0 5px #D7DFE0 ;
+}
+
+.ContainerDefineDatesProclam table .TitleTableDates{
+    background-color: rgba(188, 237, 188, 0.3);
+    color: #787777;
+    font-size: .8em;
+}
+
+.ContainerDefineDatesProclam table  .bodyTableDates{
+    color: #787777;
+    font-size: .7em;
+}
+
+.ContainerDefineDatesProclam table td{
+    border: solid 1px #D7DFE0;
+    padding: 8px 16px;
+}
+
+.ContainerDefineDatesProclam table  .Icone{
+    width: 25px;
+    margin: auto;
+    color: #787777;
+    opacity: .8;
+    transition: all .3s ease-in-out;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.ContainerDefineDatesProclam table  .Icone:hover{
+    color: white;
+    opacity: 1;
+    background-color: #728A8F;
+    box-shadow: 0 0 5px #D7DFE0;
+    cursor: pointer;
+}
+
+.ContainerDefineDatesProclam .ContBtnsAndLabel{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ContainerDefineDatesProclam .DateDefine{
+    width: 100%;
+    background-color: white;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px #D7DFE0;
+    inset-inline-start: 4px;
+
+    display: flex;
+    flex-direction: column;
+    gap:10px
+}
+
+.ContainerDefineDatesProclam .Periode{
+    font-size: .9em;
+    font-weight: bold;
+    color: #728A8F;
+}
+
+.ContainerDefineDatesProclam .PeriodeError{
+    font-size: .9em;
+    font-weight: bold;
+    color: red;
+}
+
+.ContainerDefineDatesProclam .groupeInput{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ContainerDefineDatesProclam .groupeInput label{
+    color: #787777;
+    font-size: .7em;
+}
+
+.ContainerDefineDatesProclam .DateProclInput{
+    width: 100%;
+    color: #787777;
+    font-size: .8em;
+    border: solid 2px #D7DFE0;
+    border-radius: 4px;
+    padding: 5px 10px;
+}
+.ContainerDefineDatesProclam .DateProclInput:focus{
+    outline: none;
+    border: solid 2px #D7DFE0;
+}
+
+.ContainerDefineDatesProclam .btnsActions{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.ContainerDefineDatesProclam .btnsActions button{
+    padding: 6px 18px;
+}
+.ContainerDefineDatesProclam .btnsActions button:hover{
+    cursor: pointer;
+}
+
+.ContainerDefineDatesProclam .btnsActions .Return{
+    border: solid 1px #D7DFE0;
+    color:#787777;
+    border-radius: 4px;
+    font-size: .8em;
+}
+.ContainerDefineDatesProclam .btnsActions .send{
+    border: solid 1px #D7DFE0;
+    color:white;
+    border-radius: 4px;
+    font-size: .8em;
+    background-color: #728A8F;
+    box-shadow: 0 0 5px #D7DFE0;
+}
+
+.ContainerDefineDatesProclam .btnsActions .sendDisabled{
+    border: solid 1px #D7DFE0;
+    color:white;
+    border-radius: 4px;
+    font-size: .8em;
+    background-color: #324447;
+    box-shadow: 0 0 5px #D7DFE0;
+    opacity: .4;
 }
