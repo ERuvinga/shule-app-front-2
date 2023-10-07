@@ -1,7 +1,6 @@
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
-import { CotesOfUsers, CourseSelected, PeriodeSelected } from "@/src/States/Teacher";
+import {  useRecoilValue, useSetRecoilState } from "recoil";
+import { OneCotesOfUsers, CourseSelected, PeriodeSelected } from "@/src/States/Teacher";
 import { AuthUser } from "@/src/States/UserAoth";
-import { useState } from "react";
 import { EyeIcon } from "@heroicons/react/24/outline";
 import { IdentityUserSelected } from "@/src/States/Student";
 
@@ -29,11 +28,10 @@ const HeadTitleStudentCotation = () =>{
 };
 
 const StudentsCardCotation = (datas:StudentDatas) =>{
-    const [CoteSaved, setCoteSaved]:any = useRecoilState(CotesOfUsers);
+    const setCoteSaved:any = useSetRecoilState(OneCotesOfUsers);
     const  TeacherUser:any = useRecoilValue(AuthUser);
     const  Course:any = useRecoilValue(CourseSelected);
     const  Periode:any = useRecoilValue(PeriodeSelected);
-    const  [tableLocation, setTabeLocation] = useState(null);
     const studentSelected = useSetRecoilState(IdentityUserSelected);
 
     const updateDataOfStudentSelected = () =>{
@@ -58,8 +56,7 @@ const StudentsCardCotation = (datas:StudentDatas) =>{
             periode:Periode,
         }
 
-            setCoteSaved([data]);
-
+            setCoteSaved(data);
     }
 
     return(

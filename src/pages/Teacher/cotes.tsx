@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { useRecoilValue, useRecoilState } from "recoil";
+import { useRecoilValue, useRecoilState, useSetRecoilState } from "recoil";
 
 //atoms 
 import { Link_toApi } from "@/src/States/LoginRegisterStates";
@@ -19,8 +19,7 @@ import { CoursFilter, PeriodeFilter } from "@/src/Components/CotationFilters";
 import SearchInput from "@/src/Components/SearchUser";
 import { ArrowPathIcon } from "@heroicons/react/24/outline";
 import { HeadTitleStudentCotation, StudentsCardCotation } from "@/src/Components/StudentCardCotation";
-import { CourseSelected, PeriodeSelected, CotesOfUsers } from "@/src/States/Teacher";
-import { IdentityUserSelected } from "@/src/States/Student";
+import { CourseSelected, PeriodeSelected, SavingDataOfCotesTyped, AllCotesOfStudents } from "@/src/States/Teacher";
 import FicheOfSudent from "@/src/Components/FicheStudent";
 
 const StudentNewsPage = ()=>{
@@ -38,34 +37,34 @@ const StudentNewsPage = ()=>{
     const [itemMenuSelected, setItemMenuSelected] = useRecoilState(SelectedMenuItems);
     const DataOfMenu = useRecoilValue(DataOfTeachertMenu);
     const UserFiltered:any = useRecoilValue(FilterUsersOfClassByName);
-    const StudentSelected:any = useRecoilValue(IdentityUserSelected);
+    const [AllCotes, setAllCotes]:any = useRecoilState(AllCotesOfStudents);
 
     // period and Course Selected
     const CoursSelect:any = useRecoilValue(CourseSelected);
     const PeriodSelect:any = useRecoilValue(PeriodeSelected);
-    const AllCotesOfStudent:any = useRecoilValue(CotesOfUsers); 
+    const SaveAllCotes:any = useRecoilValue(SavingDataOfCotesTyped(AllCotes)); 
 
     const SendCote = ()=>{
-        console.log(AllCotesOfStudent);
-        setstateUserData(false)
-        fetch(`${LinkToApi.localLink}/Class/newsCotes`,{
-            method:"POST",
-            headers:{
-                'Accept':'application/json',
-                'Content-type':'application/json; charset=UTF-8',
-                "Autorization": `Bearer ${localStorage.getItem("TokenUser")}`
-            },
-            body: JSON.stringify(AllCotesOfStudent)
-        })
-            .then((result)=>{
-                if(result.ok){
-                    result.json().then((datas)=>{
-                        console.log(datas)
-                        setTimeout(()=>setstateUserData(true),1200) ;
-                    })
-                }
-            })
-            .catch((error)=> console.log(error))
+        console.log(AllCotes);
+        // setstateUserData(false)
+        // fetch(`${LinkToApi.localLink}/Class/newsCotes`,{
+        //     method:"POST",
+        //     headers:{
+        //         'Accept':'application/json',
+        //         'Content-type':'application/json; charset=UTF-8',
+        //         "Autorization": `Bearer ${localStorage.getItem("TokenUser")}`
+        //     },
+        //     body: JSON.stringify(AllCotesOfStudent)
+        // })
+        //     .then((result)=>{
+        //         if(result.ok){
+        //             result.json().then((datas)=>{
+        //                 console.log(datas)
+        //                 setTimeout(()=>setstateUserData(true),1200) ;
+        //             })
+        //         }
+        //     })
+        //     .catch((error)=> console.log(error))
     }
 
     useEffect(()=>{
@@ -75,7 +74,7 @@ const StudentNewsPage = ()=>{
 
         withAuth(LinkToApi, localStorage.getItem("TokenUser"), setStatePage, setUaseAuth, UserAuth, Router); // check if token of user is valid
     },[]);
-
+    
     useEffect(()=>{
         setstateUserData(false)
         fetch(`${LinkToApi.localLink}/Class`,{
@@ -96,7 +95,11 @@ const StudentNewsPage = ()=>{
                 }
             })
             .catch((error)=> console.log(error))
-    },[reloadDate])
+    },[reloadDate]);
+
+    useEffect(()=>{
+        setAllCotes(SaveAllCotes); // saving All cotes
+    },[SaveAllCotes])
 
     return(
         <>

@@ -1,5 +1,6 @@
+
 // state Contents Datas of Users
-const  {atom, selector} = require("recoil");
+const  {atom,selectorFamily, selector} = require("recoil");
 
     // data of Menu
     const DataOfTeachertMenu =atom({
@@ -31,7 +32,7 @@ const  {atom, selector} = require("recoil");
   const CourseSelected = atom({
     key:"CourseSelected",
     default:{
-      name:"lecture_Langues Congolaises"
+      name:"Ecriture_Langues Congolaises"
     }
   });
 
@@ -50,10 +51,15 @@ const  {atom, selector} = require("recoil");
     default:"",
   });
 
-  const CotesOfUsers = atom({
+  const OneCotesOfUsers = atom({
     key:"CotesOfUsers",
-    default:[]
+    default:null
   });
+
+  const AllCotesOfStudents = atom({
+    key:"AllCotesOfStudents",
+    default:[]
+  })
 
   const FilterUsersOfClassByName = selector({
         key:"FilterUsersOfClassByName",
@@ -75,7 +81,32 @@ const  {atom, selector} = require("recoil");
 
     return AllUserOfClass;
     }
-  })
+  });
+
+  const SavingDataOfCotesTyped = selectorFamily({
+    key:"SavingDataOfCotesTyped",
+    get:(OldCotes:any)=> ({get}:any) =>{
+        const OneCotes = get(OneCotesOfUsers);
+        const ListCotes = [...OldCotes];
+        let fundOldDataInTab = false;
+
+        if(OldCotes.length){
+          OldCotes.map((value:any, index:any)=>{
+              if(value.idStudent == OneCotes.idStudent){
+                  ListCotes[index] = OneCotes;
+                  fundOldDataInTab = true;
+              }
+            });
+        }
+
+        if(!fundOldDataInTab && OneCotes){ // if no User fund in List Cote, Added it
+            ListCotes.push(OneCotes);  
+        }    
+
+    return ListCotes;
+    }
+  });
+
 
 
 export {
@@ -86,5 +117,7 @@ export {
     AllCourseInClass,
     NameFilterSearch,
     FilterUsersOfClassByName,
-    CotesOfUsers,
+    OneCotesOfUsers,
+    AllCotesOfStudents,
+    SavingDataOfCotesTyped
 }

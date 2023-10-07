@@ -4,11 +4,10 @@ import { PeriodeSelected, CourseSelected, AllCourseInClass} from "@/src/States/T
 
 const PeriodeFilter =()=>{
     const setPeriodSelected = useSetRecoilState(PeriodeSelected);
-
     return(
         <div className="PromFilter mb">
                 <span className="TitleFilter"><ClockIcon className="Icone"/><span>Periode</span></span>
-                <select className="classSelection" onChange={(event:any)=>setPeriodSelected(event.target.value)}>
+                <select className="classSelection" onChange={(event:any)=>setPeriodSelected(event.target.value)} defaultValue={"1P"}>
                     <option value="1P" className="itemsClass">1 er P</option>
                     <option value="2P" className="itemsClass">2 iem P</option>
                     <option value="Examen1" className="itemsClass">Examen 1 er trimestre</option>
@@ -29,7 +28,7 @@ const CoursFilter =()=>{
     return(
         <div className="PromFilter">
                 <span className="TitleFilter"><Square3Stack3DIcon className="Icone"/><span>Cours</span></span>
-                <select className="CourSelected" onChange={(event:any)=>setCourseSelected({name:event.target.value})}>
+                <select className="CourSelected" onChange={(event:any)=>setCourseSelected({name:event.target.value})} defaultValue={"Ecriture_Langues Congolaises"}>
                     {AllsCourse.map((item:any, index:any)=><option key={index} value={`${item.name}_${item.domaine}`} className="itemsClass">{`${item.name} (${item.domaine})`}</option>)}
                 </select>
         </div>
