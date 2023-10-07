@@ -25,12 +25,14 @@ const  {atom, selector} = require("recoil");
 
   const PeriodeSelected = atom({
     key:"PeriodeSelected",
-    default:""
+    default:"1P"
   });
 
   const CourseSelected = atom({
     key:"CourseSelected",
-    default:""
+    default:{
+      name:"lecture_Langues Congolaises"
+    }
   });
 
   const AllStudentsInClass = atom({
@@ -51,7 +53,7 @@ const  {atom, selector} = require("recoil");
   const CotesOfUsers = atom({
     key:"CotesOfUsers",
     default:[]
-  })
+  });
 
   const FilterUsersOfClassByName = selector({
         key:"FilterUsersOfClassByName",
@@ -84,5 +86,5 @@ export {
     AllCourseInClass,
     NameFilterSearch,
     FilterUsersOfClassByName,
-    CotesOfUsers
+    CotesOfUsers,
 }

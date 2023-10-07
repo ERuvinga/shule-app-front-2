@@ -97,6 +97,7 @@ const StudentNewsPage = ()=>{
             })
             .catch((error)=> console.log(error))
     },[reloadDate])
+
     return(
         <>
             <HeadPages/>

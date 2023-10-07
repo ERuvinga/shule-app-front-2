@@ -33,7 +33,15 @@ const  {atom, selector} = require("recoil");
     }
   })
 
+  const FinalResult = atom({
+    key:"FinalResult",
+    default:{
+    }
+  })
+
+
 export {
     DataOfStudentMenu,
-    IdentityUserSelected
+    IdentityUserSelected,
+    FinalResult
 }
