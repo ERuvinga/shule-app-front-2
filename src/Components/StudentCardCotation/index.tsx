@@ -13,7 +13,7 @@ interface StudentDatas{
     statusCompte:boolean,
     balance:any,
     idUser:String
-    setTooglePageState:any
+    setTooglePageState:any,
 }
 
 const HeadTitleStudentCotation = () =>{
@@ -57,22 +57,9 @@ const StudentsCardCotation = (datas:StudentDatas) =>{
             NameCourse:Course.name,
             periode:Periode,
         }
-        if(!CoteSaved.length){
+
             setCoteSaved([data]);
-        }
 
-        else{
-            switch(datas.idTab){
-                case 0:
-                    setCoteSaved([data, CoteSaved[0]]);     
-                    break;
-                case 1:
-                    setCoteSaved([CoteSaved[0], data ]);     
-                    break;                    
-            }
-        }
-
-        //console.log(CoteSaved);
     }
 
     return(

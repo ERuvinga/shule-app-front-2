@@ -8,8 +8,8 @@ const Footer = () =>{
                 <div>
                     <span className="title_contact">Ep Neema</span>
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                        Ipsa saepe sit molestiae corrupti quo accusamus! Voluptas sit minima id illum.
+                    Si vous recherchez une école qui nourrira votre enfance, votre corps et votre esprit, l`école primaire NEEMA est l`endroit idéal pour eux. Contactez-nous aujourd`hui
+                     pour en savoir plus sur nos programmes et les admissions de processus.
                     </p>
                     <span>@Copyright Ep_neema</span>
                 </div>

@@ -75,7 +75,7 @@ const DiplayResultFinal = (datas:dataToDisplay)=>{
                 <tr className="PercentRow">   
                     <td className="NameCours">%</td>
                     <td className="noneDatas"></td>
-                    <td>{(datas.tabMaxima.period_1.max/datas.minPond)*100}</td>
+                    <td>{Math.round((AllResults.period_1.max/datas.minPond)*1000)/10}</td>
                     <td>-</td>
                     <td className="noneDatas"></td>
                     <td>-</td>
