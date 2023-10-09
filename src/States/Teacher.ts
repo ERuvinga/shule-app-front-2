@@ -32,7 +32,8 @@ const  {atom,selectorFamily, selector} = require("recoil");
   const CourseSelected = atom({
     key:"CourseSelected",
     default:{
-      name:"Ecriture_Langues Congolaises"
+      name:"Ecriture_Langues Congolaises",
+      Pond:10
     }
   });
 
@@ -59,7 +60,12 @@ const  {atom,selectorFamily, selector} = require("recoil");
   const AllCotesOfStudents = atom({
     key:"AllCotesOfStudents",
     default:[]
-  })
+  });
+
+  const ErrorOverflowCotes = atom({
+    key:"ErrorOverflowCotes",
+    default:[],
+  });
 
   const FilterUsersOfClassByName = selector({
         key:"FilterUsersOfClassByName",
@@ -119,5 +125,6 @@ export {
     FilterUsersOfClassByName,
     OneCotesOfUsers,
     AllCotesOfStudents,
-    SavingDataOfCotesTyped
+    SavingDataOfCotesTyped,
+    ErrorOverflowCotes
 }
