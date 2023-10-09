@@ -94,7 +94,7 @@
     color: #787777;
     border-radius: 4px;
     font-size: .8em;
-    padding: 5px;
+    padding: 2px 5px;
 }
 
 .EditableBox .InputTextError{
@@ -103,7 +103,7 @@
     color: red;
     border-radius: 4px;
     font-size: .8em;
-    padding: 5px;
+    padding: 1px 5px;
 }
 
 .EyesIcone{

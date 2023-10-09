@@ -15,6 +15,25 @@
     padding:5px;
 }
 
+.ClassPromoUser{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 4px;
+    border-bottom: solid 1px #D7DFE0;
+}
+.containerMenu .promo{
+    color: #324447;
+    font-size: .9em;
+    font-family: poppinBlack;
+}
+
+.containerMenu .funct{
+    font-size: .8em;
+    color: #787777;
+}
+
+
 .IdentityUser{
     width: 95%;
     margin: auto;
