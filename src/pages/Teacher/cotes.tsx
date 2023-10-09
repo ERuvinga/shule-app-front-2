@@ -61,25 +61,25 @@ const StudentNewsPage = ()=>{
 
     const SendCote = ()=>{
         console.log(AllCotes);
-        // setstateUserData(false)
-        // fetch(`${LinkToApi.localLink}/Class/newsCotes`,{
-        //     method:"POST",
-        //     headers:{
-        //         'Accept':'application/json',
-        //         'Content-type':'application/json; charset=UTF-8',
-        //         "Autorization": `Bearer ${localStorage.getItem("TokenUser")}`
-        //     },
-        //     body: JSON.stringify(AllCotesOfStudent)
-        // })
-        //     .then((result)=>{
-        //         if(result.ok){
-        //             result.json().then((datas)=>{
-        //                 console.log(datas)
-        //                 setTimeout(()=>setstateUserData(true),1200) ;
-        //             })
-        //         }
-        //     })
-        //     .catch((error)=> console.log(error))
+        setstateUserData(false);
+        fetch(`${LinkToApi.localLink}/Class/newsCotes`,{
+            method:"POST",
+            headers:{
+                'Accept':'application/json',
+                'Content-type':'application/json; charset=UTF-8',
+                "Autorization": `Bearer ${localStorage.getItem("TokenUser")}`
+            },
+            body: JSON.stringify(AllCotes)
+        })
+            .then((result)=>{
+                if(result.ok){
+                    result.json().then((datas)=>{
+                        console.log(datas)
+                        setTimeout(()=>setstateUserData(true),1200) ;
+                    })
+                }
+            })
+            .catch((error)=> console.log(error))
     }
 
     useEffect(()=>{
