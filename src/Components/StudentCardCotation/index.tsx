@@ -1,5 +1,5 @@
-import {  useRecoilValue, useSetRecoilState } from "recoil";
-import { OneCotesOfUsers, CourseSelected, PeriodeSelected } from "@/src/States/Teacher";
+import {  useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { OneCotesOfUsers, CourseSelected, PeriodeSelected, ErrorOverflowCotes } from "@/src/States/Teacher";
 import { AuthUser } from "@/src/States/UserAoth";
 import { EyeIcon } from "@heroicons/react/24/outline";
 import { IdentityUserSelected } from "@/src/States/Student";
@@ -16,12 +16,15 @@ interface StudentDatas{
 }
 
 const HeadTitleStudentCotation = () =>{
+    const  Course:any = useRecoilValue(CourseSelected);
+    const  Periode:any = useRecoilValue(PeriodeSelected);
+
     return(
         <tr>
             <th className="first">ID</th>
             <th>Nom</th>
             <th>Classe</th>
-            <th>Points</th>
+            <th className="PonderationValue">{(Periode.includes("Examen"))? `/${Course.Pond*2}`:`/${Course.Pond}`}</th>
             <th className="last">Action</th>
         </tr>  
     )
@@ -33,6 +36,8 @@ const StudentsCardCotation = (datas:StudentDatas) =>{
     const  Course:any = useRecoilValue(CourseSelected);
     const  Periode:any = useRecoilValue(PeriodeSelected);
     const studentSelected = useSetRecoilState(IdentityUserSelected);
+    const [ErrorAllCotes, setErrorAllCotes]:any= useRecoilState(ErrorOverflowCotes);
+    const CopyOfCotesErrorTab = [...ErrorAllCotes];
 
     const updateDataOfStudentSelected = () =>{
         studentSelected ({
@@ -54,18 +59,53 @@ const StudentsCardCotation = (datas:StudentDatas) =>{
             PROMOTION:datas.promotion,
             NameCourse:Course.name,
             periode:Periode,
+        };
+
+        if(Periode.includes("Examen")){
+            if(event.target.value > Course.Pond*2){
+                console.log("Valeur max Depassee");
+
+                CopyOfCotesErrorTab[datas.idTab]={
+                    stateInput:true
+                };
+                setErrorAllCotes([...CopyOfCotesErrorTab]);
+            }
+
+            else{
+                CopyOfCotesErrorTab[datas.idTab]={
+                    stateInput:false
+                };
+                setErrorAllCotes([...CopyOfCotesErrorTab]);
+                setCoteSaved(data);
+            }
         }
 
-            setCoteSaved(data);
-    }
+        else{
+            if(event.target.value > Course.Pond){
+                console.log("Valeur max depassee");
+                CopyOfCotesErrorTab[datas.idTab]={
+                    stateInput:true
+                };
+                setErrorAllCotes([...CopyOfCotesErrorTab]);
+            }
 
+            else{
+                CopyOfCotesErrorTab[datas.idTab]={
+                    stateInput:false
+                };
+                setErrorAllCotes([...CopyOfCotesErrorTab]);
+                setCoteSaved(data);
+            }
+        }
+
+    }
     return(
         <tr className="bt">
             <td className="ClassPromotion">{datas.idTab}</td>
             <td className="UserName">{datas.name}</td>
             <td className="ClassPromotion">{`${datas.promotion}-${datas.CLASS}`}</td>
             <td className="EditableBox">
-                <input type="number" className="InputText" onChange={(e)=> UpdatingDatas(e)}/>
+                <input type="number" className={(ErrorAllCotes[datas.idTab])?(ErrorAllCotes[datas.idTab].stateInput ? "InputTextError":"InputText"):"InputText"} onChange={(e)=> UpdatingDatas(e)}/>
             </td>  
             <td className=""><EyeIcon className="EyesIcone" onClick={()=>updateDataOfStudentSelected()}/></td>
         </tr>

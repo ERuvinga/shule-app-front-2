@@ -25,11 +25,20 @@ const PeriodeFilter =()=>{
 const CoursFilter =()=>{
     const setCourseSelected = useSetRecoilState(CourseSelected);
     const AllsCourse:any = useRecoilValue(AllCourseInClass);
+
+    const updatedSelectCourse = (event:any)=>{
+        const decodeDatas = event.target.value.split("#");
+        setCourseSelected({
+            name:decodeDatas[0],
+            Pond:decodeDatas[1],
+        })
+    }
+
     return(
         <div className="PromFilter">
                 <span className="TitleFilter"><Square3Stack3DIcon className="Icone"/><span>Cours</span></span>
-                <select className="CourSelected" onChange={(event:any)=>setCourseSelected({name:event.target.value})} defaultValue={"Ecriture_Langues Congolaises"}>
-                    {AllsCourse.map((item:any, index:any)=><option key={index} value={`${item.name}_${item.domaine}`} className="itemsClass">{`${item.name} (${item.domaine})`}</option>)}
+                <select className="CourSelected" onChange={(event:any)=> updatedSelectCourse(event)} defaultValue={"Ecriture_Langues Congolaises"}>
+                    {AllsCourse.map((item:any, index:any)=><option key={index} value={`${item.name}_${item.domaine}#${item.pond}`} className="itemsClass">{`${item.name} (${item.domaine})`}</option>)}
                 </select>
         </div>
     )
