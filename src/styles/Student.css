@@ -76,7 +76,7 @@
 
 .descriptionsCourses .periodeSelect{
     border: solid 2px #D7DFE0;
-    padding: 3px 15px;
+    padding: 5px 15px;
     border-radius: 4px;
     color: #787777;
     font-size: .8em;
@@ -92,6 +92,15 @@
     width: 50px;
     border: solid 1px #D7DFE0;
     color: #787777;
+    border-radius: 4px;
+    font-size: .8em;
+    padding: 5px;
+}
+
+.EditableBox .InputTextError{
+    width: 50px;
+    border: solid 1px red;
+    color: red;
     border-radius: 4px;
     font-size: .8em;
     padding: 5px;
@@ -123,6 +132,16 @@
     padding: 6px 0;
 }
 
+.btnSendCotesDisabled{
+    color: white;
+    background-color: #324447;
+    font-size: .8em;
+    border-radius: 4px;
+    box-shadow: 0 0 5px 0 #D7DFE0;
+    padding: 8px 20px;
+    opacity: .4;
+}
+
 .btnSendCotes{
     color: white;
     background-color: #728A8F;
@@ -131,6 +150,11 @@
     box-shadow: 0 0 5px 0 #D7DFE0;
     padding: 8px 20px;
 }
+
+.btnSendCotes:hover, .btnSendCotesDisabled:hover{
+    cursor: pointer;
+}
+
 /*Bulletin*/
 .ContainerBultin{
     width: 100%;
@@ -171,6 +195,7 @@
     max-width: 15px;
     border: solid #D7DFE0 1px;
 }
+
 
 .MAxCourses{
     font-weight: bolder;

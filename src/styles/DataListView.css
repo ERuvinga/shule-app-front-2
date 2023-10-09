@@ -41,6 +41,36 @@
 
 }
 
+.Viewdatas .ContainerOverflowErrorRefreshDatas{
+    display: flex;
+    gap: 25px;
+    font-size: .6em;
+}
+
+@keyframes AnnimOverflowError {
+    from{
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to{
+        opacity: 0;
+        transform: scale(.9);
+    }
+    
+}
+.Viewdatas .ContainerOverflowErrorRefreshDatas .ErrorOverflow{
+    display: flex;
+    gap: 5px;
+    color: red;
+    align-items: flex-end;
+    animation: AnnimOverflowError 2s alternate-reverse infinite;
+}
+
+.Viewdatas .ContainerOverflowErrorRefreshDatas .ErrorOverflow .icone{
+    width: 16px;
+}
+
 .Viewdatas .HeadView .InputContent .Icone, .Viewdatas .HeadView .RefreshDatas .Icone{
     width: 20px;
     color: #787777;
@@ -100,6 +130,12 @@
 .titleDatas .last{
     border-radius: 0 4px 4px 0;
 }
+
+.titleDatas .PonderationValue{
+    font-family: poppinBlack;
+    font-size: .8em;
+}
+
 
 .Viewdatas .DatasComponents{
     width: 100%;
