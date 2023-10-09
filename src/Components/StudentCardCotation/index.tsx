@@ -107,7 +107,7 @@ const StudentsCardCotation = (datas:StudentDatas) =>{
             <td className="EditableBox">
                 <input type="number" className={(ErrorAllCotes[datas.idTab])?(ErrorAllCotes[datas.idTab].stateInput ? "InputTextError":"InputText"):"InputText"} onChange={(e)=> UpdatingDatas(e)}/>
             </td>  
-            <td className=""><EyeIcon className="EyesIcone" onClick={()=>updateDataOfStudentSelected()}/></td>
+            <td><EyeIcon className="EyesIcone" onClick={()=>updateDataOfStudentSelected()}/></td>
         </tr>
     )
 };
