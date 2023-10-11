@@ -28,11 +28,10 @@ const StudentPageIndex = ()=>{
     const [itemMenuSelected, setItemMenuSelected] = useRecoilState(SelectedMenuItems);
     const DataOfMenu = useRecoilValue(DataOfStudentMenu);
 
-    console.log(UserAuth);
     useEffect(()=>{
-        if(itemMenuSelected){
+        // if(itemMenuSelected){
             setItemMenuSelected(0);
-        }
+        //}
         withAuth(LinkToApi, localStorage.getItem("TokenUser"), setStatePage, setUaseAuth, UserAuth, Router); // check if token of user is valid
     },[]);
 

@@ -1,5 +1,14 @@
+.titlePrint{
+    display: none;
+}
+
 @media print {
     .containerMenu, .ReturnPrintReload{
         display: none;
     }
+
+    .titlePrint{
+        display: block;
+    }
+    
 }

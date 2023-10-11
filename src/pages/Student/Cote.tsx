@@ -19,6 +19,7 @@ import NavBarAuthPages from "@/src/Components/NavBarAuthPages";
 import { DataOfStudentMenu, FinalResult } from "@/src/States/Student";
 import { HeadTitleBultDatas, RowCotes } from "@/src/Components/BulletinStudent";
 import DiplayResultFinal from "@/src/Components/BulletinStudent/TotPercentAndPlaceListe" 
+import { DatesOfProclamm } from "@/src/States/Teacher";
 
 const StudentCotesPage = ()=>{
     const Router = useRouter();
@@ -35,6 +36,7 @@ const StudentCotesPage = ()=>{
     const [UserAuth, setUaseAuth]:any = useRecoilState(AuthUser);
     const [minPonderationCourses, setMinPonderationCourses]:any = useRecoilState(MinPonderationMin);
     const [SummOfCotes, setSummOfCotes]:any = useRecoilState(MaxResultsPeriodes);
+    const setDatesOfProclammations= useSetRecoilState(DatesOfProclamm);
     const setResultsOfStudent = useSetRecoilState(FinalResult);
 
     useEffect(()=>{
@@ -61,9 +63,11 @@ const StudentCotesPage = ()=>{
             .then((result)=>{
                 if(result.ok){
                     result.json().then((datas)=>{
+                        console.log(datas);
                         setCotesStudent(datas.Cotes);
                         setSummOfCotes(datas.Resultat);
                         setResultsOfStudent(datas.Resultat);
+                        setDatesOfProclammations(datas.datesProclam);
                         setTimeout(()=>setDatasCotesAvailable(true),1000); // secondes secondes after reload data Display it 
                     })
                 }

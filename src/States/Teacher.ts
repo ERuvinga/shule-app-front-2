@@ -6,14 +6,14 @@ const  {atom,selectorFamily, selector} = require("recoil");
     const DataOfTeachertMenu =atom({
         key:"DataOfTeachertMenu",
         default: [
-            {
-                label:"Classe",
-                Link:"/Teacher",
-                icone:"UserGroupIcon"
-            },
+            // {
+            //     label:"Classe",
+            //     Link:"/Teacher",
+            //     icone:"UserGroupIcon"
+            // },
             {
                 label:"Cotes",
-                Link:"/Teacher/cotes",
+                Link:"/Teacher/",
                 icone:"ClipboardIcon"
             },
             {
@@ -24,6 +24,10 @@ const  {atom,selectorFamily, selector} = require("recoil");
     ]
   });
 
+  const DatesOfProclamm = atom({
+    key:"DatesOfProclamm",
+    default:[]
+  })
   const PeriodeSelected = atom({
     key:"PeriodeSelected",
     default:"1P"
@@ -126,5 +130,6 @@ export {
     OneCotesOfUsers,
     AllCotesOfStudents,
     SavingDataOfCotesTyped,
-    ErrorOverflowCotes
+    ErrorOverflowCotes,
+    DatesOfProclamm
 }
