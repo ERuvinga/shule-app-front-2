@@ -1,0 +1,5 @@
+@media print {
+    .containerMenu, .ReturnPrintReload{
+        display: none;
+    }
+}
