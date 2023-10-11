@@ -147,8 +147,8 @@ const StudentNewsPage = ()=>{
                     <MenuComponent DatasOfMenu= {DataOfMenu}/>
                     <div className="constainerDatasNav">
                         { togglePage ?
-                            <div className="containerDatas">
-                                <div className="DataFilterContainer">
+                            <div className="containerDatas border">
+                                <div className="DataFilterContainer border">
                                     <div className="Viewdatas">
                                             <div className="descriptionsCourses">
                                                 <div className="ContDesc">
@@ -222,7 +222,11 @@ const StudentNewsPage = ()=>{
                                         <CoursFilter/>
                                 </div>                      
                             </div>:
-                            <FicheOfSudent Courses={AllsCourse} returnFunction={setTooglePage}/>
+                            <>                            
+                                <div className="titlePrint">Fiche de Cote Ecolier</div>
+                                <FicheOfSudent Courses={AllsCourse} returnFunction={setTooglePage}/>
+                            </>
+
                             }
                     </div>
                 </section>

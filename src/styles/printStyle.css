@@ -1,4 +1,8 @@
 .titlePrint{
+    font-family: poppinBlack;
+    font-size: .8em;
+    padding-top: 20px;
+    text-align: center;
     display: none;
 }
 

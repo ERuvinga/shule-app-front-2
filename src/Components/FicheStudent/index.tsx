@@ -45,8 +45,7 @@ const FicheOfSudent = (datas:DatasStudent)=>{
     },[ReloadDatas]);
 
     return(
-        <>
-                          
+        <>        
             <div className="CoteDatas">
                 <div className="descriptionStudent">
                     <div className="NameStudent">
