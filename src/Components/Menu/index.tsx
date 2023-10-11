@@ -37,9 +37,7 @@ const MenuComponent = (datas : DatasMenu)=>{
                 case "ChatBubbleBottomCenterTextIcon":
                     return <ChatBubbleBottomCenterTextIcon className="icone"/>
             }
-    };
-
-    console.log(DatasUser);
+    };    
     return(
         <div className="containerMenu">
             { typeAccount && 

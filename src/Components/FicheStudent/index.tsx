@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { HeadTitleBultDatas, RowCotes } from "../BulletinStudent"
 import { IdentityUserSelected } from "@/src/States/Student";
 import { useRecoilValue } from "recoil";
-import {  ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
+import {  ArrowPathIcon, ArrowSmallLeftIcon, PrinterIcon } from "@heroicons/react/24/outline";
 import { Link_toApi } from "@/src/States/LoginRegisterStates";
 import Loading from "@/src/Components/Loading"
 
@@ -19,6 +19,7 @@ const FicheOfSudent = (datas:DatasStudent)=>{
     //States
     const [StatePage, setStatePage]= useState(false);
     const [coteStudent, setCoteStudent] = useState([]);
+    const [ReloadDatas, setReloadDatas]= useState(false);
 
     useEffect(()=>{
         setStatePage(false);
@@ -41,25 +42,40 @@ const FicheOfSudent = (datas:DatasStudent)=>{
                 }
             })
             .catch((error)=> console.log(error))
-    },[]);
+    },[ReloadDatas]);
 
     return(
         <>
-            {  StatePage ?                           
+                          
             <div className="CoteDatas">
                 <div className="descriptionStudent">
-                    <div className="Return" 
-                                onClick={()=>datas.returnFunction(true)}>
-                        <ArrowUturnLeftIcon className="Icone"/>
-                        <span>Retour</span>
-                    </div>
                     <div className="NameStudent">
                         <div>{`Nom : `}<span className="namePromClass">{DatasOfUsersSelected.nameStudent}</span></div>
                         <div>{`Promotion : `}<span className="namePromClass">{DatasOfUsersSelected.PROMO}</span></div>
                         <div>{`Class : `}<span className="namePromClass">{DatasOfUsersSelected.CLASS}</span></div>
                     </div>
+                    <div className="ReturnPrintReload">
+                        <span className="Return" 
+                                    onClick={()=>datas.returnFunction(true)}>
+                            <ArrowSmallLeftIcon className="Icone"/>
+                            <span>Retour</span>
+                        </span>
+
+                        <span className="Return" 
+                                    onClick={()=> window.print()}>
+                            <PrinterIcon className="Icone"/>
+                            <span>Imprimer</span>
+                        </span>    
+                        <span className="Return" 
+                                    onClick={()=>setReloadDatas(!ReloadDatas)}>
+                            <ArrowPathIcon className="Icone"/>
+                            <span>Recharger</span>
+                        </span>                     
+                    </div>
+
                 </div>
-                <table className="CotesTable">
+                {  StatePage ? 
+                <table className="CotesTable" id="PrintTable">
                         <thead className="titleDatasFiche">
                             <HeadTitleBultDatas/>
                         </thead>
@@ -74,12 +90,13 @@ const FicheOfSudent = (datas:DatasStudent)=>{
                                         }                                                                 
                         </tbody>
                 </table>
-            </div>:
-            <div className="LoaderPage">
+           :
+            <div className="LoaderCotes">
                 <Loading/>
                 <span>Chargement...</span>
             </div>
         }
+        </div>
     </>
     )
 };

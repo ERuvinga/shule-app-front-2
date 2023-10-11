@@ -63,8 +63,6 @@ const StudentsCardCotation = (datas:StudentDatas) =>{
 
         if(Periode.includes("Examen")){
             if(event.target.value > Course.Pond*2){
-                console.log("Valeur max Depassee");
-
                 CopyOfCotesErrorTab[datas.idTab]={
                     stateInput:true
                 };
@@ -82,7 +80,6 @@ const StudentsCardCotation = (datas:StudentDatas) =>{
 
         else{
             if(event.target.value > Course.Pond){
-                console.log("Valeur max depassee");
                 CopyOfCotesErrorTab[datas.idTab]={
                     stateInput:true
                 };

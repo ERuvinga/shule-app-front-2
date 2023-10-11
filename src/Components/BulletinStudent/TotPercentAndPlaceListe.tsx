@@ -1,5 +1,6 @@
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { FinalResult } from "@/src/States/Student";
+import { DatesOfProclamm } from "@/src/States/Teacher";
 
 interface dataToDisplay{
     minPond:number,
@@ -9,10 +10,10 @@ interface dataToDisplay{
 
 const DiplayResultFinal = (datas:dataToDisplay)=>{
     
-    const [AllResults, setAllResults]:any = useRecoilState(FinalResult)
+    const AllResults:any = useRecoilValue(FinalResult);
+    const [DatesOfProclammations, setDatesOfProclammations]= useRecoilState(DatesOfProclamm);
 
-    console.log(AllResults);
-
+    console.log(DatesOfProclammations);
     switch(datas.nameRow){
         case "maxi":    
             return (
