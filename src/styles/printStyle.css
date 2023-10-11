@@ -7,7 +7,7 @@
 }
 
 @media print {
-    .containerMenu, .ReturnPrintReload{
+    .containerMenu, .ReturnPrintReload, .NavBarInAuthPages{
         display: none;
     }
 

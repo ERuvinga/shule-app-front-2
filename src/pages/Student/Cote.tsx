@@ -20,6 +20,7 @@ import { DataOfStudentMenu, FinalResult } from "@/src/States/Student";
 import { HeadTitleBultDatas, RowCotes } from "@/src/Components/BulletinStudent";
 import DiplayResultFinal from "@/src/Components/BulletinStudent/TotPercentAndPlaceListe" 
 import { DatesOfProclamm } from "@/src/States/Teacher";
+import { ArrowPathIcon, PrinterIcon } from "@heroicons/react/24/outline";
 
 const StudentCotesPage = ()=>{
     const Router = useRouter();
@@ -28,6 +29,7 @@ const StudentCotesPage = ()=>{
     const [DatasCoursessAvailable, setDatasCoursessAvailable] = useState(false);
     const [CotesStudent, setCotesStudent] = useState([]);
     const [AllCourse, setAllCourses] = useState([]);
+    const [ReloadDatas, setReloadDatas] = useState(false);
 
     //Atoms
     const LinkToApi:any = useRecoilValue(Link_toApi);
@@ -93,7 +95,8 @@ const StudentCotesPage = ()=>{
                     }
                 })
                 .catch((error)=> console.log(error))
-    },[]);
+    },[ReloadDatas]);
+    console.log(UserAuth);
     return(
         <>
             <HeadPages/>
@@ -102,12 +105,31 @@ const StudentCotesPage = ()=>{
                 <section className="ContainerFormatPages">
                     <MenuComponent DatasOfMenu= {DataOfMenu}/>
                     <div className="constainerDatasNav">
-                        <NavBarAuthPages title="" message=""/>
                                 <div className="ContainerBultin">
+                                    <div className="descriptionStudent">
+                                        <div className="NameStudent">
+                                            <div>{`Nom : `}<span className="namePromClass">{UserAuth.allName}</span></div>
+                                            <div>{`Promotion : `}<span className="namePromClass">{UserAuth.registerDatas.PROMOTION}</span></div>
+                                            <div>{`Class : `}<span className="namePromClass">{UserAuth.registerDatas.CLASS}</span></div>
+                                        </div>
+                                        <div className="ReturnPrintReload">
+                                            <span className="Return" 
+                                                        onClick={()=> window.print()}>
+                                                <PrinterIcon className="Icone"/>
+                                                <span>Imprimer</span>
+                                            </span>    
+                                            <span className="Return" 
+                                                        onClick={()=>setReloadDatas(!ReloadDatas)}>
+                                                <ArrowPathIcon className="Icone"/>
+                                                <span>Recharger</span>
+                                            </span>                     
+                                        </div>
+
+                                    </div>
                                         {
                                             (AllCourse.length && DatasCotesAvailable && DatasCoursessAvailable)?
                                                 <table className="CotesTable">
-                                                    <thead className="titleDatasFiche">
+                                                    <thead className="titleDatasFiche ">
                                                         <HeadTitleBultDatas/>
                                                             </thead>
                                                                 <tbody className="BodyTable">
