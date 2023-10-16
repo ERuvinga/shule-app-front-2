@@ -300,6 +300,21 @@
     display: flex;
     gap:5px
 }
+.print{
+    background-color: #eef4f5;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    gap: 5px;
+    transition: all .2s ease-in-out;
+    border: solid 1px #D7DFE0;
+}
+
+.print:hover{
+    cursor: pointer;
+    box-shadow: 0 0 4px 0 #D7DFE0;
+    border: #728A8F solid 1px;
+}
 
 .descriptionStudent .Return {
     background-color: #eef4f5;
@@ -311,9 +326,9 @@
     border: solid 1px #D7DFE0;
 }
 
-.descriptionStudent .Return .Icone{
-    width: 15px;
-    color: #324447;
+.descriptionStudent .Return .Icone, .print .Icone{
+    width: 18px;
+    color: #787777;
 }
 
 .descriptionStudent .Return:hover{
@@ -322,11 +337,11 @@
     border: #728A8F solid 1px;
 }
 
-.descriptionStudent .Return span{
+.descriptionStudent .Return span, .print span{
     display: flex;
     align-items: center;
-    font-size: .7em;
-    color: #728A8F;
+    font-size: .8em;
+    color: #787777;
 }
 
 .CotesTable{

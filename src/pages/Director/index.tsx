@@ -9,7 +9,7 @@ import {TypeAccountState, AllUserStates, FilterTypeAccountsUser, DataOfMenuState
 
 // lib
 import { withAuth } from "@/src/Lib/Auth";
-import { ArrowPathIcon } from "@heroicons/react/24/outline"
+import { ArrowPathIcon, PrinterIcon } from "@heroicons/react/24/outline"
 
 //components
 import HeadPages from "@/src/Components/Head";
@@ -28,6 +28,8 @@ const DirectorPageIndex = ()=>{
     const [statePage, setStatePage] = useState(false);
     const [stateUserData, setstateUserData] = useState(false);
     const [ReloadAllDatas, setReloadAllDatas] = useState(false);
+    const [TitleTab, setTitleTab] = useState("Liste des Ecolier de l'Ep Neema");
+    const [PrintPage, setPrintPage] =useState(false);
 
     //Atoms and selector
     const typeAccountSearching = useRecoilValue(TypeAccountState);
@@ -37,6 +39,17 @@ const DirectorPageIndex = ()=>{
     const DataOfMEnuDirector = useRecoilValue(DataOfMenuState);
     const UserFilters:any = useRecoilValue(FilterTypeAccountsUser);
     const setItemMenuSelected = useSetRecoilState(SelectedMenuItems);
+
+    const UpdateViewForPrint = () =>{
+        setPrintPage(true);
+        setTimeout(()=>{
+            window.print()
+        },10);
+        
+        setTimeout(()=>{
+            setPrintPage(false);
+        },50);
+    };
 
     const DataListView = ()=>{
         if(UserFilters.length){
@@ -84,9 +97,6 @@ const DirectorPageIndex = ()=>{
             }
         }
     }
-
-    // data of Menu
-
 
     const dataOfTypeAccount = [
         {
@@ -141,26 +151,40 @@ const DirectorPageIndex = ()=>{
                 <section className="ContainerFormatPages">
                     <MenuComponent DatasOfMenu={DataOfMEnuDirector}/>
                     <div className="constainerDatasNav">
-                        <NavBarAuthPages title="DashBoard" message="Detail sur les informations de l'etablissement"/>
+                        <div className="wrapperHiden">
+                            <NavBarAuthPages title="DashBoard" message="Detail sur les informations de l'etablissement"/>
+                        </div>
                         <div className="containerDatas">
-                            <div className="DataFilterContainer">
-                                <div className="TypeAccontContainer">
-                                    {
-                                        dataOfTypeAccount.map((value:any, index:any)=> <TypeAccount key={index} title={value.label} item={value.item} />)
-                                    }
+                            <div className={PrintPage ? "DatasContainerHidden":"DataFilterContainer"}>
+                                <div className="wrapperHiden">
+                                    <div className="TypeAccontContainer">
+                                        {
+                                            dataOfTypeAccount.map((value:any, index:any)=> <TypeAccount key={index} title={value.label} item={value.item} />)
+                                        }
+                                    </div>
                                 </div>
                                 <div className="Viewdatas">
-                                    <div className="HeadView">
-                                        <SearchInput/>
-                                        <div className="RefreshDatas" 
-                                            onClick={
-                                                ()=> {
-                                                        setReloadAllDatas(!ReloadAllDatas);
-                                                }
-                                            }>
-                                            <ArrowPathIcon className="Icone"/>
-                                            <span className="numberOfUser">{`(${(UserFilters.length)? UserFilters.length : "0"})`}</span>
-                                        </div>
+                                    <div className="wrapperHiden">
+                                        <div className="HeadView">
+                                            <SearchInput/>
+                                            <div className="ReturnPrintReload">
+                                                <span className="print" 
+                                                            onClick={()=> UpdateViewForPrint()
+                                                            } >
+                                                    <PrinterIcon className="Icone"/>
+                                                    <span>Imprimer</span>
+                                                </span> 
+                                                <span className="RefreshDatas" 
+                                                    onClick={
+                                                        ()=> {
+                                                                setReloadAllDatas(!ReloadAllDatas);
+                                                        }
+                                                    }>
+                                                    <ArrowPathIcon className="Icone"/>
+                                                    <span className="numberOfUser">{`(${(UserFilters.length)? UserFilters.length : "0"})`}</span>
+                                                </span>                                            
+                                            </div>
+                                    </div>
                                     </div>
                                     <div className="Datas">
                                         {
@@ -168,6 +192,8 @@ const DirectorPageIndex = ()=>{
                                             <>
                                                 {
                                                     (UserFilters.length)?
+                                                    <>
+                                                        <div className="titlePrintListUsers">{TitleTab}</div>
                                                         <table className="DatasComponents">
                                                             <thead className="titleDatas"><HeadTitleDataView 
                                                                 typeCompte={(!typeAccountSearching)? "Dir":((typeAccountSearching == 1)? "Teach": "Stud")}/>
@@ -176,12 +202,12 @@ const DirectorPageIndex = ()=>{
                                                                     {DataListView()}
                                                             </tbody>
                                                         </table>
+                                                    </>
                                                         :
                                                         <div className="UserNotFund">
                                                             <span className="Title">O oops !</span>
                                                             <span className="Description">Aucun Utilisateur Trouvé</span>                    
                                                         </div>
-                                                    
                                                 }
                                             </>
                                             :
@@ -192,19 +218,21 @@ const DirectorPageIndex = ()=>{
                                     </div>
                                 </div>
                             </div>
-                            <div className="FilterContainer">
-                                {
-                                    (!typeAccountSearching)? 
-                                    <div className="loadingAccount">
-                                        <Loading/>
-                                        <span>Auncun filtre pour la Direction</span>
-                                    </div>
-                                    :
-                                    <>
-                                        <PromotionFilter/>
-                                        <ClassFilter/>
-                                    </>
-                                }
+                            <div className="wrapperhiddenFilter">
+                                <div className="FilterContainer">
+                                    {
+                                        (!typeAccountSearching)? 
+                                        <div className="loadingAccount">
+                                            <Loading/>
+                                            <span>Auncun filtre pour la Direction</span>
+                                        </div>
+                                        :
+                                        <>
+                                            <PromotionFilter/>
+                                            <ClassFilter/>
+                                        </>
+                                    }
+                                </div>
                             </div>
                         </div> 
                     </div>

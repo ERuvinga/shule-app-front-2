@@ -15,7 +15,6 @@ import { withAuth } from "@/src/Lib/Auth";
 import HeadPages from "@/src/Components/Head";
 import Loading from "@/src/Components/Loading";
 import MenuComponent from "@/src/Components/Menu";
-import NavBarAuthPages from "@/src/Components/NavBarAuthPages";
 import { DataOfStudentMenu, FinalResult } from "@/src/States/Student";
 import { HeadTitleBultDatas, RowCotes } from "@/src/Components/BulletinStudent";
 import DiplayResultFinal from "@/src/Components/BulletinStudent/TotPercentAndPlaceListe" 
@@ -96,7 +95,6 @@ const StudentCotesPage = ()=>{
                 })
                 .catch((error)=> console.log(error))
     },[ReloadDatas]);
-    console.log(UserAuth);
     return(
         <>
             <HeadPages/>

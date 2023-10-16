@@ -29,7 +29,7 @@ const StudentNewsPage = ()=>{
     const [reloadDate, SetReloadDatas] = useState(true);
     const [UserOfClass, setUserOfClass]:any = useRecoilState(AllStudentsInClass);
     const [togglePage, setTooglePage] = useState(true);
-    const [disabledBtnSendCotes, setDisabledBtnSendCotes] = useState(true);
+    const [disabledBtnSendCotes, setDisabledBtnSendCotes] = useState(false);
 
     //Atoms
     const LinkToApi:any = useRecoilValue(Link_toApi);
@@ -130,13 +130,17 @@ const StudentNewsPage = ()=>{
  
     },[UserFiltered]);
 
-    useEffect(()=>{
-        // setup disabledStateBtn
-        if((!AllCotes.length)|| SearchError()){
-            StateDisbled = true;
-        }
-        setDisabledBtnSendCotes(StateDisbled)
-    },[AllCotes,ErrorInputValues]);
+    // useEffect(()=>{
+    //     // setup disabledStateBtn
+    //     if((!AllCotes.length)|| SearchError()){
+    //         StateDisbled = false;
+    //     }
+
+    //     else{
+    //         StateDisbled = false;
+    //     }
+    //     setDisabledBtnSendCotes(StateDisbled)
+    // },[AllCotes,ErrorInputValues]);
 
     return(
         <>
@@ -147,8 +151,8 @@ const StudentNewsPage = ()=>{
                     <MenuComponent DatasOfMenu= {DataOfMenu}/>
                     <div className="constainerDatasNav">
                         { togglePage ?
-                            <div className="containerDatas border">
-                                <div className="DataFilterContainer border">
+                            <div className="containerDatas">
+                                <div className="DataFilterContainer">
                                     <div className="Viewdatas">
                                             <div className="descriptionsCourses">
                                                 <div className="ContDesc">
