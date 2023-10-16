@@ -1,3 +1,7 @@
+import { DatesOfProclamm } from "@/src/States/Teacher";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { AuthUser } from "@/src/States/UserAoth";
+
 const HeadTitleBultDatas = () =>{
     return(
         <tr>
@@ -35,6 +39,8 @@ interface dataOfCourse {
 }
 
 const RowCotes = (datas:dataOfCourse) =>{
+    const [DatesOfProclammations, setDatesOfProclammations]:any= useRecoilState(DatesOfProclamm);
+    const AuthentiqUser :any = useRecoilValue(AuthUser)
 
     const searchCoteStudent = (periodeCote:String)=>{
         for(let i=0; i< datas.tabPoint.length; i++){
@@ -42,14 +48,42 @@ const RowCotes = (datas:dataOfCourse) =>{
                 return datas.tabPoint[i].cote
             }    
         }
-        return "-"
+        return "-";
     };
+    
+    const SearchingDatePeriod = (periodeName:any) =>{
+        const DateNow = new Date(Date.now());
+
+        let ValueReturned = false;
+        if( AuthentiqUser.typeAccount == "Student"){
+            DatesOfProclammations.map((value:any)=>{
+                if(value.namePeriode == periodeName){
+                    if(value.Dates != ""){
+                        const DateDay = value.Dates.split("-");
+                        if((DateNow.getFullYear() >= parseInt(DateDay[0])) && (DateNow.getMonth()+1 >= parseInt(DateDay[1]) && (DateNow.getDate() >= parseInt(DateDay[2])))){
+                            console.log("Date de proclammation arrivée");
+                            ValueReturned = true;
+                        }
+                        else{
+                            console.log("Date de proclammation pas encore arrivée")
+                            ValueReturned = false;
+                        }
+                    }
+                }
+            })
+        }
+        else{
+            ValueReturned = true;
+        }
+        return ValueReturned;
+    };
+
     return (
     <tr className="RowTab">
         <td className="NameCours">{datas.coursName}</td>
         <td className="MAxCourses">{datas.CourMax}</td>
-        <td className={searchCoteStudent("1P") != "-" && (searchCoteStudent("1P") < datas.CourMax/2) ? "failed":""}>{searchCoteStudent("1P")}</td>
-        <td className={searchCoteStudent("1P") != "-" && (searchCoteStudent("2P") < datas.CourMax/2) ?"failed":""}>{searchCoteStudent("2P")}</td>
+        <td className={(searchCoteStudent("1P") != "-" && (searchCoteStudent("1P") < datas.CourMax/2) && SearchingDatePeriod("1 er Periode"))? "failed":""}>{SearchingDatePeriod("1 er Periode")? searchCoteStudent("1P"):"-"}</td>
+        <td className={(searchCoteStudent("1P") != "-" && (searchCoteStudent("2P") < datas.CourMax/2) && SearchingDatePeriod("2 em Periode"))? "failed":""}>{SearchingDatePeriod("2 em Periode")? searchCoteStudent("2P"):"-"}</td>
         <td className="MAxCourses">{datas.CourMax*2}</td>
         <td className={searchCoteStudent("Examen1") != "-" && (searchCoteStudent("Examen1") < parseInt(datas.CourMax)) ? "failed":""}>{searchCoteStudent("Examen1")}</td>
         <td className="MAxCourses">{datas.CourMax*4}</td>
