@@ -21,36 +21,36 @@ const CardUser = (datas:dataDirector)=>{
             case "Director":
                 return(
                     <>
-                        <td><Image width={100} height={100} src={"/imgs/AuthImgs/avatar.png"} alt="directors Profil"/></td>
+                        <td className="wrapperHiden"><Image width={100} height={100} src={"/imgs/AuthImgs/avatar.png"} alt="directors Profil"/></td>
                         <td className="UserName">{datas.name}</td>
                         <td className="emailContente">{datas.email}</td>
                         <td className="Tel">{datas.contact}</td>
-                        <td><span className={datas.statusCompte? "actifAccount":"actifAccountFalse"}>{(datas.statusCompte)?"Oui":"Non"}</span></td>
-                        <td><EllipsisVerticalIcon className="Icone"/></td>  
+                        <td className="wrapperHiden "><span className={datas.statusCompte? "actifAccount":"actifAccountFalse"}>{(datas.statusCompte)?"Oui":"Non"}</span></td>
+                        <td className="wrapperHiden "><EllipsisVerticalIcon className="Icone"/></td>  
                     </>                  
                 )
             case "Teacher":
                 return(
                     <>
-                        <td><Image width={100} height={100} src={"/imgs/AuthImgs/avatar.png"} alt="directors Profil"/></td>
+                        <td className="wrapperHiden"><Image width={100} height={100} src={"/imgs/AuthImgs/avatar.png"} alt="directors Profil"/></td>
                         <td className="UserName">{datas.name}</td>
                         <td className="ClassPromotion">{datas.promotion}</td>
                         <td className="emailContente">{datas.email}</td>
                         <td className="Tel">{datas.contact}</td>
-                        <td><span className={datas.statusCompte? "actifAccount":"actifAccountFalse"}>{(datas.statusCompte)?"Oui":"Non"}</span></td>
-                        <td><EllipsisVerticalIcon className="Icone"/></td>  
+                        <td className="wrapperHiden "><span className={datas.statusCompte? "actifAccount":"actifAccountFalse"}>{(datas.statusCompte)?"Oui":"Non"}</span></td>
+                        <td className="wrapperHiden "><EllipsisVerticalIcon className="Icone"/></td>  
                     </>                  
                 )
             case "Student":{
                 const InscriptionDate = new Date(datas.dateOfStudentaccount);
                 return(
                     <>
-                        <td><Image width={100} height={100} src={"/imgs/AuthImgs/avatar.png"} alt="directors Profil"/></td>
+                        <td className="wrapperHiden"><Image width={100} height={100} src={"/imgs/AuthImgs/avatar.png"} alt="directors Profil"/></td>
                         <td className="UserName">{datas.name}</td>
                         <td className="ClassPromotion">{datas.promotion}</td>
                         <td className="Tel">{`${InscriptionDate.getDate()} ${monthNumberToString(InscriptionDate.getMonth())} ${InscriptionDate.getFullYear()}`}</td>
-                        <td><span className={datas.statusCompte? "actifAccount":"actifAccountFalse"}>{(datas.statusCompte)?"Oui":"Non"}</span></td>
-                        <td><EllipsisVerticalIcon className="Icone"/></td>  
+                        <td className="wrapperHiden "><span className={datas.statusCompte? "actifAccount":"actifAccountFalse"}>{(datas.statusCompte)?"Oui":"Non"}</span></td>
+                        <td className="wrapperHiden "><EllipsisVerticalIcon className="Icone"/></td>  
                     </>                  
                 )
             }

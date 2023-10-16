@@ -10,35 +10,35 @@ const HeadTitleDataView = (datas:dataTitle) =>{
             case "Dir":
                 return (
                     <tr>
-                        <th className="first">Pic</th>
+                        <th  className="wrapperHiden first">Pic</th>
                         <th>Nom</th>
                         <th>@-email</th>
                         <th>Contact</th>
-                        <th>Actif</th>
-                        <th className="last">Action</th>
+                        <th className="wrapperHiden ">Actif</th>
+                        <th className="wrapperHiden last">Action</th>
                     </tr>
                 );
             case "Teach":
                 return (
                     <tr>
-                        <th className="first">Pic</th>
+                        <th className="wrapperHiden first">Pic</th>
                         <th>Nom</th>
                         <th>Promo-Classe</th>
                         <th>@-email</th>
                         <th>Contact</th>
-                        <th>Actif</th>
-                        <th className="last">Action</th>
+                        <th className="wrapperHiden ">Actif</th>
+                        <th className="wrapperHiden last">Action</th>
                     </tr>
                 );
             case "Stud":
                 return (
                     <tr>
-                        <th className="first">Pic</th>
+                        <th className="wrapperHiden first">Pic</th>
                         <th>Nom</th>
                         <th>Classe</th>
                         <th>Inscr-Date</th>
-                        <th>Actif</th>
-                        <th className="last">Action</th>
+                        <th className="wrapperHiden ">Actif</th>
+                        <th className="wrapperHiden last">Action</th>
                     </tr>
                 )
         }

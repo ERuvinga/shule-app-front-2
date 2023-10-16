@@ -35,7 +35,6 @@ const FicheOfSudent = (datas:DatasStudent)=>{
             .then((result)=>{
                 if(result.ok){
                     result.json().then((datas)=>{
-                        console.log(datas);
                         setCoteStudent(datas.Cotes)
                         setTimeout(()=>setStatePage(true),1200) ;
                     })

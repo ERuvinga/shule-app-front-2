@@ -60,40 +60,41 @@ const StudentsCardCotation = (datas:StudentDatas) =>{
             NameCourse:Course.name,
             periode:Periode,
         };
+        setCoteSaved(data);
 
-        if(Periode.includes("Examen")){
-            if(event.target.value > Course.Pond*2){
-                CopyOfCotesErrorTab[datas.idTab]={
-                    stateInput:true
-                };
-                setErrorAllCotes([...CopyOfCotesErrorTab]);
-            }
+        // if(Periode.includes("Examen")){
+        //     if(event.target.value > Course.Pond*2){
+        //         CopyOfCotesErrorTab[datas.idTab]={
+        //             stateInput:true
+        //         };
+        //         setErrorAllCotes([...CopyOfCotesErrorTab]);
+        //     }
 
-            else{
-                CopyOfCotesErrorTab[datas.idTab]={
-                    stateInput:false
-                };
-                setErrorAllCotes([...CopyOfCotesErrorTab]);
-                setCoteSaved(data);
-            }
-        }
+        //     else{
+        //         CopyOfCotesErrorTab[datas.idTab]={
+        //             stateInput:false
+        //         };
+        //         setErrorAllCotes([...CopyOfCotesErrorTab]);
+        //         setCoteSaved(data);
+        //     }
+        // }
 
-        else{
-            if(event.target.value > Course.Pond){
-                CopyOfCotesErrorTab[datas.idTab]={
-                    stateInput:true
-                };
-                setErrorAllCotes([...CopyOfCotesErrorTab]);
-            }
+        // else{
+        //     if(event.target.value > Course.Pond){
+        //         CopyOfCotesErrorTab[datas.idTab]={
+        //             stateInput:true,
+        //         };
+        //         setErrorAllCotes([...CopyOfCotesErrorTab]);
+        //     }
 
-            else{
-                CopyOfCotesErrorTab[datas.idTab]={
-                    stateInput:false
-                };
-                setErrorAllCotes([...CopyOfCotesErrorTab]);
-                setCoteSaved(data);
-            }
-        }
+        //     else{
+        //         CopyOfCotesErrorTab[datas.idTab]={
+        //             stateInput:false,
+        //         };
+        //         setErrorAllCotes([...CopyOfCotesErrorTab]);
+        //         setCoteSaved(data);
+        //     }
+        // }
 
     }
     return(
