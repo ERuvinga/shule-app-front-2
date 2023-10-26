@@ -1,9 +1,11 @@
 import { ClockIcon, Square3Stack3DIcon } from "@heroicons/react/24/outline";
 import {  useRecoilValue, useSetRecoilState } from "recoil";
 import { PeriodeSelected, CourseSelected, AllCourseInClass} from "@/src/States/Teacher";
+import { useEffect } from "react";
 
 const PeriodeFilter =()=>{
     const setPeriodSelected = useSetRecoilState(PeriodeSelected);
+
     return(
         <div className="PromFilter mb">
                 <span className="TitleFilter"><ClockIcon className="Icone"/><span>Periode</span></span>
@@ -25,14 +27,23 @@ const PeriodeFilter =()=>{
 const CoursFilter =()=>{
     const setCourseSelected = useSetRecoilState(CourseSelected);
     const AllsCourse:any = useRecoilValue(AllCourseInClass);
+    const per:any = useRecoilValue(PeriodeSelected);
+    const cours:any = useRecoilValue(CourseSelected);
 
     const updatedSelectCourse = (event:any)=>{
         const decodeDatas = event.target.value.split("#");
+        console.log(decodeDatas[1]);
         setCourseSelected({
             name:decodeDatas[0],
-            Pond:decodeDatas[1],
+            Pond: parseInt(decodeDatas[1]),
         })
     }
+
+useEffect(()=>{
+    console.log(per);
+    console.log(cours);
+
+},[per, cours])
 
     return(
         <div className="PromFilter">

@@ -2,12 +2,10 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useRecoilValue, useRecoilState, useResetRecoilState } from "recoil";
 
-//atoms 
+//atoms & lib
 import { Link_toApi } from "@/src/States/LoginRegisterStates";
 import { AuthUser } from "@/src/States/UserAoth";
 import {SelectedMenuItems} from "@/src/States/Director"
-
-// lib
 import { withAuth } from "@/src/Lib/Auth";
 
 //components
@@ -130,17 +128,17 @@ const StudentNewsPage = ()=>{
  
     },[UserFiltered]);
 
-    // useEffect(()=>{
-    //     // setup disabledStateBtn
-    //     if((!AllCotes.length)|| SearchError()){
-    //         StateDisbled = false;
-    //     }
+    useEffect(()=>{
+        // setup disabledStateBtn
+        if((!AllCotes.length)|| SearchError()){
+            StateDisbled = false;
+        }
 
-    //     else{
-    //         StateDisbled = false;
-    //     }
-    //     setDisabledBtnSendCotes(StateDisbled)
-    // },[AllCotes,ErrorInputValues]);
+        else{
+            StateDisbled = false;
+        }
+        setDisabledBtnSendCotes(StateDisbled)
+    },[AllCotes,ErrorInputValues]);
 
     return(
         <>
