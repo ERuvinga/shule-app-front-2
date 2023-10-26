@@ -11,13 +11,8 @@ const  {atom, selector} = require("recoil");
             icone:"CurrencyDollarIcon"
         },
         {
-            label:"Classe",
-            Link:"/Student/ClassRoom",
-            icone:"UserGroupIcon"
-        },
-        {
             label:"Cotes",
-            Link:"/Student/Cotes",
+            Link:"/Student/Cote",
             icone:"ClipboardIcon"
         },
         {
@@ -28,6 +23,25 @@ const  {atom, selector} = require("recoil");
     ]
   });
 
+  const IdentityUserSelected = atom({
+    key:"IdentityUserSelected",
+    default:{
+        idStudent:"",
+        CLASS:"",
+        PROMO:0,
+        nameStudent:""
+    }
+  })
+
+  const FinalResult = atom({
+    key:"FinalResult",
+    default:{
+    }
+  })
+
+
 export {
     DataOfStudentMenu,
+    IdentityUserSelected,
+    FinalResult
 }

@@ -15,6 +15,25 @@
     padding:5px;
 }
 
+.ClassPromoUser{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 4px;
+    border-bottom: solid 1px #D7DFE0;
+}
+.containerMenu .promo{
+    color: #324447;
+    font-size: .9em;
+    font-family: poppinBlack;
+}
+
+.containerMenu .funct{
+    font-size: .8em;
+    color: #787777;
+}
+
+
 .IdentityUser{
     width: 95%;
     margin: auto;
@@ -191,16 +210,32 @@
     flex-direction: column;
     align-items: center;
     padding: 8px;
-    gap: 5px;
+    gap: 8px;
     z-index: 0;
     position: relative;
 }
+
+.wrapperhiddenFilter .FilterContainer{
+    width: 100%;
+    height: fit-content;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 0 4px #D7DFE0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    gap: 8px;
+    z-index: 0;
+    position: relative;
+}
+
 
 .FilterContainer .PromFilter{
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
     color: #787777;
 }
 
@@ -226,7 +261,7 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding: 8px 0;
+    padding: 8px 4px;
 }
 
 .FilterContainer .PromFilter .itemsPromFilter .itemProm{

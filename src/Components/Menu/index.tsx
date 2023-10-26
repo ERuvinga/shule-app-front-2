@@ -17,6 +17,7 @@ interface DatasMenu {
 const MenuComponent = (datas : DatasMenu)=>{
     const DatasUser: any = useRecoilValue(AuthUser);
     const [selectedItemInMenu, setSelectedItemInMenu] =  useRecoilState(SelectedMenuItems);
+    const typeAccount = (DatasUser.typeAccount == "Teacher" || DatasUser.typeAccount == "Student")
 
     // fuction searching icone
     const searchIcone = (IconName:String)=>{
@@ -36,10 +37,15 @@ const MenuComponent = (datas : DatasMenu)=>{
                 case "ChatBubbleBottomCenterTextIcon":
                     return <ChatBubbleBottomCenterTextIcon className="icone"/>
             }
-    };
-
+    };    
     return(
         <div className="containerMenu">
+            { typeAccount && 
+                <div className="ClassPromoUser">
+                    <span className="funct">{DatasUser.typeAccount === "Teacher" ? "Enseignant(e)": "Ecolier(ère)"}</span>
+                    <span className="promo"><span>{`Classe:`}</span>{DatasUser.typeAccount === "Teacher" ? ` ${DatasUser.PROMOTION}-${DatasUser.CLASS}`:` ${DatasUser.registerDatas.PROMOTION}-${DatasUser.registerDatas.CLASS}`}</span>
+                    </div>
+            }
             <div className="IdentityUser">
                 <Image className="imageProfil" width={200} height={200} src={"/imgs/AuthImgs/avatar.png"} alt="profil img"/>
                 <span className="nameUser">{DatasUser.allName}</span>

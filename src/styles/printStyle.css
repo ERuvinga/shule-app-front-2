@@ -1,0 +1,54 @@
+.titlePrint{
+    font-family: poppinBlack;
+    font-size: .8em;
+    padding-top: 20px;
+    text-align: center;
+    display: none;
+}
+
+.titlePrintListUsers{
+    font-family: poppinBlack;
+    font-size: .8em;
+    padding: 10px;
+    text-align: center;
+    display: none;
+}
+
+.wrapperhiddenFilter{
+    width:25%
+}
+
+.DatasContainerHidden{
+    width: 74%;
+}
+
+@media print {
+
+    .Datas{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } 
+    .containerMenu, .ReturnPrintReload, .HeadView,.PromFilter{
+        display: none;
+    }
+    .wrapperHiden, .wrapperhiddenFilter{
+        display: none;
+    }
+
+    .titlePrint{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .titlePrintListUsers{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .DatasContainerHidden{
+        width: 100%;
+    }
+    
+}
