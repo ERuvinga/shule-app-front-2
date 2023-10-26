@@ -130,8 +130,8 @@ const StudentNewsPage = ()=>{
 
     useEffect(()=>{
         // setup disabledStateBtn
-        if((!AllCotes.length)|| SearchError()){
-            StateDisbled = false;
+        if((!AllCotes.length) || SearchError()){
+            StateDisbled = true;
         }
 
         else{

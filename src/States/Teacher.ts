@@ -113,6 +113,7 @@ const  {atom,selectorFamily, selector} = require("recoil");
             ListCotes.push(OneCotes);  
         }    
 
+    console.log(OldCotes);
     return ListCotes;
     }
   });

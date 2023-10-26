@@ -50,7 +50,6 @@ const StudentsCardCotation = (datas:StudentDatas) =>{
     };
 
     const UpdatingDatas = (event:any) =>{
-
         const data ={
             cote:event.target.value,
             idStudent:datas.idUser,
@@ -60,8 +59,8 @@ const StudentsCardCotation = (datas:StudentDatas) =>{
             NameCourse:Course.name,
             periode:Periode,
         };
-        setCoteSaved(data);
 
+        setCoteSaved(data);
         if(Periode.includes("Examen")){
             if(event.target.value > Course.Pond*2){
                 CopyOfCotesErrorTab[datas.idTab]={
@@ -97,7 +96,7 @@ const StudentsCardCotation = (datas:StudentDatas) =>{
         }
 
     }
-    
+
     return(
         <tr className="bt">
             <td className="ClassPromotion">{datas.idTab}</td>

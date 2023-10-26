@@ -27,8 +27,6 @@ const PeriodeFilter =()=>{
 const CoursFilter =()=>{
     const setCourseSelected = useSetRecoilState(CourseSelected);
     const AllsCourse:any = useRecoilValue(AllCourseInClass);
-    const per:any = useRecoilValue(PeriodeSelected);
-    const cours:any = useRecoilValue(CourseSelected);
 
     const updatedSelectCourse = (event:any)=>{
         const decodeDatas = event.target.value.split("#");
@@ -38,12 +36,6 @@ const CoursFilter =()=>{
             Pond: parseInt(decodeDatas[1]),
         })
     }
-
-useEffect(()=>{
-    console.log(per);
-    console.log(cours);
-
-},[per, cours])
 
     return(
         <div className="PromFilter">
